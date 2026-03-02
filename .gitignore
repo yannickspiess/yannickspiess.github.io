@@ -1,0 +1,5 @@
+# Keep local backup/source archives out of version control.
+Old website backup yannickspiess.com/
+
+# Prevent accidental PDF uploads from local archives.
+*.pdf
