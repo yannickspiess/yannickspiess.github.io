@@ -174,71 +174,52 @@
       </footer>
     </div>
 
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
-    <script>
-      (async function mountDecisionModel() {
-        const statusEl = document.getElementById("app-status");
-        const errorEl = document.getElementById("app-error");
-        const mountEl = document.getElementById("decision-model-app");
-
-        function showError(message) {
-          statusEl.hidden = true;
-          errorEl.hidden = false;
-          errorEl.innerHTML =
-            "Could not load the local Decision Model JSX. " +
-            "Please try a refresh. If it persists, open " +
-            '<a href="/assets/decision-tree-v6.jsx" target="_blank" rel="noopener noreferrer">the source file</a>.' +
-            "<br><small>Technical detail: " + message + "</small>";
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@18.3.1",
+          "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+          "react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime"
         }
+      }
+    </script>
+    <script type="module">
+      const statusEl = document.getElementById("app-status");
+      const errorEl = document.getElementById("app-error");
+      const mountEl = document.getElementById("decision-model-app");
 
+      function showError(message) {
+        statusEl.hidden = true;
+        errorEl.hidden = false;
+        errorEl.innerHTML =
+          "Could not load the local Decision Model app. " +
+          "Please try a refresh. If it persists, open " +
+          '<a href="/assets/decision-tree-v6.jsx" target="_blank" rel="noopener noreferrer">the source file</a>.' +
+          "<br><small>Technical detail: " + message + "</small>";
+      }
+
+      async function mountDecisionModel() {
         try {
-          if (!window.React || !window.ReactDOM || !window.Babel) {
-            throw new Error("React/Babel runtime failed to load.");
-          }
+          const [reactModule, reactDomModule, appModule] = await Promise.all([
+            import("react"),
+            import("react-dom/client"),
+            import("/assets/decision-tree-v6.js"),
+          ]);
 
-          const response = await fetch("/assets/decision-tree-v6.jsx", { cache: "no-store" });
-          if (!response.ok) {
-            throw new Error("JSX fetch failed with HTTP " + response.status);
-          }
-
-          let source = await response.text();
-          source = source.replace(
-            /^import\s+\{\s*useState\s*,\s*useMemo\s*\}\s+from\s+["']react["'];?\s*/m,
-            "const { useState, useMemo } = React;\n"
-          );
-
-          if (!/export\s+default\s+function\s+HourValueApp\s*\(/.test(source)) {
-            throw new Error("Expected `export default function HourValueApp(...)` not found.");
-          }
-
-          source = source.replace(
-            /export\s+default\s+function\s+HourValueApp\s*\(/,
-            "function HourValueApp("
-          );
-          source += "\nwindow.HourValueApp = HourValueApp;";
-
-          const transformed = window.Babel.transform(source, {
-            presets: ["react"],
-            sourceType: "script",
-            comments: false,
-          }).code;
-
-          new Function("React", transformed)(window.React);
-
-          if (typeof window.HourValueApp !== "function") {
-            throw new Error("HourValueApp was not initialized.");
+          if (!appModule || typeof appModule.default !== "function") {
+            throw new Error("HourValueApp export missing.");
           }
 
           statusEl.hidden = true;
           mountEl.hidden = false;
-          window.ReactDOM.createRoot(mountEl).render(window.React.createElement(window.HourValueApp));
+          reactDomModule.createRoot(mountEl).render(reactModule.createElement(appModule.default));
         } catch (err) {
           console.error(err);
           showError(err && err.message ? err.message : "Unknown error");
         }
-      })();
+      }
+
+      mountDecisionModel();
     </script>
   </body>
 </html>
