@@ -18,8 +18,6 @@
         --ink: #202125;
         --ink-muted: #50525b;
         --line: #d3cdc5;
-        --button-ink: #f8f7f4;
-        --button-bg: #343948;
       }
 
       * {
@@ -46,7 +44,7 @@
       }
 
       .page {
-        width: min(980px, calc(100% - 2.75rem));
+        width: min(1100px, calc(100% - 2.75rem));
         margin: 0 auto;
         padding: clamp(1.15rem, 2vw, 1.75rem) 0 clamp(2rem, 4vw, 3rem);
       }
@@ -79,80 +77,33 @@
       }
 
       main {
-        padding-top: clamp(1.8rem, 3vw, 2.4rem);
+        padding-top: clamp(1rem, 2vw, 1.4rem);
       }
 
-      h1 {
-        margin: 0;
-        font-size: clamp(1.85rem, 4vw, 2.4rem);
-        line-height: 1.15;
-      }
-
-      .subtitle {
-        margin: 0.6rem 0 1.25rem;
-        color: var(--ink-muted);
-        font-size: 1.04rem;
-        line-height: 1.55;
-      }
-
-      .embed-fallback {
-        margin: 0 0 1rem;
+      #app-status,
+      #app-error {
+        margin: 1rem auto;
+        max-width: 720px;
         border: 1px solid var(--line);
-        border-radius: 14px;
+        border-radius: 12px;
         padding: 0.85rem 1rem;
-        background: rgba(255, 255, 255, 0.46);
+        font-size: 0.95rem;
+        line-height: 1.5;
       }
 
-      .embed-fallback p {
-        margin: 0;
+      #app-status {
         color: var(--ink-muted);
-        font-size: 0.98rem;
-        line-height: 1.55;
+        background: rgba(255, 255, 255, 0.52);
       }
 
-      .embed-fallback p + p {
-        margin-top: 0.68rem;
+      #app-error {
+        color: #5d2f2f;
+        background: rgba(255, 245, 245, 0.92);
       }
 
-      .open-link {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.5rem 0.95rem;
-        border-radius: 999px;
-        border: 1px solid transparent;
-        color: var(--button-ink);
-        background: linear-gradient(140deg, #303646, #454d62);
-        text-decoration: none;
-        box-shadow: 0 10px 24px rgba(52, 57, 72, 0.18);
-      }
-
-      .open-link:hover,
-      .open-link:focus-visible {
-        border-color: rgba(246, 238, 229, 0.85);
-        box-shadow: 0 14px 30px rgba(52, 57, 72, 0.24);
-      }
-
-      .embed-shell {
-        margin-top: 1rem;
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        background: rgba(255, 255, 255, 0.38);
-        overflow: hidden;
-        box-shadow: 0 16px 36px rgba(44, 49, 61, 0.09);
-      }
-
-      .embed-shell iframe {
-        display: block;
-        width: 100%;
-        height: max(600px, 70vh);
-        border: 0;
-      }
-
-      .embed-caption {
-        margin: 0.65rem 0 0;
-        color: #666b76;
-        font-size: 0.9rem;
-        line-height: 1.45;
+      #app-error a {
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
       }
 
       #site-footer {
@@ -180,12 +131,8 @@
 
       @media (max-width: 760px) {
         .page {
-          width: min(980px, calc(100% - 3.2rem));
-          padding: 1.75rem 0 3rem;
-        }
-
-        .embed-shell iframe {
-          height: max(560px, 68vh);
+          width: min(1100px, calc(100% - 2.4rem));
+          padding: 1.4rem 0 2.5rem;
         }
       }
 
@@ -209,39 +156,14 @@
       </header>
 
       <main>
-        <section aria-label="Decision model embed">
-          <h1>Decision Model</h1>
-          <p class="subtitle">What is an hour of your life worth?</p>
-          <div class="embed-fallback">
-            <p>
-              If the embed area appears blank, open the Decision Model directly on Claude.
-            </p>
-            <p>
-              <a
-                class="open-link"
-                href="https://claude.site/public/artifacts/171b501f-253f-49c5-ba38-bae35226d605/embed"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Open Decision Model
-              </a>
-            </p>
+        <div id="app-status" role="status" aria-live="polite">Loading Decision Model…</div>
+        <div id="app-error" role="alert" hidden></div>
+        <div id="decision-model-app" hidden></div>
+        <noscript>
+          <div id="app-error">
+            This page needs JavaScript to render the Decision Model.
           </div>
-          <div class="embed-shell">
-            <iframe
-              src="https://claude.site/public/artifacts/171b501f-253f-49c5-ba38-bae35226d605/embed"
-              title="Claude Artifact"
-              width="100%"
-              height="600"
-              frameborder="0"
-              allow="clipboard-write"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <p class="embed-caption">
-            Note: this source can block third-party embedding on some domains and browsers.
-          </p>
-        </section>
+        </noscript>
       </main>
 
       <footer id="site-footer">
@@ -251,5 +173,72 @@
         </p>
       </footer>
     </div>
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
+    <script>
+      (async function mountDecisionModel() {
+        const statusEl = document.getElementById("app-status");
+        const errorEl = document.getElementById("app-error");
+        const mountEl = document.getElementById("decision-model-app");
+
+        function showError(message) {
+          statusEl.hidden = true;
+          errorEl.hidden = false;
+          errorEl.innerHTML =
+            "Could not load the local Decision Model JSX. " +
+            "Please try a refresh. If it persists, open " +
+            '<a href="/assets/decision-tree-v6.jsx" target="_blank" rel="noopener noreferrer">the source file</a>.' +
+            "<br><small>Technical detail: " + message + "</small>";
+        }
+
+        try {
+          if (!window.React || !window.ReactDOM || !window.Babel) {
+            throw new Error("React/Babel runtime failed to load.");
+          }
+
+          const response = await fetch("/assets/decision-tree-v6.jsx", { cache: "no-store" });
+          if (!response.ok) {
+            throw new Error("JSX fetch failed with HTTP " + response.status);
+          }
+
+          let source = await response.text();
+          source = source.replace(
+            /^import\s+\{\s*useState\s*,\s*useMemo\s*\}\s+from\s+["']react["'];?\s*/m,
+            "const { useState, useMemo } = React;\n"
+          );
+
+          if (!/export\s+default\s+function\s+HourValueApp\s*\(/.test(source)) {
+            throw new Error("Expected `export default function HourValueApp(...)` not found.");
+          }
+
+          source = source.replace(
+            /export\s+default\s+function\s+HourValueApp\s*\(/,
+            "function HourValueApp("
+          );
+          source += "\nwindow.HourValueApp = HourValueApp;";
+
+          const transformed = window.Babel.transform(source, {
+            presets: ["react"],
+            sourceType: "script",
+            comments: false,
+          }).code;
+
+          new Function("React", transformed)(window.React);
+
+          if (typeof window.HourValueApp !== "function") {
+            throw new Error("HourValueApp was not initialized.");
+          }
+
+          statusEl.hidden = true;
+          mountEl.hidden = false;
+          window.ReactDOM.createRoot(mountEl).render(window.React.createElement(window.HourValueApp));
+        } catch (err) {
+          console.error(err);
+          showError(err && err.message ? err.message : "Unknown error");
+        }
+      })();
+    </script>
   </body>
 </html>
