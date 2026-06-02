@@ -33,7 +33,7 @@ body {
 .hdr__bar { max-width: var(--content-wide); margin: 0 auto; padding: 18px var(--gutter); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid transparent; transition: border-color var(--dur-medium) var(--ease-move); }
 .hdr--scrolled .hdr__bar { border-bottom-color: var(--hair); }
 .hdr__mark { font-family: var(--font-display); font-weight: 700; font-size: 18px; letter-spacing: -.01em; color: var(--ink); text-decoration: none; }
-.hdr__link { font-family: var(--font-body); font-weight: 600; font-size: 15px; color: var(--accent-ink); text-decoration: underline; text-underline-offset: .15em; text-decoration-thickness: 1px; letter-spacing: .01em; white-space: nowrap; transition: opacity var(--dur-short) var(--ease-move); }
+.hdr__link { font-family: var(--font-body); font-weight: 600; font-size: 15px; color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: .15em; text-decoration-thickness: 1px; letter-spacing: .01em; white-space: nowrap; transition: opacity var(--dur-short) var(--ease-move); }
 .hdr__link:hover { opacity: .7; }
 
 /* ---------------------------------------------------------------------- */
