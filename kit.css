@@ -139,7 +139,7 @@ section { padding-block: var(--section-y); }
 .ilink:hover { opacity: .7; }
 
 /* Tighten bottom gap between problems and the loop section that follows */
-#problems { padding-block-end: clamp(64px, 8vh, 112px); }
+#problems { padding-block: clamp(64px, 8vh, 112px); }
 
 /* ---------------------------------------------------------------------- */
 /* HOW IT WORKS — the loop                                                  */
