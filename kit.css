@@ -145,45 +145,31 @@ section { padding-block: var(--section-y); }
 
 .loop { display: flex; align-items: stretch; gap: 0; }
 .loop__stage {
-  flex: 1; padding: 22px 18px; border-top: 2px solid var(--hair);
+  flex: 1; padding: 22px 18px 18px; border-top: 2px solid var(--hair);
   border-radius: 6px; position: relative; cursor: pointer;
-  transition:
-    border-color var(--dur-medium) var(--ease-move),
-    background var(--dur-medium) var(--ease-move),
-    transform var(--dur-medium) var(--ease-move),
-    box-shadow var(--dur-medium) var(--ease-move);
+  display: flex; flex-direction: column;
+  transition: border-color var(--dur-medium) var(--ease-move);
   user-select: none;
   outline: none;
 }
 .loop__stage:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .loop__stage + .loop__stage { border-left: 1px solid var(--hair); }
+/* Auto-cycling active state */
 .loop__stage.active { border-top-color: var(--accent); }
-/* Hover — full tile pop-out */
-.loop__stage:hover,
-.loop__stage--expanded {
-  background: var(--accent);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 28px rgba(225, 73, 42, 0.22);
-  border-top-color: var(--accent);
-  z-index: 1;
-}
-.loop__stage:hover .loop__dot,
-.loop__stage--expanded .loop__dot { background: rgba(255,255,255,0.7); transform: scale(1.3); }
-.loop__stage:hover .loop__num,
-.loop__stage--expanded .loop__num { color: rgba(255,255,255,0.75); }
-.loop__stage:hover .loop__name,
-.loop__stage--expanded .loop__name { color: var(--paper); }
-.loop__stage:hover .loop__desc,
-.loop__stage--expanded .loop__desc { color: rgba(255,255,255,0.8); }
-.loop__stage:hover .loop__chevron,
-.loop__stage--expanded .loop__chevron { color: rgba(255,255,255,0.75); }
-.loop__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--hair); position: absolute; top: -5.5px; left: 18px; transition: background var(--dur-medium) var(--ease-move), transform var(--dur-medium) var(--ease-move); }
 .loop__stage.active .loop__dot { background: var(--accent); transform: scale(1.3); }
-.loop__num { font-family: var(--font-mono); font-size: 13px; font-weight: 500; letter-spacing: .04em; color: var(--ink-soft); display: block; margin-bottom: 10px; transition: color var(--dur-medium) var(--ease-move); }
 .loop__stage.active .loop__num { color: var(--accent-ink); }
-.loop__name { font-family: var(--font-display); font-weight: 700; font-size: 18px; letter-spacing: -.01em; color: var(--ink); margin: 0 0 8px; transition: color var(--dur-medium) var(--ease-move); }
-.loop__desc { font-family: var(--font-body); font-size: 14px; line-height: 1.45; color: var(--ink-soft); margin: 0; transition: color var(--dur-medium) var(--ease-move); }
-.loop__chevron { font-family: var(--font-mono); font-size: 16px; color: var(--ink-soft); display: block; margin-top: 14px; transition: color var(--dur-medium) var(--ease-move); }
+/* Hover — only the chevron signals interactivity */
+.loop__stage:hover .loop__chevron { color: var(--accent); }
+/* Expanded — top border stays vermilion, chevron vermilion */
+.loop__stage--expanded { border-top-color: var(--accent); }
+.loop__stage--expanded .loop__dot { background: var(--accent); transform: scale(1.3); }
+.loop__stage--expanded .loop__chevron { color: var(--accent-ink); }
+.loop__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--hair); position: absolute; top: -5.5px; left: 18px; transition: background var(--dur-medium) var(--ease-move), transform var(--dur-medium) var(--ease-move); }
+.loop__num { font-family: var(--font-mono); font-size: 13px; font-weight: 500; letter-spacing: .04em; color: var(--ink-soft); display: block; margin-bottom: 10px; transition: color var(--dur-medium) var(--ease-move); }
+.loop__name { font-family: var(--font-display); font-weight: 700; font-size: 18px; letter-spacing: -.01em; color: var(--ink); margin: 0 0 8px; }
+.loop__desc { font-family: var(--font-body); font-size: 14px; line-height: 1.45; color: var(--ink-soft); margin: 0; }
+/* Chevron pinned to bottom of card at consistent height */
+.loop__chevron { font-family: var(--font-mono); font-size: 16px; color: var(--ink-soft); display: block; margin-top: auto; padding-top: 16px; transition: color var(--dur-short) var(--ease-move); }
 .loop__return { font-family: var(--font-mono); font-size: 13px; color: var(--accent-ink); margin-top: 22px; display: flex; align-items: center; gap: 10px; }
 .loop__return .arc { flex: 1; height: 1px; background: linear-gradient(to right, var(--hair), var(--accent)); opacity: .6; }
 /* Expanded detail panel */
