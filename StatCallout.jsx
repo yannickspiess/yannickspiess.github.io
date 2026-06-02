@@ -54,13 +54,13 @@ function StatCallout() {
         <div className="stat-callout__grid">
           <StatItem
             num={44}
-            desc="mehr Kaufabsicht nach nur 3 Sekunden Video-Werbung."
+            desc={<>mehr Kaufabsicht nach nur 3 Sekunden <span className="hero__hl">Video-Werbung</span>.</>}
             source="Nielsen BrandEffect-Studie · 173 Kampagnen · Meta"
           />
           <div className="stat-callout__rule" aria-hidden="true" />
           <StatItem
             num={612}
-            desc="mehr Engagement als Bild-Anzeigen auf Meta."
+            desc={<>mehr Engagement mit <span className="hero__hl">Video</span> als Bild-Anzeigen auf Meta.</>}
             source="Confect.io · 12,7 Mrd. Impressionen · 2023"
           />
         </div>
