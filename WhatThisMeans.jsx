@@ -71,7 +71,7 @@ function WhatThisMeans() {
         <p className="eyebrow reveal">Was das für dich bedeutet</p>
         <p className="lead reveal">
           Bevor irgendjemand ein Video dreht, verstehen wir deine Situation vollständig.
-          Im 60-minütigen Audit schauen wir uns drei Bereiche an:
+          Im <span className="hero__hl">60-minütigen Audit</span> schauen wir uns drei Bereiche an:
         </p>
         <ol className="audit-stack">
           {areas.map((area, i) => (
