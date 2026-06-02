@@ -9,8 +9,7 @@ const LOOP_STAGES = [
     detail: (
       <React.Fragment>
         Wir analysieren deine Zielgruppe, deine Marktposition und deine aktuellen Kanäle — und bauen daraus eine konkrete{' '}
-        <strong className="kw">Video-Roadmap</strong>: welche Formate, welche Botschaften,{' '}
-        <strong className="kw">welche Test-Hypothesen zuerst</strong>. Kein Schuss ins Blaue.
+        <strong className="kw">Video-Roadmap</strong>: welche Formate, welche Botschaften, welche Test-Hypothesen zuerst. Kein Schuss ins Blaue.
       </React.Fragment>
     )
   },
@@ -20,8 +19,8 @@ const LOOP_STAGES = [
     desc: 'Das Video machen, auf hohem Niveau.',
     detail: (
       <React.Fragment>
-        Von <strong className="kw">Brief bis Final Cut</strong>, konzipiert zum Konvertieren. Wir produzieren mehrere{' '}
-        <strong className="kw">Formate und Hooks gleichzeitig</strong> — damit die Tests direkt in die Distribution fließen. Handwerk und Strategie in einem Durchgang.
+        Von Brief bis Final Cut, konzipiert zum Konvertieren. Wir produzieren{' '}
+        <strong className="kw">mehrere Formate und Hooks gleichzeitig</strong> — damit die Tests direkt in die Distribution fließen. Handwerk und Strategie in einem Durchgang.
       </React.Fragment>
     )
   },
@@ -32,8 +31,7 @@ const LOOP_STAGES = [
     detail: (
       <React.Fragment>
         Kampagnen einrichten, Launch starten, laufend anpassen.{' '}
-        <strong className="kw">Budget, Targeting und Platzierungen</strong> werden{' '}
-        <strong className="kw">kontinuierlich optimiert</strong> — nicht einmal eingerichtet und vergessen.
+        <strong className="kw">Budget, Targeting und Platzierungen werden kontinuierlich optimiert</strong> — nicht einmal eingerichtet und vergessen.
       </React.Fragment>
     )
   },
@@ -45,8 +43,7 @@ const LOOP_STAGES = [
       <React.Fragment>
         Performance-Daten zeigen, was ankommt und was nicht. Was funktioniert, wird{' '}
         <strong className="kw">skaliert</strong>. Was nicht, wird{' '}
-        <strong className="kw">iteriert</strong>. Jeder Zyklus macht das System{' '}
-        <strong className="kw">schärfer</strong> — das ist der Unterschied zu einem Einzelprojekt.
+        <strong className="kw">iteriert</strong>. Jeder Zyklus macht das System schärfer — das ist der Unterschied zu einem Einzelprojekt.
       </React.Fragment>
     )
   },
