@@ -1,0 +1,262 @@
+/* ============================================================================
+   Yannick Spieß — Design System
+   colors_and_type.css
+
+   The single source of truth for color + type tokens.
+   Derived verbatim from "Website Landing Page DESIGN System 2026-06-01.md".
+   Direction: editorial restraint — warm paper-and-ink, one vermilion accent.
+
+   Fonts are free for commercial use and hosted on Google Fonts. Loaded via CDN
+   (see @import below) per the design spec. If you need offline/self-hosted
+   builds, drop woff2 files into /fonts and swap the @import for @font-face.
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ---------------------------------------------------------------------- */
+  /* COLOR — base tokens (warm paper-and-ink, one accent)                    */
+  /* ---------------------------------------------------------------------- */
+  --paper:       #FAF6EF; /* page background — warm off-white            */
+  --paper-2:     #F2ECE1; /* alternate section background / surfaces      */
+  --ink:         #1A1613; /* primary text — warm near-black               */
+  --ink-soft:    #6B635A; /* secondary text, captions, sublines           */
+  --hair:        #E2D9C9; /* hairline rules, borders, dividers            */
+  --accent:      #E1492A; /* signal vermilion — CTA fill, live data points */
+  --accent-ink:  #B83A1F; /* accent on paper — links + hover, AA on paper */
+
+  /* Semantic (rare — contact-form states only) */
+  --success:     #2F7A4F;
+  --error:       #B83A1F; /* reuse accent-ink */
+  --info:        var(--ink-soft);
+
+  /* Dark mode surfaces (optional, not required for V1) */
+  --dk-surface-1:  #181410;
+  --dk-surface-2:  #211C16;
+  --dk-text:       #F2ECE1;
+  --dk-text-soft:  #A89E91;
+  --dk-accent:     #D8542F; /* vermilion desaturated ~10% */
+
+  /* ---------------------------------------------------------------------- */
+  /* TYPE — families                                                         */
+  /* ---------------------------------------------------------------------- */
+  --font-display: 'Bricolage Grotesque', 'Bricolage Grotesque Fallback', system-ui, sans-serif;
+  --font-body:    'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+  --font-mono:    'Geist Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* ---------------------------------------------------------------------- */
+  /* TYPE — fluid role sizes (clamp min / preferred / max)                   */
+  /* ---------------------------------------------------------------------- */
+  --fs-hero:     clamp(40px, 6vw, 64px);
+  --fs-h2:       clamp(28px, 4vw, 40px);
+  --fs-h3:       22px;
+  --fs-lede:     clamp(18px, 2.2vw, 21px);
+  --fs-body:     18px;   /* body runs 17–18px */
+  --fs-ui:       15px;   /* UI label / button */
+  --fs-eyebrow:  13px;   /* kicker / uppercase */
+  --fs-mono:     13px;   /* metrics / stage labels (13–14px) */
+
+  /* TYPE — weights */
+  --fw-body:        400;
+  --fw-medium:      500;
+  --fw-semibold:    600;
+  --fw-head:        700;
+  --fw-hero:        800;
+
+  /* TYPE — tracking */
+  --tracking-hero:    -0.02em;
+  --tracking-h2:      -0.015em;
+  --tracking-h3:      -0.01em;
+  --tracking-ui:      0.01em;
+  --tracking-eyebrow: 0.06em;
+  --tracking-mono:    0.01em;
+
+  /* TYPE — line-height */
+  --lh-hero:   1.04;
+  --lh-h2:     1.1;
+  --lh-h3:     1.2;
+  --lh-lede:   1.45;
+  --lh-body:   1.6;
+  --lh-tight:  1;
+  --lh-mono:   1.4;
+
+  /* Measure (max line length) */
+  --measure-body: 62ch;  /* body + lede max ~46–62ch */
+  --measure-hero: 17ch;  /* hero breaks into strong short lines */
+
+  /* ---------------------------------------------------------------------- */
+  /* SPACING — 8px base, spacious                                            */
+  /* ---------------------------------------------------------------------- */
+  --space-2:   4px;
+  --space-xs:  8px;
+  --space-sm:  12px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+  --space-5xl: 128px;
+
+  /* Section rhythm — enforces "one message per screen" */
+  --section-y:    clamp(96px, 12vh, 160px);
+  --gutter:       clamp(20px, 5vw, 40px);
+  --content-text: 720px;   /* text column max */
+  --content-wide: 1100px;  /* how-it-works loop max */
+
+  /* ---------------------------------------------------------------------- */
+  /* RADIUS — moderate, not bubbly                                           */
+  /* ---------------------------------------------------------------------- */
+  --radius-button:  12px;
+  --radius-card:    16px;
+  --radius-pill:    9999px;
+
+  /* ---------------------------------------------------------------------- */
+  /* MOTION                                                                  */
+  /* ---------------------------------------------------------------------- */
+  --dur-micro:  80ms;
+  --dur-short:  180ms;
+  --dur-medium: 280ms;
+  --dur-long:   450ms;
+  --ease-enter: cubic-bezier(0.16, 1, 0.3, 1);   /* ease-out */
+  --ease-exit:  cubic-bezier(0.4, 0, 1, 1);       /* ease-in */
+  --ease-move:  cubic-bezier(0.4, 0, 0.2, 1);     /* ease-in-out */
+}
+
+/* ============================================================================
+   SEMANTIC ELEMENT STYLES
+   Apply these by using the classes / element selectors below, or copy the
+   declarations into your own components. They wire the tokens above into the
+   roles defined in the type scale.
+   ============================================================================ */
+
+.ds-hero,
+h1.ds {
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  font-weight: var(--fw-hero);
+  letter-spacing: var(--tracking-hero);
+  line-height: var(--lh-hero);
+  color: var(--ink);
+  max-width: var(--measure-hero);
+  text-wrap: balance;
+}
+
+.ds-h2,
+h2.ds {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-head);
+  letter-spacing: var(--tracking-h2);
+  line-height: var(--lh-h2);
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.ds-h3,
+h3.ds {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-head);
+  letter-spacing: var(--tracking-h3);
+  line-height: var(--lh-h3);
+  color: var(--ink);
+}
+
+.ds-lede {
+  font-family: var(--font-body);
+  font-size: var(--fs-lede);
+  font-weight: var(--fw-body);
+  line-height: var(--lh-lede);
+  color: var(--ink-soft);
+  max-width: var(--measure-body);
+}
+
+.ds-body,
+p.ds {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-body);
+  line-height: var(--lh-body);
+  color: var(--ink);
+  max-width: var(--measure-body);
+  text-wrap: pretty;
+}
+
+.ds-ui {
+  font-family: var(--font-body);
+  font-size: var(--fs-ui);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-ui);
+  line-height: var(--lh-tight);
+}
+
+.ds-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-eyebrow);
+  line-height: var(--lh-tight);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.ds-mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  font-weight: var(--fw-body);
+  letter-spacing: var(--tracking-mono);
+  line-height: var(--lh-mono);
+}
+
+/* Inline link — vermilion on paper */
+.ds-link,
+a.ds {
+  color: var(--accent-ink);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 1px;
+  transition: opacity var(--dur-short) var(--ease-move);
+}
+.ds-link:hover,
+a.ds:hover { opacity: 0.7; }
+
+/* ----------------------------------------------------------------------- */
+/* BUTTONS                                                                  */
+/* ----------------------------------------------------------------------- */
+.ds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  font-family: var(--font-body);
+  font-size: var(--fs-ui);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-ui);
+  line-height: var(--lh-tight);
+  white-space: nowrap;
+  padding: 14px 22px;
+  border-radius: var(--radius-button);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform var(--dur-micro) var(--ease-move),
+              background-color var(--dur-short) var(--ease-move),
+              opacity var(--dur-short) var(--ease-move);
+}
+.ds-btn:active { transform: translateY(1px); }
+
+/* Primary — vermilion fill */
+.ds-btn--primary {
+  background: var(--accent);
+  color: var(--paper);
+}
+.ds-btn--primary:hover { background: var(--accent-ink); }
+
+/* Secondary — quiet text link beside the CTA */
+.ds-btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--hair);
+}
+.ds-btn--ghost:hover { background: var(--paper-2); }
