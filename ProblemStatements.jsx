@@ -21,7 +21,7 @@ function ProblemStatements() {
   ];
 
   return (
-    <section id="problems">
+    <section id="problems" className="alt">
       <div className="wrap">
         <p className="eyebrow reveal">Die Situation</p>
         <h2 className="h2 reveal">Kommt dir das bekannt vor?</h2>
