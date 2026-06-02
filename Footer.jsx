@@ -10,7 +10,6 @@ function Footer({ wordmark, contact }) {
         <a href={`mailto:${contact}`}>{contact}</a>
         <span className="dot">&middot;</span>
         <span>&copy; 2026</span>
-        <span className="ftr__tag">Unabhängig &mdash; wir bauen Video-Wachstumssysteme auf.</span>
       </div>
     </footer>
   );
