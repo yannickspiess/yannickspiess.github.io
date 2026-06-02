@@ -116,7 +116,7 @@ section { padding-block: var(--section-y); }
 .hero__phone-screen { position: relative; display: inline-block; line-height: 0; }
 .hero__text { display: flex; flex-direction: column; justify-content: center; }
 .hero__iphone { height: clamp(360px, 58vh, 620px); width: auto; display: block; object-fit: contain; position: relative; z-index: 1; }
-.hero__screen-video { position: absolute; top: 2.5%; left: 5.35%; width: 89.3%; height: 95%; object-fit: cover; border-radius: 15% / 5.5%; z-index: 0; }
+.hero__screen-video { position: absolute; top: 2%; left: 4.85%; width: 90.3%; height: 96%; object-fit: cover; border-radius: 15% / 5.5%; z-index: 0; }
 .hero__hl { color: var(--accent); }
 
 .hero__title { font-family: var(--font-display); font-weight: 800; font-size: var(--fs-hero); letter-spacing: -.02em; line-height: 1.04; color: var(--ink); margin: 0; text-wrap: balance; }
