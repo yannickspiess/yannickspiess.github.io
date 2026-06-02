@@ -44,6 +44,68 @@ section { padding-block: var(--section-y); }
 .eyebrow { font-family: var(--font-body); font-weight: 600; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 20px; }
 
 /* ---------------------------------------------------------------------- */
+/* STAT CALLOUT — editorial trust block                                     */
+/* ---------------------------------------------------------------------- */
+.stat-callout { padding-block: clamp(64px, 10vh, 108px); border-bottom: 1px solid var(--hair); }
+.stat-callout__eyebrow { margin-bottom: 40px; }
+.stat-callout__grid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 0 clamp(32px, 5vw, 72px);
+  align-items: start;
+}
+.stat-callout__rule { background: var(--hair); align-self: stretch; }
+
+.stat-item {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.65s var(--ease-enter), transform 0.65s var(--ease-enter);
+}
+.stat-item--visible { opacity: 1; transform: none; }
+
+.stat-item__num {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(88px, 13vw, 132px);
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  margin: 0 0 24px;
+}
+.stat-item__pct { color: var(--accent); }
+.stat-item__desc {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.4;
+  color: var(--ink);
+  margin: 0 0 16px;
+  max-width: 24ch;
+  text-wrap: pretty;
+}
+.stat-item__source {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .stat-callout__grid { grid-template-columns: 1fr; gap: 0; }
+  .stat-callout__rule { display: none; }
+  .stat-item { padding-block: 48px; border-bottom: 1px solid var(--hair); }
+  .stat-item:first-child { padding-top: 0; }
+  .stat-item:last-child { border-bottom: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stat-item { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---------------------------------------------------------------------- */
 /* HERO                                                                     */
 /* ---------------------------------------------------------------------- */
 .hero { padding-top: clamp(72px, 11vh, 132px); }
