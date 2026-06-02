@@ -362,6 +362,7 @@ section { padding-block: var(--section-y); }
 }
 .audit-item.in .audit-icon-radar .icon-ring-outer { stroke-dashoffset: 0; }
 .audit-icon-radar .radar-sweep {
+  transform-box: view-box;
   transform-origin: 22px 22px;
   opacity: 0;
 }

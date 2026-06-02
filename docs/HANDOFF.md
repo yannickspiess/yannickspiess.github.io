@@ -3,7 +3,7 @@
 _For full context (GZS, coaching, business trajectory) see the Obsidian vault:_  
 `01 Workspace/Projects/Transition to Freelance/Working Documents/Website — Agent Handoff.md`
 
-Last updated: 2026-06-02
+Last updated: 2026-06-02 16:21
 
 ---
 

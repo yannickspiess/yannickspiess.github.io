@@ -5,11 +5,11 @@ function HowItWorks() {
   return (
     <section id="how">
       <div className="wrap wrap--wide">
-        <p className="eyebrow reveal">So funktioniert es</p>
-        <h2 className="h2 reveal">Es funktioniert als Loop, nicht als Projekt.</h2>
+        <p className="eyebrow reveal">Das Prinzip</p>
+        <h2 className="h2 reveal">Es funktioniert als <span className="hero__hl">Loop</span>, nicht als Projekt.</h2>
         <p className="how__intro reveal">
-          Zuerst verstehen, dann handeln. Jede Stage speist die nächste &ndash; was wir messen,
-          formt die nächste Runde.
+          Zuerst verstehen, dann handeln. Jede Phase fließt in die nächste &ndash; was wir messen,
+          schärft die nächste Runde.
         </p>
         <div className="reveal">
           <LoopDiagram />
