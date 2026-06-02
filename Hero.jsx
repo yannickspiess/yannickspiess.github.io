@@ -5,11 +5,22 @@ function Hero() {
     <section className="hero" id="top">
       <div className="wrap wrap--wide hero__wrap">
         <div className="hero__phone reveal">
-          <img
-            src="iphone.png"
-            alt="iPhone Mockup — Paid Social Ads"
-            className="hero__iphone"
-          />
+          <div className="hero__phone-screen">
+            <video
+              className="hero__screen-video"
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
+              <source src="assets/hero-screen.mp4" type="video/mp4" />
+            </video>
+            <img
+              src="iphone.png"
+              alt="iPhone Mockup — Paid Social Ads"
+              className="hero__iphone"
+            />
+          </div>
         </div>
         <div className="hero__text">
           <h1 className="hero__title reveal">

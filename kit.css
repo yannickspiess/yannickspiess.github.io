@@ -113,8 +113,10 @@ section { padding-block: var(--section-y); }
 /* Two-column grid: iPhone left (~1/3), text right (~2/3) */
 .hero__wrap { display: grid; grid-template-columns: 1fr 2fr; gap: clamp(22px, 3.2vw, 58px); align-items: stretch; }
 .hero__phone { display: flex; justify-content: flex-end; align-items: flex-end; }
+.hero__phone-screen { position: relative; display: inline-block; line-height: 0; }
 .hero__text { display: flex; flex-direction: column; justify-content: center; }
-.hero__iphone { height: 100%; max-height: clamp(360px, 58vh, 620px); width: auto; display: block; object-fit: contain; }
+.hero__iphone { height: clamp(360px, 58vh, 620px); width: auto; display: block; object-fit: contain; position: relative; z-index: 1; }
+.hero__screen-video { position: absolute; top: 2.5%; left: 5.81%; width: 88.37%; height: 94.9%; object-fit: cover; border-radius: 15% / 5.5%; z-index: 0; }
 .hero__hl { color: var(--accent); }
 
 .hero__title { font-family: var(--font-display); font-weight: 800; font-size: var(--fs-hero); letter-spacing: -.02em; line-height: 1.04; color: var(--ink); margin: 0; text-wrap: balance; }
@@ -127,7 +129,7 @@ section { padding-block: var(--section-y); }
   .hero__wrap { grid-template-columns: 1fr; align-items: start; }
   .hero__phone { order: 2; margin-top: 36px; justify-content: center; align-items: flex-start; }
   .hero__text  { order: 1; }
-  .hero__iphone { width: min(64vw, 320px); height: auto; max-height: none; }
+  .hero__iphone { width: min(64vw, 320px); height: auto; }
 }
 
 /* ---------------------------------------------------------------------- */
