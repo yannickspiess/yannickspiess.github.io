@@ -1,20 +1,31 @@
-// LoopDiagram — four stages. Active stage cycles via auto-timer.
+// LoopDiagram — five stages. Active stage cycles via auto-timer.
 // Hover: chevron turns vermilion. Click: expand panel below with detail.
 // Bold key terms in detail animate in with staggered delays on open.
 const LOOP_STAGES = [
   {
     n: '01',
-    name: 'Strategie',
-    desc: 'Eine Video-Roadmap für Paid Social entwickeln, die zur Situation passt.',
+    name: 'Audit',
+    desc: 'Produkt, Kunden, Kanäle und Acquisition-Flow verstehen. Bevor ein Video entsteht.',
     detail: (
       <React.Fragment>
-        Wir analysieren deine Zielgruppe, deine Marktposition und deine aktuellen Kanäle — und bauen daraus eine konkrete{' '}
-        <strong className="kw">Video-Roadmap</strong>: welche Formate, welche Botschaften, welche Test-Hypothesen zuerst. Kein Schuss ins Blaue.
+        Bevor ein Video entsteht, klären wir die Ausgangslage:{' '}
+        <strong className="kw">Produkt, Zielgruppe, bestehende Kanäle und Acquisition-Flow</strong>. So wissen wir, wo Video wirklich etwas bewegt — und wo nicht.
       </React.Fragment>
     )
   },
   {
     n: '02',
+    name: 'Strategie',
+    desc: 'Eine Video-Roadmap für Paid Social entwickeln, die zur Situation passt.',
+    detail: (
+      <React.Fragment>
+        Wir entwickeln aus dem Audit eine konkrete{' '}
+        <strong className="kw">Video-Roadmap</strong>: welche Formate, welche Botschaften, welche Test-Hypothesen zuerst. Kein Schuss ins Blaue.
+      </React.Fragment>
+    )
+  },
+  {
+    n: '03',
     name: 'Produktion',
     desc: 'Das Video machen, auf hohem Niveau.',
     detail: (
@@ -25,7 +36,7 @@ const LOOP_STAGES = [
     )
   },
   {
-    n: '03',
+    n: '04',
     name: 'Distribution',
     desc: 'Auf Meta, TikTok, YouTube und Co. ausspielen. Bezahlt und organisch.',
     detail: (
@@ -36,9 +47,9 @@ const LOOP_STAGES = [
     )
   },
   {
-    n: '04',
+    n: '05',
     name: 'Messung & Iteration',
-    desc: 'Was funktioniert, skalieren. Die Daten fließen zurück in die Strategie.',
+    desc: 'Was funktioniert, skalieren. Die Daten fließen zurück in den Audit.',
     detail: (
       <React.Fragment>
         Performance-Daten zeigen, was ankommt und was nicht. Was funktioniert, wird{' '}
@@ -100,7 +111,7 @@ function LoopDiagram() {
         </div>
       )}
       <div className="loop__return">
-        <span>&#8635; Messung &amp; Iteration speist zurück in die Strategie</span>
+        <span>&#8635; Messung &amp; Iteration speist zurück in den Audit</span>
         <span className="arc"></span>
       </div>
     </div>

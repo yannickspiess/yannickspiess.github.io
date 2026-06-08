@@ -24,13 +24,16 @@
   <script type="text/babel" src="HowItWorks.jsx"></script>
   <script type="text/babel" src="Proof.jsx"></script>
   <script type="text/babel" src="ProblemStatements.jsx"></script>
+  <script type="text/babel" src="Qualify.jsx"></script>
+  <script type="text/babel" src="PilotOffer.jsx"></script>
+  <script type="text/babel" src="Team.jsx"></script>
   <script type="text/babel" src="SoftClose.jsx"></script>
   <script type="text/babel" src="Footer.jsx"></script>
 
   <script type="text/babel">
     // [[VARIABLE]] fills — confirm with Yannick (see Implementation Spec §6)
     const WORDMARK = 'Yannick Spiess';
-    const CONTACT  = 'hello@yannickspiess.com'; // placeholder mailto target
+    const CONTACT  = 'yannick.spiess@icloud.com'; // temporary; swap when custom domain lands
 
     function App() {
       // Scroll-in reveal — quiet entrance, disabled under reduced-motion (CSS handles fallback)
@@ -55,6 +58,9 @@
             <ProblemStatements />
             <HowItWorks />
             <WhatThisMeans />
+            <Qualify />
+            <PilotOffer />
+            <Team />
             <SoftClose contact={CONTACT} />
           </main>
           <Footer wordmark={WORDMARK} contact={CONTACT} />

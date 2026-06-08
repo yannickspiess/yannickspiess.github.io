@@ -442,3 +442,51 @@ section { padding-block: var(--section-y); }
 .ftr__row a { color: var(--ink-soft); text-decoration: none; }
 .ftr__row a:hover { color: var(--accent-ink); }
 .ftr__tag { margin-left: auto; font-style: normal; }
+
+/* ====================================================================== */
+/* V2 ADDITIONS (2026-06-08) — stat story, fit, pilot, team                */
+/* ====================================================================== */
+
+/* Stat callout — narrative framing around the two research stats */
+.stat-callout__eyebrow { margin-bottom: 24px; }
+.stat-callout__story {
+  font-family: var(--font-body); font-size: var(--fs-lede); line-height: 1.55;
+  color: var(--ink); max-width: 60ch; margin: 0 0 56px; text-wrap: pretty;
+}
+.stat-callout__cred {
+  font-family: var(--font-body); font-size: var(--fs-lede); line-height: 1.5;
+  color: var(--ink); max-width: 56ch; margin: 56px 0 0;
+  padding-top: 28px; border-top: 1px solid var(--hair); text-wrap: pretty;
+}
+
+/* Qualify — who it's for / who it isn't */
+.fit__list { margin-top: 32px; }
+.fit__list li { align-items: baseline; }
+.fit__mk { font-family: var(--font-body); font-weight: 700; font-size: 16px; color: var(--accent-ink); flex: none; width: 1.2em; }
+.fit__not-label { font-family: var(--font-body); font-weight: 600; font-size: 14px; letter-spacing: .03em; text-transform: uppercase; color: var(--ink-soft); margin: 40px 0 0; }
+.fit__list--no { margin-top: 12px; }
+.fit__list--no li { color: var(--ink-soft); }
+.fit__mk--no { color: var(--ink-soft); font-weight: 600; }
+
+/* Pilot offer */
+.pilot__note { font-family: var(--font-body); font-size: 16px; line-height: 1.6; color: var(--ink-soft); margin: 24px 0 0; max-width: 58ch; text-wrap: pretty; }
+
+/* Team — 3-up card grid; placeholder initials avatars until photos land */
+.team__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 4vw, 48px); margin-top: 52px; }
+.team__card { display: flex; flex-direction: column; }
+.team__photo {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--paper-2); border: 1px solid var(--hair);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 700; font-size: 24px;
+  color: var(--ink-soft); margin-bottom: 20px;
+}
+.team__name { font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: -.01em; color: var(--ink); margin: 0 0 4px; }
+.team__role { font-family: var(--font-mono); font-size: 13px; letter-spacing: .01em; color: var(--accent-ink); margin: 0 0 14px; }
+.team__bio { font-family: var(--font-body); font-size: 15px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 16px; text-wrap: pretty; }
+.team__link { font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--ink-soft); text-decoration: none; margin-top: auto; transition: color var(--dur-short) var(--ease-move); }
+.team__link:hover { color: var(--accent-ink); }
+
+@media (max-width: 760px) {
+  .team__grid { grid-template-columns: 1fr; gap: 36px; }
+}

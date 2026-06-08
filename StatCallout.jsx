@@ -48,9 +48,14 @@ function StatItem({ num, desc, source }) {
 
 function StatCallout() {
   return (
-    <section className="stat-callout" aria-label="Forschungsdaten">
+    <section className="stat-callout" aria-label="Warum Video">
       <div className="wrap wrap--wide">
-        <p className="eyebrow stat-callout__eyebrow">Aus der Forschung</p>
+        <p className="eyebrow stat-callout__eyebrow">Warum Video</p>
+        <p className="stat-callout__story reveal">
+          Video schlägt Bild-Anzeigen besonders dort, wo es am schwersten ist: bei kalten
+          Zielgruppen, die deine Marke noch nicht kennen. Es transportiert in Sekunden, wofür
+          ein Bild mehrere Kontakte braucht. Die Forschung ist hier deutlich.
+        </p>
         <div className="stat-callout__grid">
           <StatItem
             num={44}
@@ -64,6 +69,10 @@ function StatCallout() {
             source="Confect.io · 12,7 Mrd. Impressionen · 2023"
           />
         </div>
+        <p className="stat-callout__cred reveal">
+          Und es ist mein Handwerk: Creatives, die ich produziert habe, haben über{' '}
+          <span className="hero__hl">10 Millionen Euro</span> an Ad Spend bewegt.
+        </p>
       </div>
     </section>
   );

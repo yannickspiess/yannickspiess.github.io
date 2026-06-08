@@ -12,9 +12,10 @@ function SoftClose({ contact }) {
   return (
     <section id="lets-talk" className="close">
       <div className="wrap">
-        <h2 className="h2 reveal">Dein nächster Schritt: ein 60-minütiger Audit.</h2>
+        <h2 className="h2 reveal">Dein nächster Schritt: ein 30-minütiger Audit.</h2>
         <p className="close__sub reveal">
-          Hinterlass deine E-Mail — wir melden uns, um einen Termin zu vereinbaren.
+          30 Minuten, kostenlos, kein Risiko. Hinterlass deine E-Mail — wir melden uns,
+          um einen Termin zu vereinbaren.
         </p>
         <form className="close__form reveal" onSubmit={submit}>
           <input
