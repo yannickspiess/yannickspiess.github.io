@@ -4,8 +4,10 @@
 - This repository hosts the GitHub Pages user site at `https://yannickspiess.github.io/`.
 - The live site is a single-page portfolio implemented in `index.html`.
 
-## Copy
-- Before writing or iterating ANY copy, read `docs/COPY.md` (voice guide + full copy in render order). Change copy with the whole narrative arc in view, not line-by-line. All copy is prototype-stage; keep `docs/COPY.md` and the `.jsx` files in sync in the same pass.
+## Copy rule (READ FIRST)
+- **Before ANY copy change — new copy, edits, rewrites, or iteration — you MUST read `docs/COPY.md` first.** No exceptions, even for a one-word change.
+- `docs/COPY.md` is the voice guide + the full site copy in render order. Change copy **holistically** (whole narrative arc in view), never line-by-line in isolation.
+- All copy is prototype-stage (write best-effort, Yannick iterates — no review gate). Keep `docs/COPY.md` and the `.jsx` files in sync in the **same** commit.
 
 ## Deploy (Default Flow)
 Run this for normal content updates:
