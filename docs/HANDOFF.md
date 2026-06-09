@@ -9,7 +9,7 @@ Last updated: 2026-06-09 (V3 fully implemented and deployed)
 > **Current state — V3 is live.**
 > Items 1–7 of the V3 backlog are implemented and deployed (`dad7440`, 2026-06-09).
 > Two items remain parked for the next iteration (see Open Next Steps).
-> Before editing any German copy, read the 2026-06-09 German-copy decision: call advisor, no direct translation.
+> Before writing or iterating any copy, read `docs/COPY.md` (voice guide + full copy in render order). All copy is prototype-stage — write best-effort, Yannick iterates. No review gate (see the 2026-06-09 German-copy decision).
 
 ---
 

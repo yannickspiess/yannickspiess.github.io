@@ -4,6 +4,9 @@
 - This repository hosts the GitHub Pages user site at `https://yannickspiess.github.io/`.
 - The live site is a single-page portfolio implemented in `index.html`.
 
+## Copy
+- Before writing or iterating ANY copy, read `docs/COPY.md` (voice guide + full copy in render order). Change copy with the whole narrative arc in view, not line-by-line. All copy is prototype-stage; keep `docs/COPY.md` and the `.jsx` files in sync in the same pass.
+
 ## Deploy (Default Flow)
 Run this for normal content updates:
 

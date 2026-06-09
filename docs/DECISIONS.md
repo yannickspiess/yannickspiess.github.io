@@ -4,6 +4,70 @@ Architectural, product, and implementation decisions with rationale.
 
 ---
 
+## 2026-06-09 — German copy: prototype-stage, write best-effort, iterate holistically (supersedes the advisor-gate rule)
+
+**Decision:** All site copy is prototype-stage — nothing is "signed off" or reviewed. Write the best version you can; Yannick iterates and corrects where he sees fit. There is **no** advisor/native-review gate. Before writing or iterating ANY copy, read `docs/COPY.md` (voice guide + full copy in render order) so changes are made with the whole narrative arc in view, not line-by-line in isolation. Keep `docs/COPY.md` and the `.jsx` files in sync in the same pass.
+
+**Rationale:** Yannick: the earlier review-gate rule was "too tight." The real reviewer is Yannick (native speaker); his iteration loop replaces the gate. The risk the old rule guarded against (bad literal translation) is better handled by writing copy with the full page in view than by blocking on review. Earlier rule (call advisor, no direct translation, native review required) is overridden.
+
+---
+
+## 2026-06-09 — Remove "10 Millionen Euro" credibility line from StatCallout
+
+**Decision:** Delete the credibility line `"Und es ist mein Handwerk: Creatives, die ich produziert habe, haben über 10 Millionen Euro an Ad Spend bewegt."` from `StatCallout.jsx`.
+
+**Rationale:** Overrides the 2026-06-08 decision that kept this line. Two reasons: (1) the site must not use "ich"-form language — it is a company site, not a personal portfolio; (2) Yannick said in the design review "I wouldn't put that 10 million number anywhere." The stats block should end after the two research numbers.
+
+---
+
+## 2026-06-09 — Strip all "ich"-form language site-wide
+
+**Decision:** Remove any first-person singular ("ich", "mein", "mir", etc.) from all visible copy. The site speaks as a company, not as an individual.
+
+**Rationale:** Stated explicitly in the voice design review. Any copy referencing "I" is a holdover from an earlier personal-portfolio framing. The company voice should be "we" or impersonal where possible.
+
+---
+
+## 2026-06-09 — "Warum Video" body copy: editorial callout style, not body text
+
+**Decision:** The narrative paragraph in `StatCallout` ("Video schlägt Bild-Anzeigen besonders dort…") should be replaced with a short punchy tagline, styled as a magazine editorial callout — larger text, not bold header, not plain body. Think pull-quote or magazine cover callout. Research numbers follow.
+
+**Rationale:** Current body text is too long and reads like an explanation. The section's job is to create impact, not to argue. The user's reference: "like in magazine covers — a callout text, highlighted, called out."
+
+---
+
+## 2026-06-09 — New section: podcast/interview video placeholder after StatCallout
+
+**Decision:** Add a new section between `StatCallout` and `ProblemStatements`. It contains a landscape YouTube embed as a placeholder video (https://youtu.be/gSNFJbgoaHI). The section is visible from day one with the placeholder. Purpose: introduce Yannick in interview/podcast format to build trust.
+
+**Rationale:** A trust-building "meet the person" video was missing. Placing it right after "Warum Video" gives it context: first you understand why video works, then you see Yannick talk. The placeholder keeps the layout accurate while the real video is produced.
+
+---
+
+## 2026-06-09 — New contact page: schema-m style, form + WhatsApp
+
+**Decision:** Replace / supplement the current `SoftClose` mailto flow with a dedicated contact page. The page uses a qualifying form with schema-m.com/contacts questions as the starting template: Vorname, Nachname, E-Mail, Telefon, Brand/Unternehmensname, Rolle, Projektbeschreibung + Ziele, monatliches Adspend (Meta/TikTok), Weitere Ansprechpartner. Alongside the form: a WhatsApp number as a direct-contact alternative. Stretch: Calendly embed after submission.
+
+**Rationale:** The current mailto CTA is too frictionless in the wrong direction — it gives no information before a call is booked. A qualifying form pre-filters clients and signals seriousness on both sides. Schema-m was cited by Yannick as the reference for the method. The static site needs a form-submission service (Formspree or equivalent) since there is no backend — to be decided in the implementation session.
+
+---
+
+## 2026-06-09 — AI/people framing section: skip for this iteration
+
+**Decision:** Do not add a dedicated section about "AI is the engine, humans are the secret" for this iteration.
+
+**Rationale:** Three options were explored (inside Team, inside HowItWorks, standalone bridge section). None felt right and the concept risks over-emphasising AI on an unproven brand. The north-star doc already says the launch stays person-fronted and not AI-first. Revisit in a later iteration once the brand has traction.
+
+---
+
+## 2026-06-09 — Company name: parked
+
+**Decision:** No company name decided. Exploration continues separately.
+
+**Rationale:** Broad brainstorm in session covered loop-direct, lab/learning, fractal, seed, novel, method, single-word attitude, German words. Nothing clicked. Strong near-misses: Loop Lab (taken), Delta Lab (probably taken), Agentur Kreisrund (too German-only). Direction is: internationally portable, internet-first, loops/iteration/learning concept. Parking until a name lands naturally or a dedicated naming session surfaces a winner.
+
+---
+
 ## 2026-06-08 — Stats stay external-sourced; no Flowkey attribution
 
 **Decision:** The two `StatCallout` numbers (44 % Kaufabsicht, 612 % Engagement) keep their real provenance — Nielsen BrandEffect and Confect.io — and are wrapped in narrative context ("Warum Video"). They are **not** relabeled as Flowkey results. Credibility instead comes from a true first-person line: "Creatives, die ich produziert habe, haben über 10 Millionen Euro an Ad Spend bewegt."
