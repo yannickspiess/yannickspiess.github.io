@@ -55,15 +55,17 @@ function StatCallout() {
           Auf Social entscheidet das beste Video, nicht das größte Budget.
         </p>
         <div className="stat-callout__grid">
+          {/* No accent inside the descriptions — the giant numerals and the vermilion %
+              carry the emphasis; repeating the highlight here dilutes the accent. */}
           <StatItem
             num={44}
-            desc={<>mehr Kaufabsicht nach nur 3 Sekunden <span className="hero__hl">Video-Werbung</span>.</>}
+            desc="mehr Kaufabsicht nach nur 3 Sekunden Video-Werbung."
             source="Nielsen BrandEffect-Studie · 173 Kampagnen · Meta"
           />
           <div className="stat-callout__rule" aria-hidden="true" />
           <StatItem
             num={612}
-            desc={<>mehr Engagement mit <span className="hero__hl">Video</span> als Bild-Anzeigen auf Meta.</>}
+            desc="mehr Engagement mit Video als Bild-Anzeigen auf Meta."
             source="Confect.io · 12,7 Mrd. Impressionen · 2023"
           />
         </div>

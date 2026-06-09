@@ -4,10 +4,16 @@ _For full context (GZS, coaching, business trajectory) see the Obsidian vault:_
 `01 Workspace/Projects/Transition to Freelance/Working Documents/Website — Agent Handoff.md`
 _Vault task note: `01 Workspace/Projects/Transition to Freelance/Tasks/Website-Prototyp V2.md`_
 
-Last updated: 2026-06-09 (V4 consolidation + de-stuffing live)
+Last updated: 2026-06-09 (V4.1 UX-audit pass)
 
-> **Current state — V4 is live (`6d83fbb`).**
-> Consolidated 11 → 7 content sections; page ~36% shorter. Merged ProblemStatements + HowItWorks + WhatThisMeans into one method section; removed the VideoIntro placeholder; folded the platform strip into the hero; cut eyebrows down to 2; mobile loop detail now opens inline under the tapped tile. Copy is prototype-stage (best-effort, owner iterates — no review gate). See WORKLOG Session 3 for the full change list and the office-hours design doc.
+> **Current state — V4.1.**
+> V4 consolidated 11 → 7 content sections (~36% shorter). V4.1 (Session 4) layered a
+> UX-audit pass on top: working form validation + graceful failure states (mailto fallback),
+> no dead links (WhatsApp/LinkedIn render only when real), OG/meta tags + brand
+> `assets/og-image.png` + `favicon.svg`, header CTA → `/kontakt.html`, loop auto-cycle
+> removed (hover-driven), hero video pause toggle + reduced-motion, monochrome platform
+> glyphs, global focus rings, scroll-margin under the sticky header, production React.
+> See WORKLOG Session 4 + DECISIONS "UX audit pass (V4.1)".
 > Validate the section merges with Jacob on 2026-06-18.
 > Before writing or iterating any copy, read `docs/COPY.md` (voice guide + full copy in render order). All copy is prototype-stage — write best-effort, Yannick iterates. No review gate (see the 2026-06-09 German-copy decision).
 
@@ -62,10 +68,10 @@ Render order in `App()` inside `index.html` (V4, 2026-06-09):
 | 3 | `Proof.jsx` | `#platforms` | `PlatformStrip` — IG / FB / TikTok / YouTube logos. **V4:** label removed (folded into hero). |
 | 4 | `StatCallout.jsx` | — | "Warum Video" eyebrow + pullquote → two research stats (44 % / 612 %, count-up). |
 | 5 | `HowItWorks.jsx` | `#how` | **V4:** merged method section (problem → Loop). No eyebrow. Renders `<LoopDiagram />`. |
-| 6 | `LoopDiagram.jsx` | — | 5-stage loop (Audit → Strategie → Produktion → Distribution → Messung & Iteration). Auto-cycles; click to expand. **V4:** mobile opens detail inline under the tapped tile (`.loop__inline-expand`, ≤760px); desktop uses the bottom `.loop__expand` panel. |
+| 6 | `LoopDiagram.jsx` | — | 5-stage loop (Audit → Strategie → Produktion → Distribution → Messung & Iteration). **V4.1:** accent follows hover/focus (no auto-cycle); click to expand. **V4:** mobile opens detail inline under the tapped tile (`.loop__inline-expand`, ≤760px); desktop uses the bottom `.loop__expand` panel (scrolled into view on open). |
 | 7 | `Qualify.jsx` | `#fit` | "Für wen das passt" — 3 fit criteria (✓) + 2 not-fit (–). |
 | 8 | `PilotOffer.jsx` | `#pilot` | 4-week sprint entry offer, no fixed price. **V4:** eyebrow removed. Alt background. |
-| 9 | `Team.jsx` | `#team` | 3-person team cards. **V4:** eyebrow removed. Initials-avatar + `#` LinkedIn placeholders. |
+| 9 | `Team.jsx` | `#team` | 3-person team cards. **V4:** eyebrow removed. Initials-avatar placeholders; LinkedIn links hidden until real URLs are filled (V4.1). |
 | 10 | `SoftClose.jsx` | `#lets-talk` | Single CTA button → `/kontakt.html`. |
 | 11 | `Footer.jsx` | — | Wordmark · Berlin · contact · © 2026 |
 
@@ -78,7 +84,7 @@ Render order in `App()` inside `index.html` (V4, 2026-06-09):
 | Component | Notes |
 |---|---|
 | `Header.jsx` | `homeHref="/"` `ctaHref="#contact-form"` `ctaLabel="Zum Formular"` |
-| `ContactForm.jsx` | Qualifying form. Formspree endpoint + WhatsApp number are `TODO_*` placeholders — gated at submit time. |
+| `ContactForm.jsx` | Qualifying form, native browser validation (V4.1: no `noValidate`). Formspree endpoint is a `TODO_*` placeholder — submit shows a mailto fallback until filled. WhatsApp block renders only once `WHATSAPP_NUMBER` is real. Takes a `contact` prop (mailto fallback address). |
 | `Footer.jsx` | Same as main page. |
 
 > No `.reveal` classes on `kontakt.html` — there is no `IntersectionObserver` on that page.
@@ -131,7 +137,7 @@ Render order in `App()` inside `index.html` (V4, 2026-06-09):
 }
 ```
 
-The PNG overlays the video so phone chrome stays sharp. `border-radius` clips video corners to fit the screen opening. Video: `autoPlay loop muted playsInline`.
+The PNG overlays the video so phone chrome stays sharp. `border-radius` clips video corners to fit the screen opening. Video: `loop muted playsInline preload="metadata"`; autoplay only without `prefers-reduced-motion`, and a pause/play toggle (`.hero__video-toggle`, z-index 2) sits inside the bezel (WCAG 2.2.2).
 
 ---
 
@@ -142,7 +148,7 @@ The PNG overlays the video so phone chrome stays sharp. `border-radius` clips vi
 | `index.html` | `WORDMARK` | `Yannick Spiess` | ✅ confirmed correct |
 | `index.html` | `CONTACT` | `yannick.spiess@icloud.com` | Temporary — swap when a custom domain/email lands |
 | `Team.jsx` | team photos | initials-avatar placeholders (`.team__photo`) | Replace with real photos |
-| `Team.jsx` | LinkedIn URLs | `#` placeholders | Replace with real profile URLs |
+| `Team.jsx` | LinkedIn URLs | `#` placeholders (links hidden while `#`) | Replace with real profile URLs |
 | `Team.jsx` | Tommaso's surname | first name only | Add surname |
 | `ContactForm.jsx` | `FORMSPREE_ENDPOINT` | `'TODO_REPLACE_WITH_FORMSPREE_ENDPOINT'` | Create Formspree account, swap value |
 | `ContactForm.jsx` | `WHATSAPP_NUMBER` | `'TODO_WHATSAPP'` | Digits-only number, e.g. `'4915123456789'` |
@@ -152,10 +158,10 @@ The PNG overlays the video so phone chrome stays sharp. `border-radius` clips vi
 
 ## Open Next Steps
 
-1. **Formspree + WhatsApp** — fill the two `TODO_*` constants in `ContactForm.jsx`. The form blocks submission until both are set.
-2. **Team placeholders** — fill photos, real LinkedIn URLs, Tommaso's surname in `Team.jsx`.
+1. **Formspree + WhatsApp** — fill the two `TODO_*` constants in `ContactForm.jsx`. Until then the form shows a graceful mailto fallback on submit and the WhatsApp block stays hidden (V4.1).
+2. **Team placeholders** — fill photos, real LinkedIn URLs (links are hidden until then), Tommaso's surname in `Team.jsx`.
 3. **Niche question for Jacob (Sitzung 3, 2026-06-18)** — sharpen offer to a compound niche vs. start broader? See vault task note.
-4. OG meta tags — add `og:title`, `og:description`, `og:image` to `<head>` on both `index.html` and `kontakt.html` (open from v0.1).
+4. ~~OG meta tags~~ — done in V4.1 (both heads + `assets/og-image.png`; regenerate via `assets/og-image-gen.html` if the headline changes).
 5. Mobile visual check — loop collapses to vertical at ≤760px; team grid → 1 col at ≤760px; contact form 2-col → 1 col at ≤600px.
 6. `iphone.png` — swap for real mockup if/when available.
 7. Deferred: AI-stance section, founder video, campaign examples, use-case landing pages, Calendly embed on contact page.

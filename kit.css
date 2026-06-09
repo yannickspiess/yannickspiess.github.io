@@ -18,6 +18,16 @@ body {
 .wrap { max-width: var(--content-text); margin: 0 auto; padding-inline: var(--gutter); }
 .wrap--wide { max-width: var(--content-wide); }
 
+/* Keyboard focus — one on-brand ring everywhere (WCAG 2.4.7). Buttons, links and
+   inputs previously had no visible focus state at all. */
+:where(a, button, input, select, textarea, [role='button']):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* In-page anchors land below the sticky header instead of underneath it */
+:where(section, [id]) { scroll-margin-top: 80px; }
+
 /* Scroll-in entrance — quiet fade + translate, honored only when allowed */
 .reveal { opacity: 0; transform: translateY(14px); transition: opacity var(--dur-long) var(--ease-enter), transform var(--dur-long) var(--ease-enter); }
 .reveal.in { opacity: 1; transform: none; }
@@ -86,7 +96,7 @@ section { padding-block: var(--section-y); }
 }
 .stat-item__source {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px; /* 12px ink-soft mono sat right at the AA contrast edge */
   letter-spacing: 0.02em;
   color: var(--ink-soft);
   margin: 0;
@@ -119,6 +129,19 @@ section { padding-block: var(--section-y); }
 .hero__screen-video { position: absolute; top: 2%; left: 4.85%; width: 90.3%; height: 96%; object-fit: cover; border-radius: 15% / 5.5%; z-index: 0; }
 .hero__hl { color: var(--accent); }
 
+/* Quiet pause/play toggle on the phone screen (WCAG 2.2.2 — looping motion must be
+   stoppable). Sits inside the bezel, bottom-right; visible but not shouting. */
+.hero__video-toggle {
+  position: absolute; right: 10%; bottom: 6%; z-index: 2;
+  width: 34px; height: 34px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--ink) 55%, transparent);
+  color: var(--paper); border: none; cursor: pointer;
+  font-size: 11px; line-height: 1; padding: 0;
+  transition: background-color var(--dur-short) var(--ease-move);
+}
+.hero__video-toggle:hover { background: color-mix(in srgb, var(--ink) 75%, transparent); }
+
 .hero__title { font-family: var(--font-display); font-weight: 800; font-size: var(--fs-hero); letter-spacing: -.02em; line-height: 1.04; color: var(--ink); margin: 0; text-wrap: balance; }
 .hero__sub { font-family: var(--font-body); font-weight: 400; font-size: var(--fs-lede); line-height: 1.45; color: var(--ink-soft); margin: 24px 0 0; max-width: 46ch; }
 .hero__cta { display: flex; align-items: center; gap: 22px; margin-top: 40px; flex-wrap: wrap; }
@@ -129,7 +152,11 @@ section { padding-block: var(--section-y); }
   .hero__wrap { grid-template-columns: 1fr; align-items: start; }
   .hero__phone { order: 2; margin-top: 36px; justify-content: center; align-items: flex-start; }
   .hero__text  { order: 1; }
-  .hero__iphone { width: min(64vw, 320px); height: auto; }
+  /* Cap the mockup so the platform strip peeks into the first scroll — on a 30–60s
+     mobile skim, a full-height decoration costs a whole viewport of real content.
+     (Width-only cap: a max-height would letterbox the img box and misalign the
+     screen video, which is %-positioned against the img bounds.) */
+  .hero__iphone { width: min(54vw, 260px); height: auto; }
 }
 
 /* ---------------------------------------------------------------------- */
@@ -215,18 +242,19 @@ section { padding-block: var(--section-y); }
   flex: 1; padding: 22px 18px 18px; border-top: 2px solid var(--hair);
   border-radius: 6px; position: relative; cursor: pointer;
   display: flex; flex-direction: column;
-  transition: border-color var(--dur-medium) var(--ease-move);
+  transition: border-color var(--dur-medium) var(--ease-move), background-color var(--dur-short) var(--ease-move);
   user-select: none;
   outline: none;
 }
 .loop__stage:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .loop__stage + .loop__stage { border-left: 1px solid var(--hair); }
-/* Auto-cycling active state */
+/* Active = hovered/focused stage (stage 01 at rest) */
 .loop__stage.active { border-top-color: var(--accent); }
 .loop__stage.active .loop__dot { background: var(--accent); transform: scale(1.3); }
 .loop__stage.active .loop__num { color: var(--accent-ink); }
-/* Hover — only the chevron signals interactivity */
-.loop__stage:hover .loop__chevron { color: var(--accent); }
+/* Hover — the whole tile reads as clickable, not just the chevron */
+.loop__stage:hover { background: var(--paper-2); }
+.loop__stage:hover .loop__chevron { color: var(--accent-ink); }
 /* Expanded — top border stays vermilion, chevron vermilion */
 .loop__stage--expanded { border-top-color: var(--accent); }
 .loop__stage--expanded .loop__dot { background: var(--accent); transform: scale(1.3); }
@@ -235,8 +263,11 @@ section { padding-block: var(--section-y); }
 .loop__num { font-family: var(--font-mono); font-size: 13px; font-weight: 500; letter-spacing: .04em; color: var(--ink-soft); display: block; margin-bottom: 10px; transition: color var(--dur-medium) var(--ease-move); }
 .loop__name { font-family: var(--font-display); font-weight: 700; font-size: 18px; letter-spacing: -.01em; color: var(--ink); margin: 0 0 8px; }
 .loop__desc { font-family: var(--font-body); font-size: 14px; line-height: 1.45; color: var(--ink-soft); margin: 0; }
-/* Chevron pinned to bottom of card at consistent height */
-.loop__chevron { font-family: var(--font-body); font-weight: 600; font-size: 22px; color: var(--ink-soft); display: block; margin-top: auto; padding-top: 16px; line-height: 1; transition: color var(--dur-short) var(--ease-move); }
+/* Chevron pinned to bottom of card — link-styled so it reads as an action, and sized
+   below the stage name so it supports the card instead of competing with it */
+.loop__chevron { font-family: var(--font-body); font-weight: 600; font-size: 15px; color: var(--ink-soft); display: block; margin-top: auto; padding-top: 16px; line-height: 1; text-decoration: underline; text-decoration-color: var(--hair); text-underline-offset: .2em; text-decoration-thickness: 1px; transition: color var(--dur-short) var(--ease-move), text-decoration-color var(--dur-short) var(--ease-move); }
+.loop__stage:hover .loop__chevron,
+.loop__stage--expanded .loop__chevron { text-decoration-color: var(--accent); }
 .loop__return { font-family: var(--font-mono); font-size: 13px; color: var(--accent-ink); margin-top: 22px; display: flex; align-items: center; gap: 10px; }
 .loop__return .arc { flex: 1; height: 1px; background: linear-gradient(to right, var(--hair), var(--accent)); opacity: .6; }
 /* Mobile-only inline detail (opens under the tapped tile). Hidden on desktop. */

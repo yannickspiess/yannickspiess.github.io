@@ -4,6 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kontakt — Yannick Spiess</title>
+<meta name="description" content="Dein nächster Schritt: ein 30-minütiger Audit. Kostenlos, kein Risiko — füll das kurze Formular aus, wir melden uns für einen Termin.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kontakt — Yannick Spiess">
+<meta property="og:description" content="Dein nächster Schritt: ein 30-minütiger Audit. Kostenlos, kein Risiko.">
+<meta property="og:image" content="https://yannickspiess.github.io/assets/og-image.png">
+<meta property="og:url" content="https://yannickspiess.github.io/kontakt.html">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="colors_and_type.css">
@@ -12,8 +21,8 @@
 <body>
   <div id="root"></div>
 
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
   <script type="text/babel" src="Header.jsx"></script>
@@ -29,7 +38,7 @@
         <React.Fragment>
           <Header wordmark={WORDMARK} homeHref="/" ctaHref="#contact-form" ctaLabel="Zum Formular" />
           <main id="contact-form">
-            <ContactForm />
+            <ContactForm contact={CONTACT} />
           </main>
           <Footer wordmark={WORDMARK} contact={CONTACT} />
         </React.Fragment>

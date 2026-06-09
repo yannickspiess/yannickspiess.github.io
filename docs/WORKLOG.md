@@ -2,6 +2,24 @@
 
 > **Note for agents:** This file is reverse-chronological — newest entries are at the top, oldest at the bottom. Always read from the top of the Entries section to find the insertion point. Do not use `tail` to locate where to insert.
 
+## 2026-06-09 (Session 4 — UX audit + V4.1 conversion-plumbing pass)
+
+- Scope: Structured UX audit (ui-ux-designer subagent critique + interactive Playwright testing at 1152px/390px), then one implementation pass. Audit verdict: the editorial system is strong; the failures were in the conversion path (chat unfurl → CTA → form) — exactly the journey of the warm-referral audience. Full decision detail in DECISIONS "UX audit pass (V4.1)".
+- Conversion/trust fixes:
+  - `ContactForm.jsx` — removed `noValidate` (native validation now blocks empty/garbage submits; verified: empty submit focuses Vorname, no fetch fires); misconfigured gate checks only the Formspree TODO; error/misconfigured states link `mailto:` (new `contact` prop from `kontakt.html`); Telefon + Rolle now optional and labeled; WhatsApp block hidden until the number is real.
+  - `Team.jsx` — LinkedIn links render only with a real URL (no more styled `#` dead links).
+  - `index.html` + `kontakt.html` — meta description, OG/Twitter tags, `og:image` → new brand `assets/og-image.png` (1200×630; generator at `assets/og-image-gen.html`, rendered via headless Chrome), `favicon.svg` (vermilion loop-ring mark).
+  - Header CTA on home → `/kontakt.html` (was `#lets-talk`; identical "Audit starten" labels now share one destination). Default changed in `Header.jsx`.
+- Interaction/craft fixes:
+  - `LoopDiagram.jsx` — auto-cycle (1.4s) removed; accent follows hover/focus, stage 01 anchors at rest; tiles get hover background; "Mehr →" restyled 22px → 15px link-underline (affordance, not competition with the stage name); desktop panel `scrollIntoView({block:'nearest'})` on open; `aria-controls`/panel `id` added.
+  - `Hero.jsx` — video autoplays only without `prefers-reduced-motion`; quiet pause/play toggle in the bezel (`.hero__video-toggle`), WCAG 2.2.2.
+  - `Proof.jsx` — colored raster PNGs → monochrome ink-soft SVG glyphs (`currentColor`; the `.pstrip__logo svg` CSS was already written for this).
+  - `StatCallout.jsx` — accent highlight removed from stat descriptions (accent scarcity).
+  - `kit.css` — global `:focus-visible` ring (WCAG 2.4.7); `scroll-margin-top: 80px` for anchors under the sticky header; stat source 12→13px; mobile hero mockup capped `min(54vw, 260px)` (width-only; max-height would misalign the %-positioned screen video).
+  - `index.html` — deep-link `/#how` fix (hash re-scroll after React mounts; native scroll no-ops because the target doesn't exist pre-render); React dev UMD → production UMD (fresh SRI hashes; still CDN, no build step).
+- Verification: fresh ports (8799/8801 — Babel-fetched `.jsx` caches per origin); 0 console errors; loop static + expands with correct panel id; form validation blocks empty submit; no horizontal overflow at 390px; full-page screenshots desktop + mobile.
+- Follow-ups unchanged: Formspree endpoint + WhatsApp number (form now fails gracefully with mailto until then); Team photos/LinkedIn URLs/Tommaso surname; hero mockup video footage; company name/wordmark. Validate section merges with Jacob 2026-06-18.
+
 ## 2026-06-09 (Session 3 — V4 consolidation, de-stuffing, copy + mobile loop)
 
 - Scope: Owner felt the site was "too stuffy / TMI" and copy "half-baked." Office-hours diagnosis: 11 sections / 8.5 screens vs. the north star (clarity machine for a warm referral, 30–60s, "one message per screen"). Owner chose aggressive consolidation. Design doc: `~/.gstack/projects/yannickspiess-yannickspiess.github.io/yannickspiess-main-design-20260609-174714.md`.

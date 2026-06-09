@@ -40,9 +40,12 @@ function Team() {
               <h3 className="team__name">{m.name}</h3>
               <p className="team__role">{m.role}</p>
               <p className="team__bio">{m.bio}</p>
-              <a className="team__link" href={m.linkedin} target="_blank" rel="noopener noreferrer">
-                LinkedIn ↗
-              </a>
+              {/* A dead '#' link reads as "placeholder shipped live" — render only with a real URL. */}
+              {m.linkedin && m.linkedin !== '#' && (
+                <a className="team__link" href={m.linkedin} target="_blank" rel="noopener noreferrer">
+                  LinkedIn ↗
+                </a>
+              )}
             </div>
           ))}
         </div>

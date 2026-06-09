@@ -1,15 +1,16 @@
 // ContactForm — qualifying contact form for kontakt.html.
-// Submits to Formspree. WhatsApp alt link. Placeholders gated at submission time.
+// Submits to Formspree. The WhatsApp alt link renders only once the number is real.
+// Validation is the browser's native required/email handling (localized, zero JS).
 const FORMSPREE_ENDPOINT = 'TODO_REPLACE_WITH_FORMSPREE_ENDPOINT';
 const WHATSAPP_NUMBER = 'TODO_WHATSAPP';
 
-function ContactForm() {
+function ContactForm({ contact }) {
   const [status, setStatus] = React.useState('idle'); // idle | sending | success | error | misconfigured
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (FORMSPREE_ENDPOINT.startsWith('TODO') || WHATSAPP_NUMBER.startsWith('TODO')) {
+    if (FORMSPREE_ENDPOINT.startsWith('TODO')) {
       setStatus('misconfigured');
       return;
     }
@@ -48,7 +49,7 @@ function ContactForm() {
           Damit wir gut vorbereitet sind: Ein paar Fragen vor unserem Gespräch.
         </p>
 
-        <form className="contact-form__form" onSubmit={handleSubmit} noValidate>
+        <form className="contact-form__form" onSubmit={handleSubmit}>
           <div className="contact-form__row contact-form__row--2col">
             <label className="contact-form__field">
               <span className="contact-form__label">Vorname</span>
@@ -66,7 +67,7 @@ function ContactForm() {
               <input className="contact-form__input" type="email" name="email" required autoComplete="email" />
             </label>
             <label className="contact-form__field">
-              <span className="contact-form__label">Telefon</span>
+              <span className="contact-form__label">Telefon (optional)</span>
               <input className="contact-form__input" type="tel" name="telefon" autoComplete="tel" />
             </label>
           </div>
@@ -77,8 +78,8 @@ function ContactForm() {
               <input className="contact-form__input" type="text" name="brand" required />
             </label>
             <label className="contact-form__field">
-              <span className="contact-form__label">Deine Rolle</span>
-              <input className="contact-form__input" type="text" name="rolle" required />
+              <span className="contact-form__label">Deine Rolle (optional)</span>
+              <input className="contact-form__input" type="text" name="rolle" />
             </label>
           </div>
 
@@ -107,12 +108,14 @@ function ContactForm() {
 
           {status === 'error' && (
             <p className="contact-form__error">
-              Etwas ist schiefgelaufen. Bitte versuche es erneut oder schreib uns direkt.
+              Etwas ist schiefgelaufen. Bitte versuche es erneut — oder schreib uns direkt
+              an <a className="ilink" href={`mailto:${contact}`}>{contact}</a>.
             </p>
           )}
           {status === 'misconfigured' && (
             <p className="contact-form__error">
-              Das Formular ist noch nicht fertig eingerichtet. Bitte meld dich direkt per E-Mail.
+              Das Formular ist noch nicht fertig eingerichtet. Schreib uns direkt
+              an <a className="ilink" href={`mailto:${contact}`}>{contact}</a> — wir melden uns.
             </p>
           )}
 
@@ -123,17 +126,20 @@ function ContactForm() {
           </div>
         </form>
 
-        <div className="contact-form__whatsapp">
-          <p className="contact-form__whatsapp-label">Du erreichst uns auch direkt per WhatsApp:</p>
-          <a
-            className="contact-form__whatsapp-link"
-            href={WHATSAPP_NUMBER.startsWith('TODO') ? '#' : 'https://wa.me/' + WHATSAPP_NUMBER}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            WhatsApp öffnen
-          </a>
-        </div>
+        {/* A styled link that goes nowhere is worse than no link — render only when real. */}
+        {!WHATSAPP_NUMBER.startsWith('TODO') && (
+          <div className="contact-form__whatsapp">
+            <p className="contact-form__whatsapp-label">Du erreichst uns auch direkt per WhatsApp:</p>
+            <a
+              className="contact-form__whatsapp-link"
+              href={'https://wa.me/' + WHATSAPP_NUMBER}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp öffnen
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

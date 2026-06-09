@@ -1,6 +1,7 @@
-// LoopDiagram — five stages. Active stage cycles via auto-timer.
-// Hover: chevron turns vermilion. Click: expand panel below with detail.
-// Bold key terms in detail animate in with staggered delays on open.
+// LoopDiagram — five stages. The accent follows hover/focus; stage 01 anchors at rest.
+// (No auto-timer: cycling every 1.4s repainted faster than a card could be read and made
+// hover/expanded states illegible — the reader drives the motion, not a clock.)
+// Click: expand panel below with detail. Bold key terms animate in with staggered delays.
 const LOOP_STAGES = [
   {
     n: '01',
@@ -63,24 +64,24 @@ const LOOP_STAGES = [
 function LoopDiagram() {
   const reduce = React.useMemo(
     () => window.matchMedia('(prefers-reduced-motion: reduce)').matches, []);
-  const [active, setActive] = React.useState(reduce ? -1 : 0);
+  const [active, setActive] = React.useState(0);
   const [expanded, setExpanded] = React.useState(null);
-  const [paused, setPaused] = React.useState(false);
-
-  React.useEffect(() => {
-    if (reduce || paused) return;
-    const id = setInterval(() => {
-      setActive((a) => (a + 1) % LOOP_STAGES.length);
-    }, 1400);
-    return () => clearInterval(id);
-  }, [reduce, paused]);
+  const panelRef = React.useRef(null);
 
   const handleClick = (i) => {
     const opening = expanded !== i;
     setExpanded(opening ? i : null);
-    setPaused(opening);
     if (opening) setActive(i);
   };
+
+  // Desktop: the shared detail panel sits below all five tiles, so opening a middle
+  // tile can drop the text off-screen. Nudge it into view (no-op if already visible;
+  // the mobile inline expand is display:none's sibling, guarded via offsetParent).
+  React.useEffect(() => {
+    const panel = panelRef.current;
+    if (expanded === null || !panel || panel.offsetParent === null) return;
+    panel.scrollIntoView({ block: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
+  }, [expanded, reduce]);
 
   return (
     <div>
@@ -88,12 +89,14 @@ function LoopDiagram() {
         {LOOP_STAGES.map((s, i) => (
           <div
             key={s.n}
-            className={'loop__stage' + (reduce || i === active ? ' active' : '') + (expanded === i ? ' loop__stage--expanded' : '')}
-            onMouseEnter={() => { if (!reduce) setActive(i); }}
+            className={'loop__stage' + (i === active ? ' active' : '') + (expanded === i ? ' loop__stage--expanded' : '')}
+            onMouseEnter={() => setActive(i)}
+            onFocus={() => setActive(i)}
             onClick={() => handleClick(i)}
             role="button"
             tabIndex={0}
             aria-expanded={expanded === i}
+            aria-controls={'loop-detail-' + s.n}
             onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleClick(i); } }}
           >
             <span className="loop__dot"></span>
@@ -112,7 +115,7 @@ function LoopDiagram() {
         ))}
       </div>
       {expanded !== null && (
-        <div className="loop__expand" key={expanded}>
+        <div className="loop__expand" key={expanded} id={'loop-detail-' + LOOP_STAGES[expanded].n} ref={panelRef}>
           <span className="loop__expand-label">{LOOP_STAGES[expanded].n} — {LOOP_STAGES[expanded].name}</span>
           <p className="loop__expand-text">{LOOP_STAGES[expanded].detail}</p>
         </div>

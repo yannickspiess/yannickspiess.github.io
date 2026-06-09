@@ -1,7 +1,7 @@
-// Header — minimal. Orients, doesn't navigate (the page is one scroll).
-// Wordmark left, single CTA text link right. Hairline appears on scroll.
-// homeHref / ctaHref / ctaLabel are optional — defaults preserve main-page behaviour.
-function Header({ wordmark, homeHref = '#top', ctaHref = '#lets-talk', ctaLabel = 'Audit starten' }) {
+// Header — minimal. Wordmark left, single CTA text link right. Hairline appears on scroll.
+// The CTA defaults to the contact page so "Audit starten" does the same thing everywhere
+// it appears (hero, header, soft close) — identical label, identical destination.
+function Header({ wordmark, homeHref = '#top', ctaHref = '/kontakt.html', ctaLabel = 'Audit starten' }) {
   const [scrolled, setScrolled] = React.useState(false);
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);

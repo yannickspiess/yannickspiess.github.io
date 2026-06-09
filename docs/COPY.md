@@ -63,6 +63,7 @@ section serves that one test.
 - Subline: **Wie dein internes Video-Team: Strategie, Produktion und Distribution aus einer Hand.**
 - CTA primary: **Audit starten** → `/kontakt.html`
 - CTA secondary: **So funktioniert es** → `#how`
+- Video pause toggle (a11y label): **Video pausieren** / **Video abspielen**
 
 ### 2 · Platform strip — `Proof.jsx` `#platforms`
 *Job: quiet trust texture under the hero. Logos only, no label.*
@@ -72,10 +73,12 @@ section serves that one test.
 *Job: one impact beat — why video works. Not an argument.*
 - Eyebrow: **Warum Video**
 - Pullquote: **Auf Social entscheidet das beste Video, nicht das größte Budget.**
-- Stat 1: **44 %** — mehr Kaufabsicht nach nur 3 Sekunden _Video-Werbung_.
+- Stat 1: **44 %** — mehr Kaufabsicht nach nur 3 Sekunden Video-Werbung.
   - Source: Nielsen BrandEffect-Studie · 173 Kampagnen · Meta
-- Stat 2: **612 %** — mehr Engagement mit _Video_ als Bild-Anzeigen auf Meta.
+- Stat 2: **612 %** — mehr Engagement mit Video als Bild-Anzeigen auf Meta.
   - Source: Confect.io · 12,7 Mrd. Impressionen · 2023
+- (No accent highlight inside the stat descriptions — the numerals + vermilion % carry
+  the emphasis; the accent stays reserved for the hero "Video" and the Loop "Loop".)
 
 ### 4 · So arbeiten wir — `HowItWorks.jsx` + `LoopDiagram.jsx` `#how`
 *Job: the method, as one merged section. The Loop is the centerpiece. (No eyebrow.)*
@@ -132,13 +135,19 @@ section serves that one test.
 ---
 
 ## Contact page — `kontakt.html` / `ContactForm.jsx`
-*Job: qualify before a call. Form + WhatsApp fallback. (Formspree/WhatsApp are TODO_ placeholders — submit currently errors until filled.)*
+*Job: qualify before a call. Form + WhatsApp fallback. Formspree/WhatsApp are still TODO_
+placeholders, but the failure paths are graceful: the WhatsApp block only renders once the
+number is real, and the misconfigured/error states show a clickable mailto fallback.*
 - Heading: **Lass uns sprechen.**
 - Intro: **Damit wir gut vorbereitet sind: Ein paar Fragen vor unserem Gespräch.**
-- Fields: Vorname · Nachname · E-Mail · Telefon · Brand / Unternehmen · Deine Rolle · Monatliches Adspend (Meta / TikTok, select) · Projektbeschreibung · Weitere Ansprechpartner (optional)
+- Fields: Vorname · Nachname · E-Mail · Telefon (optional) · Brand / Unternehmen ·
+  Deine Rolle (optional) · Monatliches Adspend (Meta / TikTok, select) ·
+  Projektbeschreibung · Weitere Ansprechpartner (optional)
 - Submit: **Anfrage senden** / sending: **Wird gesendet…**
 - Success: **Danke für deine Anfrage — wir melden uns in der Regel innerhalb von 24 Stunden.**
-- WhatsApp: **Du erreichst uns auch direkt per WhatsApp:** → **WhatsApp öffnen**
+- Error: **Etwas ist schiefgelaufen. Bitte versuche es erneut — oder schreib uns direkt an [E-Mail-Adresse].**
+- Misconfigured (pre-launch only): **Das Formular ist noch nicht fertig eingerichtet. Schreib uns direkt an [E-Mail-Adresse] — wir melden uns.**
+- WhatsApp (renders only once the number is configured): **Du erreichst uns auch direkt per WhatsApp:** → **WhatsApp öffnen**
 
 ---
 

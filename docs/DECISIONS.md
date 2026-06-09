@@ -4,6 +4,24 @@ Architectural, product, and implementation decisions with rationale.
 
 ---
 
+## 2026-06-09 — UX audit pass: conversion plumbing + craft fixes (V4.1)
+
+**Decision:** After a structured UX audit (NN/g-heuristic review + interactive testing), ship one pass of usability/trust fixes:
+
+1. **Loop auto-cycle removed.** The 1.4s timer repainted the active tile faster than a card could be read and made hover/expanded states illegible. The accent now follows hover/focus (stage 01 anchors at rest); tiles get a hover background + link-styled, smaller "Mehr →" so the whole tile reads as clickable. Desktop detail panel scrolls into view (`block:'nearest'`) so opening a middle tile doesn't drop the text off-screen; `aria-controls` added.
+2. **Contact form validates.** `noValidate` removed — native browser validation (localized) now enforces `required`/`type=email`. Required set reduced: Telefon and Rolle are optional and labeled "(optional)". The misconfigured gate checks only the Formspree TODO (a TODO WhatsApp number no longer blocks submissions); error/misconfigured states show a clickable `mailto:` fallback.
+3. **No dead links.** WhatsApp block and team LinkedIn links render only when a real URL/number exists — a styled `#` link is worse than no link for a credibility-checking referral.
+4. **Chat unfurl is the first impression.** Meta description + OG/Twitter tags on both pages, plus a brand 1200×630 `assets/og-image.png` (generator kept at `assets/og-image-gen.html`) and `favicon.svg` (loop-ring mark). The audience receives this link in WhatsApp/Slack — previously it unfurled as a bare URL.
+5. **Header CTA = same label, same destination.** "Audit starten" in the header now goes to `/kontakt.html` like hero and soft close (was `#lets-talk` — identical labels did different things).
+6. **Hero video: WCAG 2.2.2.** Autoplay only when `prefers-reduced-motion` allows; quiet pause/play toggle inside the phone bezel.
+7. **Platform strip monochrome.** Colored raster PNGs replaced with ink-soft `currentColor` SVG glyphs — the CSS was already written for this; the saturated logos were the only off-system element and out-shouted the vermilion accent.
+8. **Accent stays scarce.** Removed the `hero__hl` highlight on "Video" inside the two stat descriptions (numerals + vermilion % carry the emphasis).
+9. **A11y/platform hygiene.** Global `:focus-visible` ring (CTAs/links/inputs had none), `scroll-margin-top` under the sticky header, deep-link `/#how` re-scroll after React mounts (target doesn't exist at native scroll time), stat source lines 12→13px (AA contrast edge), mobile hero mockup capped (width-only — a max-height would misalign the %-positioned screen video), production React UMD builds (still CDN, no build step).
+
+**Rationale:** The audit's core finding: the editorial system is doing its job, but the conversion path (chat unfurl → CTA → form) had a failure at every step for the exact target user. Fixes prioritize plumbing over aesthetics; no documented design decision (section count, eyebrows, no-build, voice) was overridden.
+
+---
+
 ## 2026-06-09 — V4: consolidate 11 → 7 sections (de-stuff)
 
 **Decision:** Merge `ProblemStatements` + `HowItWorks` + `WhatThisMeans` into one method section (Loop as centerpiece; audit detail carried by Loop stage 01); remove the `VideoIntro` placeholder section; fold the platform strip into the hero (no label); drop eyebrows everywhere except `StatCallout` and `Qualify`; reduce motion systems from 5 to 2. Page height dropped ~36%.
