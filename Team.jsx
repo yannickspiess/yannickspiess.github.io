@@ -6,7 +6,7 @@ const TEAM = [
     initials: 'YS',
     name: 'Yannick Spiess',
     role: 'Creative Director & Strategie',
-    bio: 'Strategische Führung, Konzept und Creative Direction — ich halte das System zusammen.',
+    bio: 'Strategische Führung, Konzept und Creative Direction — das Rückgrat des Systems.',
     linkedin: '#',
   },
   {
@@ -32,8 +32,7 @@ function Team() {
         <p className="eyebrow reveal">Wer dahinter steht</p>
         <h2 className="h2 reveal">Ein kleines, festes Team.</h2>
         <p className="lead reveal">
-          Keine Abteilungs-Übergaben, keine Brief-Schleifen. Ich bin Yannick und übernehme
-          die strategische Führung — zusammen mit zwei Leuten, die ihr Handwerk verstehen.
+          Keine Abteilungs-Übergaben, keine Brief-Schleifen. Yannick übernimmt die strategische Führung — zusammen mit zwei Leuten, die ihr Handwerk verstehen.
         </p>
         <div className="team__grid">
           {TEAM.map((m, i) => (

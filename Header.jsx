@@ -1,6 +1,7 @@
 // Header — minimal. Orients, doesn't navigate (the page is one scroll).
-// Wordmark left, single "Let's talk" text link right. Hairline appears on scroll.
-function Header({ wordmark }) {
+// Wordmark left, single CTA text link right. Hairline appears on scroll.
+// homeHref / ctaHref / ctaLabel are optional — defaults preserve main-page behaviour.
+function Header({ wordmark, homeHref = '#top', ctaHref = '#lets-talk', ctaLabel = 'Audit starten' }) {
   const [scrolled, setScrolled] = React.useState(false);
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -11,8 +12,8 @@ function Header({ wordmark }) {
   return (
     <header className={'hdr' + (scrolled ? ' hdr--scrolled' : '')}>
       <div className="hdr__bar">
-        <a className="hdr__mark" href="#top">{wordmark}</a>
-        <a className="hdr__link" href="#lets-talk">Audit starten</a>
+        <a className="hdr__mark" href={homeHref}>{wordmark}</a>
+        <a className="hdr__link" href={ctaHref}>{ctaLabel}</a>
       </div>
     </header>
   );

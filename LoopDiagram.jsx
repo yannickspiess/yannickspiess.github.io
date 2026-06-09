@@ -100,7 +100,7 @@ function LoopDiagram() {
             <span className="loop__num">{s.n}</span>
             <h3 className="loop__name">{s.name}</h3>
             <p className="loop__desc">{s.desc}</p>
-            <span className="loop__chevron" aria-hidden="true">{expanded === i ? '−' : '+'}</span>
+            <span className="loop__chevron">{expanded === i ? '−' : 'Mehr →'}</span>
           </div>
         ))}
       </div>
