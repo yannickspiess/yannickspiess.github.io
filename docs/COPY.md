@@ -60,7 +60,7 @@ section serves that one test.
 ### 1 · Hero — `Hero.jsx` `#top`
 *Job: land the outcome in 5 seconds; one clear CTA.*
 - H1: **Mach _Video_ zu deinem verlässlichen Kanal für neue Kunden.** ("Video" in accent)
-- Subline: **Wie ein internes Video-Team für Wachstum – Strategie, Produktion und Distribution aus einer Hand.**
+- Subline: **Wie dein internes Video-Team: Strategie, Produktion und Distribution aus einer Hand.**
 - CTA primary: **Audit starten** → `/kontakt.html`
 - CTA secondary: **So funktioniert es** → `#how`
 
@@ -71,7 +71,7 @@ section serves that one test.
 ### 3 · Warum Video — `StatCallout.jsx`
 *Job: one impact beat — why video works. Not an argument.*
 - Eyebrow: **Warum Video**
-- Pullquote: **Das Medium, das kalte Märkte erwärmt.**
+- Pullquote: **Video macht aus Aufmerksamkeit Kunden.**
 - Stat 1: **44 %** — mehr Kaufabsicht nach nur 3 Sekunden _Video-Werbung_.
   - Source: Nielsen BrandEffect-Studie · 173 Kampagnen · Meta
 - Stat 2: **612 %** — mehr Engagement mit _Video_ als Bild-Anzeigen auf Meta.
@@ -143,8 +143,7 @@ section serves that one test.
 ---
 
 ## Known weak spots / open copy questions (prototype)
-- Hero subline ("internes Video-Team für Wachstum") — clunky? finalize wording.
-- StatCallout pullquote ("kalte Märkte erwärmt") — abstract metaphor; make concrete?
 - The old "Was das für dich bedeutet / what you get" beat was merged away — is the
-  offer still paraphrase-able in one sentence without it?
-- Mixed register: `du` + English jargon density. Decide how much English stays.
+  offer still paraphrase-able in one sentence without it? (Structural call, not just copy.)
+- Mixed register: `du` + English jargon density. Decide how much English stays
+  (e.g. "Acquisition-Flow", "Creative-Output", "Ad-Volumen" in the Loop/Qualify copy).
