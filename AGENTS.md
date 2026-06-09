@@ -8,11 +8,12 @@
 Run this for normal content updates:
 
 ```bash
-cd /Users/yannickspiess/Documents/yannickspiess.github.io
+# Repo currently lives inside the Obsidian vault (its own git repo, nested in the vault repo):
+cd "/Users/yannickspiess/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian/03 Records/Work/Portfolio/Portfolio Website 2026/yannickspiess.github.io"
 git status --short
-git add -A
+git add <changed files>   # avoid `git add -A`: .DS_Store is untracked and not yet in .gitignore
 git commit -m "Update site"
-git push
+git push origin main
 ```
 
 ## Local Archive Safety
