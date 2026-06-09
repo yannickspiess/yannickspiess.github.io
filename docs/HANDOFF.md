@@ -42,7 +42,7 @@ Last updated: 2026-06-09 (V4.1 UX-audit pass)
 | Local repo path | `03 Records/Work/Portfolio/Portfolio Website 2026/yannickspiess.github.io/` (inside the Obsidian vault; it is its own git repo, nested in the vault repo — run git from this folder) |
 | Local dev | `python3 -m http.server 8765 --directory "<path-to-repo>"` → http://localhost:8765 |
 | Deploy | `git push origin main` — GitHub Pages auto-deploys (~1 min) |
-| Last deploy | `6d83fbb` (2026-06-09) — V4 consolidation + de-stuffing + mobile loop |
+| Last deploy | `8e12f4c` (2026-06-09) — V4.1 UX audit pass (conversion plumbing + craft) |
 
 ---
 
