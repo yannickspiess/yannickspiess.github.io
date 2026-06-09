@@ -4,11 +4,11 @@ _For full context (GZS, coaching, business trajectory) see the Obsidian vault:_
 `01 Workspace/Projects/Transition to Freelance/Working Documents/Website — Agent Handoff.md`
 _Vault task note: `01 Workspace/Projects/Transition to Freelance/Tasks/Website-Prototyp V2.md`_
 
-Last updated: 2026-06-09 (V3 fully implemented and deployed)
+Last updated: 2026-06-09 (V4 consolidation + de-stuffing live)
 
-> **Current state — V3 is live.**
-> Items 1–7 of the V3 backlog are implemented and deployed (`dad7440`, 2026-06-09).
-> Two items remain parked for the next iteration (see Open Next Steps).
+> **Current state — V4 is live (`6d83fbb`).**
+> Consolidated 11 → 7 content sections; page ~36% shorter. Merged ProblemStatements + HowItWorks + WhatThisMeans into one method section; removed the VideoIntro placeholder; folded the platform strip into the hero; cut eyebrows down to 2; mobile loop detail now opens inline under the tapped tile. Copy is prototype-stage (best-effort, owner iterates — no review gate). See WORKLOG Session 3 for the full change list and the office-hours design doc.
+> Validate the section merges with Jacob on 2026-06-18.
 > Before writing or iterating any copy, read `docs/COPY.md` (voice guide + full copy in render order). All copy is prototype-stage — write best-effort, Yannick iterates. No review gate (see the 2026-06-09 German-copy decision).
 
 ---
@@ -36,7 +36,7 @@ Last updated: 2026-06-09 (V3 fully implemented and deployed)
 | Local repo path | `03 Records/Work/Portfolio/Portfolio Website 2026/yannickspiess.github.io/` (inside the Obsidian vault; it is its own git repo, nested in the vault repo — run git from this folder) |
 | Local dev | `python3 -m http.server 8765 --directory "<path-to-repo>"` → http://localhost:8765 |
 | Deploy | `git push origin main` — GitHub Pages auto-deploys (~1 min) |
-| Last deploy | `dad7440` (2026-06-09) — V3 iteration |
+| Last deploy | `6d83fbb` (2026-06-09) — V4 consolidation + de-stuffing + mobile loop |
 
 ---
 
@@ -53,24 +53,25 @@ No build step. React 18 + ReactDOM via unpkg CDN. Babel Standalone transpiles JS
 
 ## Section Inventory
 
-Render order in `App()` inside `index.html` (V3, 2026-06-09):
+Render order in `App()` inside `index.html` (V4, 2026-06-09):
 
 | Order | File | Section ID | Description |
 |---|---|---|---|
 | 1 | `Header.jsx` | — | Sticky header: wordmark left, CTA link right. Optional `homeHref`/`ctaHref`/`ctaLabel` props for contact page. |
-| 2 | `Hero.jsx` | `#top` | Two-col: iPhone mockup + headline/CTA. Mobile: stacks (text first). |
-| 3 | `Proof.jsx` | `#platforms` | `PlatformStrip` — Instagram / Facebook / TikTok / YouTube logos. |
-| 4 | `StatCallout.jsx` | — | **V3:** "Warum Video" eyebrow + editorial pullquote (accent left-border) → two research stats (44 % / 612 %, count-up). Credibility line removed. |
-| 5 | `VideoIntro.jsx` | — | **V3 (new):** YouTube embed (podcast/interview placeholder). 16:9 responsive. |
-| 6 | `ProblemStatements.jsx` | `#problems` | Accordion: 3 problems + solutions. Alt background. |
-| 7 | `HowItWorks.jsx` | `#how` | Section shell + heading; renders `<LoopDiagram />`. |
-| 8 | `LoopDiagram.jsx` | — | **V2:** 5-stage loop (Audit → Strategie → Produktion → Distribution → Messung & Iteration). Auto-cycles; click to expand. |
-| 9 | `WhatThisMeans.jsx` | `#what` | Audit-stack: 3 animated SVG icons + 30-min audit areas. `audit-result` is an elevated card (V3). Alt background. |
-| 10 | `Qualify.jsx` | `#fit` | "Für wen das passt" — 3 fit criteria (✓) + 2 not-fit (–). |
-| 11 | `PilotOffer.jsx` | `#pilot` | 4-week sprint entry offer, no fixed price. `pilot__note` separated by hairline (V3). Alt background. |
-| 12 | `Team.jsx` | `#team` | 3-person team cards (Yannick / Tommaso / Britney Tan). Initials-avatar + `#` LinkedIn placeholders. |
-| 13 | `SoftClose.jsx` | `#lets-talk` | **V3:** Single CTA button linking to `/kontakt.html`. No email input. |
-| 14 | `Footer.jsx` | — | Wordmark · Berlin · contact · © 2026 |
+| 2 | `Hero.jsx` | `#top` | Two-col: iPhone mockup + headline/CTA. Subline = role line. Primary CTA → `/kontakt.html` (single hop). Mobile: stacks. |
+| 3 | `Proof.jsx` | `#platforms` | `PlatformStrip` — IG / FB / TikTok / YouTube logos. **V4:** label removed (folded into hero). |
+| 4 | `StatCallout.jsx` | — | "Warum Video" eyebrow + pullquote → two research stats (44 % / 612 %, count-up). |
+| 5 | `HowItWorks.jsx` | `#how` | **V4:** merged method section (problem → Loop). No eyebrow. Renders `<LoopDiagram />`. |
+| 6 | `LoopDiagram.jsx` | — | 5-stage loop (Audit → Strategie → Produktion → Distribution → Messung & Iteration). Auto-cycles; click to expand. **V4:** mobile opens detail inline under the tapped tile (`.loop__inline-expand`, ≤760px); desktop uses the bottom `.loop__expand` panel. |
+| 7 | `Qualify.jsx` | `#fit` | "Für wen das passt" — 3 fit criteria (✓) + 2 not-fit (–). |
+| 8 | `PilotOffer.jsx` | `#pilot` | 4-week sprint entry offer, no fixed price. **V4:** eyebrow removed. Alt background. |
+| 9 | `Team.jsx` | `#team` | 3-person team cards. **V4:** eyebrow removed. Initials-avatar + `#` LinkedIn placeholders. |
+| 10 | `SoftClose.jsx` | `#lets-talk` | Single CTA button → `/kontakt.html`. |
+| 11 | `Footer.jsx` | — | Wordmark · Berlin · contact · © 2026 |
+
+**Unregistered in V4 (files left on disk, not rendered):** `VideoIntro.jsx`, `ProblemStatements.jsx`, `WhatThisMeans.jsx`. Their content was merged into the method section (problem framing + Loop stage 01 audit) or dropped (placeholder video). Delete the files or revive by re-adding the `<script>` tag + render call.
+
+> **Copy:** all copy is prototype-stage; before any copy change read `docs/COPY.md` (voice guide + full copy in render order) and edit it in the same pass.
 
 **Second page — `kontakt.html`:**
 

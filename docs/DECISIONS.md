@@ -4,6 +4,20 @@ Architectural, product, and implementation decisions with rationale.
 
 ---
 
+## 2026-06-09 — V4: consolidate 11 → 7 sections (de-stuff)
+
+**Decision:** Merge `ProblemStatements` + `HowItWorks` + `WhatThisMeans` into one method section (Loop as centerpiece; audit detail carried by Loop stage 01); remove the `VideoIntro` placeholder section; fold the platform strip into the hero (no label); drop eyebrows everywhere except `StatCallout` and `Qualify`; reduce motion systems from 5 to 2. Page height dropped ~36%.
+
+**Rationale:** Owner felt the site was "stuffy / TMI." The page (11 sections / 8.5 screens) had drifted from its own north star — a clarity machine for a warm referral giving 30–60s, "one message per screen." The eight-in-a-row mono-eyebrow rhythm read like a pitch deck; three sections re-explained the method; a placeholder video sat in a trust slot. The merges touch sections originally added on Jacob's advice → flagged to validate with Jacob on 2026-06-18. Owner explicitly chose the aggressive consolidation over tightening in place.
+
+---
+
+## 2026-06-09 — Mobile: loop detail opens inline under the tapped tile
+
+**Decision:** On ≤760px, `LoopDiagram` renders each expanded stage's detail inline inside that stage (`.loop__inline-expand`), and the single bottom `.loop__expand` panel is hidden. Desktop is unchanged (single-row loop + bottom panel).
+
+**Rationale:** On mobile the loop stacks vertically, but the detail rendered in one panel below all five stages — so tapping "01 Audit" flipped the chevron while the actual text appeared off-screen far below, making the interaction unintelligible. Inline-under-tile keeps tap and result together. Kept the desktop bottom-panel because inline expansion would break the horizontal single-row layout.
+
 ## 2026-06-09 — German copy: prototype-stage, write best-effort, iterate holistically (supersedes the advisor-gate rule)
 
 **Decision:** All site copy is prototype-stage — nothing is "signed off" or reviewed. Write the best version you can; Yannick iterates and corrects where he sees fit. There is **no** advisor/native-review gate. Before writing or iterating ANY copy, read `docs/COPY.md` (voice guide + full copy in render order) so changes are made with the whole narrative arc in view, not line-by-line in isolation. Keep `docs/COPY.md` and the `.jsx` files in sync in the same pass.

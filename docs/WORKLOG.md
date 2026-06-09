@@ -2,6 +2,28 @@
 
 > **Note for agents:** This file is reverse-chronological — newest entries are at the top, oldest at the bottom. Always read from the top of the Entries section to find the insertion point. Do not use `tail` to locate where to insert.
 
+## 2026-06-09 (Session 3 — V4 consolidation, de-stuffing, copy + mobile loop)
+
+- Scope: Owner felt the site was "too stuffy / TMI" and copy "half-baked." Office-hours diagnosis: 11 sections / 8.5 screens vs. the north star (clarity machine for a warm referral, 30–60s, "one message per screen"). Owner chose aggressive consolidation. Design doc: `~/.gstack/projects/yannickspiess-yannickspiess.github.io/yannickspiess-main-design-20260609-174714.md`.
+- Structure (11 → 7 content sections, page height ~6930px → ~4411px, −36%):
+  - Merged `ProblemStatements` + `HowItWorks` + `WhatThisMeans` → one method section (`HowItWorks` + `LoopDiagram`). Audit detail now carried by Loop stage 01. `ProblemStatements.jsx` / `WhatThisMeans.jsx` unregistered in `index.html` (files left on disk).
+  - Deleted `VideoIntro` placeholder section (unregistered in `index.html`; file left on disk).
+  - Folded platform strip into hero (dropped `.plat__label` in `Proof.jsx`).
+  - Dropped eyebrows on method/Pilot/Team → only 2 eyebrows remain (Warum Video, Für wen das passt). Broke the pitch-deck rhythm.
+  - Motion reduced 5 → 2 systems (kept Loop + stat count-up; the 3 animated SVG icons were in `WhatThisMeans`, now removed).
+- Hero: subline → "Wie dein internes Video-Team: Strategie, Produktion und Distribution aus einer Hand." (was a jargon stack). Primary CTA single-hop → `/kontakt.html` (was `#lets-talk`).
+- Copy iteration (owner-selected):
+  - Warum-Video pullquote → "Auf Social entscheidet das beste Video, nicht das größte Budget." (positioning: quality over spend).
+  - Loop intro → clean mechanic line; removed a merge artifact where the body ("Jedes Video ist ein Einzelprojekt") contradicted the headline ("…nicht als Projekt").
+- Mobile loop UX fix: tapping a stage now opens its detail **inline, directly under the tapped tile** (`.loop__inline-expand`, shown only ≤760px); the single bottom `.loop__expand` panel is hidden on mobile. Desktop unchanged (bottom panel, single-row loop). Verified both widths via Playwright (real click; programmatic `.click()` does not trigger React here).
+- Process changes:
+  - **Copy rule loosened.** All copy is prototype-stage; write best-effort, owner iterates. No advisor/native-review gate. New durable rule: read `docs/COPY.md` before ANY copy change.
+  - Added `docs/COPY.md` — voice guide + full copy in render order (the holistic copy surface). Keep it in sync with `.jsx` in the same commit.
+  - `CLAUDE.md` is now the agent entry point (hard "Copy rule (READ FIRST)"); `AGENTS.md` reduced to `@CLAUDE.md`.
+- Deploy commits: `0686cfd` (hero subline + first pullquote pass), `6d83fbb` (pullquote #7 + loop intro + mobile loop UX). Earlier in session: `e93d005` (V4 consolidation), `7a9adfe` (COPY.md + rule), `0e88f0c` (CLAUDE.md entry point), `3e17b60` (strengthen copy rule).
+- Verification: Playwright at 1440px + 390px, fresh ports (Babel caches `.jsx`; use a new port or hard-refresh). No JS errors (favicon 404 only). No mobile horizontal overflow. Live deploy confirmed.
+- Follow-ups (unchanged + new): Formspree/WhatsApp `TODO_` in `ContactForm.jsx` (form errors on submit until filled); Team photos/LinkedIn/Tommaso surname; OG meta tags; open copy questions parked at bottom of `docs/COPY.md` (English-jargon density; whether the offer still paraphrases in one sentence without the old "what you get" beat). Validate the section merges with Jacob on 2026-06-18.
+
 ## 2026-06-09 (Session 2 — V3 implementation)
 
 - Scope: Implement all 7 items from the V3 backlog in full. Two commits.
