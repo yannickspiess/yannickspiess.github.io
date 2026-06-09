@@ -2,6 +2,38 @@
 
 > **Note for agents:** This file is reverse-chronological — newest entries are at the top, oldest at the bottom. Always read from the top of the Entries section to find the insertion point. Do not use `tail` to locate where to insert.
 
+## 2026-06-09 (Session 2 — V3 implementation)
+
+- Scope: Implement all 7 items from the V3 backlog in full. Two commits.
+- Changes:
+  - `StatCallout.jsx` — deleted `stat-callout__cred` paragraph (10M Euro line); replaced `stat-callout__story` body with editorial pullquote "Das Medium, das kalte Märkte erwärmt." (Items 1 + 3).
+  - `Team.jsx` — Yannick bio: "ich halte das System zusammen" → "das Rückgrat des Systems."; team intro: ich-form stripped (Item 2).
+  - `VideoIntro.jsx` (new) — YouTube embed section, placed after StatCallout. Registered + rendered in `index.html` (Item 4).
+  - `Header.jsx` — added optional `homeHref`, `ctaHref`, `ctaLabel` props (defaults preserve existing main-page behaviour) (Item 5 dependency).
+  - `ContactForm.jsx` (new) — qualifying contact form (Vorname, Nachname, E-Mail, Telefon, Brand, Rolle, Projektbeschreibung, Adspend dropdown, Weitere Ansprechpartner). Formspree + WhatsApp placeholders gated at submit time with inline error. (Item 5).
+  - `kontakt.html` (new) — second page: Header (homeHref="/"), ContactForm, Footer. No `.reveal` classes (no IO on this page). Title: "Kontakt — Yannick Spiess" (Item 5).
+  - `SoftClose.jsx` — replaced email input + mailto with link to `/kontakt.html`. Dropped `contact` prop (Item 6).
+  - `kit.css` — added `.stat-callout__pullquote`, `.video-intro` embed block, `.wrap--narrow`, full `.contact-form__*` component styles, `.pilot__note` hairline separator, elevated `.audit-result` to card, `#fit` explicit padding (Items 3, 4, 5, 7).
+  - `index.html` — registered VideoIntro script; updated `<SoftClose />` (no prop) (Items 4 + 6).
+- Deploy commits:
+  - `9b69898 V3: Items 1–6 — contact page, VideoIntro, ich-form, StatCallout editorial, SoftClose CTA`
+  - `dad7440 V3 Item 7: Visual density pass — PilotOffer separator, audit-result card, Qualify spacing`
+- Verification:
+  - Local: `python3 -m http.server 8765`; Playwright full-page screenshots of both `index.html` and `kontakt.html`. No JS errors (favicon 404 only). All form fields render; 2-col layout correct; pullquote accent border visible; VideoIntro iframe present.
+- Follow-ups:
+  - Fill `FORMSPREE_ENDPOINT` in `ContactForm.jsx` (line 3) when Formspree account is created.
+  - Fill `WHATSAPP_NUMBER` in `ContactForm.jsx` (line 4) — digits-only, e.g. `4915123456789`.
+  - Team placeholders (photos, LinkedIn URLs, Tommaso surname) — Yannick fills manually.
+  - OG meta tags still open.
+
+## 2026-06-09 (Session 1 — V3 design)
+
+- Scope: Voice design-review session (Friedenstraße.m4a, ~19 min) + structured Q&A to define V3 scope. No deploy yet — design decisions only, plus one small affordance fix.
+- Changes:
+  - `LoopDiagram.jsx` — chevron `+` → `Mehr →` (collapsed); `−` stays for expanded. Removed `aria-hidden` so screen readers pick up the label. **Only code change deployed this session.**
+- Session output — decisions and open items captured in `docs/DECISIONS.md` (2026-06-09 block) and `docs/HANDOFF.md` (V3 backlog). Nothing else committed yet; all remaining V3 work is design-approved and awaiting an implementation session.
+- Follow-ups: see V3 backlog in HANDOFF.md.
+
 ## 2026-06-08
 - Scope: V2 landing-page iteration — implement Jacob Thomsen's Sitzung-2 feedback + competitor-research integration end-to-end, then refresh continuity docs.
 - Changes:
