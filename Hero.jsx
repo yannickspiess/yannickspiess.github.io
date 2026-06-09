@@ -27,10 +27,10 @@ function Hero() {
             Mach <span className="hero__hl">Video</span> zu deinem verlässlichen Kanal für neue Kunden.
           </h1>
           <p className="hero__sub reveal">
-            Dein Paid Social Growth Partner für Meta, YouTube und TikTok.
+            Wie ein internes Video-Team für Wachstum &ndash; Strategie, Produktion und Distribution aus einer Hand.
           </p>
           <div className="hero__cta reveal">
-            <a className="btn btn--primary" href="#lets-talk">Audit starten</a>
+            <a className="btn btn--primary" href="/kontakt.html">Audit starten</a>
             <a className="hero__seclink" href="#how">So funktioniert es</a>
           </div>
         </div>

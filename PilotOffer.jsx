@@ -5,7 +5,6 @@ function PilotOffer() {
   return (
     <section id="pilot" className="alt">
       <div className="wrap">
-        <p className="eyebrow reveal">Wie ein Projekt startet</p>
         <h2 className="h2 reveal">Ein klarer Einstieg, kein Jahresvertrag.</h2>
         <p className="lead reveal">
           Ein typischer Einstieg ist ein 4-Wochen-Sprint: ein Funnel, drei bis fünf

@@ -29,7 +29,6 @@ function Team() {
   return (
     <section id="team">
       <div className="wrap wrap--wide">
-        <p className="eyebrow reveal">Wer dahinter steht</p>
         <h2 className="h2 reveal">Ein kleines, festes Team.</h2>
         <p className="lead reveal">
           Keine Abteilungs-Übergaben, keine Brief-Schleifen. Yannick übernimmt die strategische Führung — zusammen mit zwei Leuten, die ihr Handwerk verstehen.
