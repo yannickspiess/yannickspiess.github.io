@@ -52,7 +52,7 @@ function StatCallout() {
       <div className="wrap wrap--wide">
         <p className="eyebrow stat-callout__eyebrow">Warum Video</p>
         <p className="stat-callout__pullquote reveal">
-          Video macht aus Aufmerksamkeit Kunden.
+          Auf Social entscheidet das beste Video, nicht das größte Budget.
         </p>
         <div className="stat-callout__grid">
           <StatItem

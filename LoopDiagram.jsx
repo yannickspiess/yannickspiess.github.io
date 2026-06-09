@@ -101,6 +101,13 @@ function LoopDiagram() {
             <h3 className="loop__name">{s.name}</h3>
             <p className="loop__desc">{s.desc}</p>
             <span className="loop__chevron">{expanded === i ? '−' : 'Mehr →'}</span>
+            {/* Mobile: detail opens directly under the tapped tile (CSS shows this only ≤760px; */}
+            {/* desktop uses the single .loop__expand panel below the row instead). */}
+            {expanded === i && (
+              <div className="loop__inline-expand">
+                <p>{s.detail}</p>
+              </div>
+            )}
           </div>
         ))}
       </div>

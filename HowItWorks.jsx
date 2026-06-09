@@ -7,8 +7,8 @@ function HowItWorks() {
       <div className="wrap wrap--wide">
         <h2 className="h2 reveal">Es funktioniert als <span className="hero__hl">Loop</span>, nicht als Projekt.</h2>
         <p className="how__intro reveal">
-          Jedes Video ist ein Einzelprojekt &ndash; kein System, das sich aufbaut. Zuerst verstehen,
-          dann handeln. Jede Phase fließt in die nächste, und was wir messen, schärft die nächste Runde.
+          Zuerst verstehen, dann handeln. Jede Phase fließt in die nächste &ndash; und was wir messen,
+          schärft die nächste Runde.
         </p>
         <div className="reveal">
           <LoopDiagram />

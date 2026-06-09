@@ -71,7 +71,7 @@ section serves that one test.
 ### 3 · Warum Video — `StatCallout.jsx`
 *Job: one impact beat — why video works. Not an argument.*
 - Eyebrow: **Warum Video**
-- Pullquote: **Video macht aus Aufmerksamkeit Kunden.**
+- Pullquote: **Auf Social entscheidet das beste Video, nicht das größte Budget.**
 - Stat 1: **44 %** — mehr Kaufabsicht nach nur 3 Sekunden _Video-Werbung_.
   - Source: Nielsen BrandEffect-Studie · 173 Kampagnen · Meta
 - Stat 2: **612 %** — mehr Engagement mit _Video_ als Bild-Anzeigen auf Meta.
@@ -80,7 +80,7 @@ section serves that one test.
 ### 4 · So arbeiten wir — `HowItWorks.jsx` + `LoopDiagram.jsx` `#how`
 *Job: the method, as one merged section. The Loop is the centerpiece. (No eyebrow.)*
 - H2: **Es funktioniert als _Loop_, nicht als Projekt.**
-- Intro: **Jedes Video ist ein Einzelprojekt – kein System, das sich aufbaut. Zuerst verstehen, dann handeln. Jede Phase fließt in die nächste, und was wir messen, schärft die nächste Runde.**
+- Intro: **Zuerst verstehen, dann handeln. Jede Phase fließt in die nächste – und was wir messen, schärft die nächste Runde.**
 - Loop stage 01 · **Audit** — Produkt, Kunden, Kanäle und Acquisition-Flow verstehen. Bevor ein Video entsteht.
   - Detail: Bevor ein Video entsteht, klären wir die Ausgangslage: **Produkt, Zielgruppe, bestehende Kanäle und Acquisition-Flow**. So wissen wir, wo Video wirklich etwas bewegt — und wo nicht.
 - Loop stage 02 · **Strategie** — Eine Video-Roadmap für Paid Social entwickeln, die zur Situation passt.
