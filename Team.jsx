@@ -6,7 +6,7 @@ const TEAM = [
     initials: 'YS',
     name: 'Yannick Spiess',
     role: 'Creative Director & Strategie',
-    bio: 'Strategische Führung, Konzept und Creative Direction — das Rückgrat des Systems.',
+    bio: 'Strategische Führung, Konzept und Creative Direction.',
     linkedin: '#',
   },
   {
@@ -29,9 +29,9 @@ function Team() {
   return (
     <section id="team">
       <div className="wrap wrap--wide">
-        <h2 className="h2 reveal">Ein kleines, festes Team.</h2>
+        <h2 className="h2 reveal">Wer das umsetzt.</h2>
         <p className="lead reveal">
-          Keine Abteilungs-Übergaben, keine Brief-Schleifen. Yannick übernimmt die strategische Führung — zusammen mit zwei Leuten, die ihr Handwerk verstehen.
+          Yannick leitet Strategie und Creative Direction. Für jedes Projekt kommen die richtigen Spezialisten dazu — je nachdem, was das Projekt braucht.
         </p>
         <div className="team__grid">
           {TEAM.map((m, i) => (

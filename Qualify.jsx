@@ -2,7 +2,7 @@
 // the page was missing an explicit fit statement. Honest, no track-record claims.
 function Qualify() {
   const fit = [
-    'Gründer:innen und Marketing-Leads bei EdTech- und B2B-SaaS-Unternehmen',
+    'Gründer:innen und Marketing-Leads bei Startups und Scale-ups',
     'mit einem Paid-Kanal, der bereits läuft',
     'die besseren Creative-Output wollen — nicht einfach mehr Ad-Volumen',
   ];

@@ -40,6 +40,9 @@ section serves that one test.
   "unsere Kunden / die meisten" phrasing that implies a customer base.
 - **Calm, not loud.** Fewer words, less shouting. The page should feel
   confident, not like it's performing.
+- **No negation patterns.** Never use "Keine X, keine/sondern Y" constructions
+  (e.g. "Keine Abteilungs-Übergaben, keine Brief-Schleifen"). This is an AI
+  copy trope. State what you do — not what you don't do.
 
 ## Section rhythm (anti-stuffy)
 
@@ -60,14 +63,15 @@ section serves that one test.
 ### 1 · Hero — `Hero.jsx` `#top`
 *Job: land the outcome in 5 seconds; one clear CTA.*
 - H1: **Mach _Video_ zu deinem verlässlichen Kanal für neue Kunden.** ("Video" in accent)
-- Subline: **Wie dein internes Video-Team: Strategie, Produktion und Distribution aus einer Hand.**
+- Subline: **Video Ads für Paid Social — Strategie, Produktion und Distribution aus einer Hand.**
 - CTA primary: **Audit starten** → `/kontakt.html`
 - CTA secondary: **So funktioniert es** → `#how`
 - Video pause toggle (a11y label): **Video pausieren** / **Video abspielen**
 
 ### 2 · Platform strip — `Proof.jsx` `#platforms`
-*Job: quiet trust texture under the hero. Logos only, no label.*
-- (Instagram · Facebook · TikTok · YouTube logos — no text)
+*Job: quiet trust texture under the hero.*
+- Label: **Die Kanäle, auf denen wir arbeiten.**
+- (Instagram · Facebook · TikTok · YouTube logos — SVGs, monochrome)
 
 ### 3 · Warum Video — `StatCallout.jsx`
 *Job: one impact beat — why video works. Not an argument.*
@@ -101,7 +105,7 @@ section serves that one test.
 - Eyebrow: **Für wen das passt**
 - H2: **Am besten passt das, wenn …**
 - Fit ✓:
-  - Gründer:innen und Marketing-Leads bei EdTech- und B2B-SaaS-Unternehmen
+  - Gründer:innen und Marketing-Leads bei Startups und Scale-ups
   - mit einem Paid-Kanal, der bereits läuft
   - die besseren Creative-Output wollen — nicht einfach mehr Ad-Volumen
 - Label: **Weniger passend:**
@@ -112,14 +116,13 @@ section serves that one test.
 ### 6 · So startet ein Projekt — `PilotOffer.jsx` `#pilot`
 *Job: show the entry engagement; no fixed price, no implied customer base. (No eyebrow.)*
 - H2: **Ein klarer Einstieg, kein Jahresvertrag.**
-- Lead: **Ein typischer Einstieg ist ein 4-Wochen-Sprint: ein Funnel, drei bis fünf Creative-Varianten, eine Iterationsrunde. Genug, um echte Signale zu sehen — ohne großes Commitment im Voraus.**
-- Note: **Scope und Investment definieren wir gemeinsam im ersten Gespräch, abhängig von Geschwindigkeit, Projektgröße und Ausgangslage. Keine Pauschale von der Stange — maßgeschneiderte Arbeit braucht einen passenden Rahmen.**
+- Lead: **Ein typischer Einstieg ist ein 6-Wochen-Sprint: ein Funnel, drei bis fünf Creative-Varianten, eine Iterationsrunde. Genug, um echte Signale zu sehen — ohne großes Commitment im Voraus.**
 
 ### 7 · Team — `Team.jsx` `#team`
 *Job: real people = the proof substitute (no testimonials yet). (No eyebrow.)*
-- H2: **Ein kleines, festes Team.**
-- Lead: **Keine Abteilungs-Übergaben, keine Brief-Schleifen. Yannick übernimmt die strategische Führung — zusammen mit zwei Leuten, die ihr Handwerk verstehen.**
-- Yannick Spiess — *Creative Director & Strategie* — Strategische Führung, Konzept und Creative Direction — das Rückgrat des Systems.
+- H2: **Wer das umsetzt.**
+- Lead: **Yannick leitet Strategie und Creative Direction. Für jedes Projekt kommen die richtigen Spezialisten dazu — je nachdem, was das Projekt braucht.**
+- Yannick Spiess — *Creative Director & Strategie* — Strategische Führung, Konzept und Creative Direction.
 - Tommaso — *Kamera & Videografie* — Produktion auf hohem handwerklichen Niveau, von der Kamera bis zum Schnitt. *(surname TODO)*
 - Britney Tan — *Social Media* — Distribution und Präsenz über Meta, TikTok und YouTube — bezahlt und organisch.
 

@@ -265,9 +265,7 @@ section { padding-block: var(--section-y); }
 .loop__desc { font-family: var(--font-body); font-size: 14px; line-height: 1.45; color: var(--ink-soft); margin: 0; }
 /* Chevron pinned to bottom of card — link-styled so it reads as an action, and sized
    below the stage name so it supports the card instead of competing with it */
-.loop__chevron { font-family: var(--font-body); font-weight: 600; font-size: 15px; color: var(--ink-soft); display: block; margin-top: auto; padding-top: 16px; line-height: 1; text-decoration: underline; text-decoration-color: var(--hair); text-underline-offset: .2em; text-decoration-thickness: 1px; transition: color var(--dur-short) var(--ease-move), text-decoration-color var(--dur-short) var(--ease-move); }
-.loop__stage:hover .loop__chevron,
-.loop__stage--expanded .loop__chevron { text-decoration-color: var(--accent); }
+.loop__chevron { font-family: var(--font-body); font-weight: 600; font-size: 15px; color: var(--ink-soft); display: block; margin-top: auto; padding-top: 16px; line-height: 1; transition: color var(--dur-short) var(--ease-move); }
 .loop__return { font-family: var(--font-mono); font-size: 13px; color: var(--accent-ink); margin-top: 22px; display: flex; align-items: center; gap: 10px; }
 .loop__return .arc { flex: 1; height: 1px; background: linear-gradient(to right, var(--hair), var(--accent)); opacity: .6; }
 /* Mobile-only inline detail (opens under the tapped tile). Hidden on desktop. */
@@ -277,7 +275,7 @@ section { padding-block: var(--section-y); }
   margin-top: 14px;
   padding: 22px 26px;
   background: var(--paper-2);
-  border-radius: 8px;
+  border-radius: 0 8px 8px 0;
   border-left: 3px solid var(--accent);
   animation: expand-in var(--dur-medium) var(--ease-enter) both;
 }
