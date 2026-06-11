@@ -2,7 +2,7 @@
 // Submits to Formspree. Direct channels (phone/WhatsApp + email) sit above the form
 // so the visitor can pick: form, call, or mail (Schema-M-style contact row).
 // Validation is the browser's native required/email handling (localized, zero JS).
-const FORMSPREE_ENDPOINT = 'TODO_REPLACE_WITH_FORMSPREE_ENDPOINT';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xojznyvg';
 const WHATSAPP_NUMBER = '491713120124';
 const PHONE_DISPLAY = '+49 171 3120124';
 

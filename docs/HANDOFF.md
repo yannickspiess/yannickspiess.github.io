@@ -84,7 +84,7 @@ Render order in `App()` inside `index.html` (V4, 2026-06-09):
 | Component | Notes |
 |---|---|
 | `Header.jsx` | `homeHref="/"` `ctaHref="#contact-form"` `ctaLabel="Zum Formular"` |
-| `ContactForm.jsx` | Qualifying form, native browser validation (V4.1: no `noValidate`). Formspree endpoint is a `TODO_*` placeholder — submit shows a mailto fallback until filled. Direct channels row (Telefon/WhatsApp `tel:` + E-Mail `mailto:`) sits above the form, Schema-M-style (2026-06-11); prep sentence below the channels divider; adspend is a free text input (Meta / Google / TikTok). Takes a `contact` prop (mailto fallback + displayed email). |
+| `ContactForm.jsx` | Qualifying form, native browser validation (V4.1: no `noValidate`). Submits live to Formspree (`f/xojznyvg`, filled 2026-06-11); error state falls back to a clickable mailto. Direct channels row (Telefon/WhatsApp `tel:` + E-Mail `mailto:`) sits above the form, Schema-M-style (2026-06-11); prep sentence below the channels divider; adspend is a free text input (Meta / Google / TikTok). Takes a `contact` prop (mailto fallback + displayed email). |
 | `Footer.jsx` | Same as main page. |
 
 > No `.reveal` classes on `kontakt.html` — there is no `IntersectionObserver` on that page.
@@ -150,7 +150,7 @@ The PNG overlays the video so phone chrome stays sharp. `border-radius` clips vi
 | `Team.jsx` | team photos | Yannick ✅ (`assets/team-yannick.jpg`, 2026-06-11); Tommaso + Britney still initials avatars | Add `photo:` field per member once photos exist |
 | `Team.jsx` | LinkedIn URLs | Yannick ✅ (2026-06-11); Tommaso + Britney still `#` (links hidden while `#`) | Replace with real profile URLs |
 | `Team.jsx` | Tommaso's surname | `Tommaso Marinaro` | ✅ filled 2026-06-11 |
-| `ContactForm.jsx` | `FORMSPREE_ENDPOINT` | `'TODO_REPLACE_WITH_FORMSPREE_ENDPOINT'` | Create Formspree account, swap value |
+| `ContactForm.jsx` | `FORMSPREE_ENDPOINT` | `'https://formspree.io/f/xojznyvg'` | ✅ filled 2026-06-11 — form submits live (verified with a test submission, HTTP 200 + success state) |
 | `ContactForm.jsx` | `WHATSAPP_NUMBER` | `'491713120124'` | ✅ filled 2026-06-11 — shown in the channels row above the form (`tel:` link; the old WhatsApp button block was removed) |
 | `StatCallout.jsx` | Flowkey numbers | not used (external-study stats only) | Optional: if real internal metrics exist, add as a separate truthful claim — do NOT relabel the Nielsen/Confect.io numbers |
 
@@ -158,7 +158,7 @@ The PNG overlays the video so phone chrome stays sharp. `border-radius` clips vi
 
 ## Open Next Steps
 
-1. **Formspree** — fill `FORMSPREE_ENDPOINT` in `ContactForm.jsx`. Until then the form shows a graceful mailto fallback on submit. (~~WhatsApp~~ ✅ filled 2026-06-11.)
+1. ~~**Formspree + WhatsApp**~~ — ✅ both filled 2026-06-11; the form submits live (endpoint `xojznyvg`). The misconfigured/mailto branch stays in the code as an inert guard.
 2. **Team placeholders** — Tommaso + Britney photos and LinkedIn URLs in `Team.jsx` (links hidden until real). (~~Tommaso's surname~~ ✅ Marinaro; ~~Yannick photo + LinkedIn~~ ✅ — both 2026-06-11.)
 3. **Niche question for Jacob (Sitzung 3, 2026-06-18)** — sharpen offer to a compound niche vs. start broader? See vault task note.
 4. ~~OG meta tags~~ — done in V4.1 (both heads + `assets/og-image.png`; regenerate via `assets/og-image-gen.html` if the headline changes).

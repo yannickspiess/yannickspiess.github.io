@@ -139,8 +139,8 @@ section serves that one test.
 
 ## Contact page — `kontakt.html` / `ContactForm.jsx`
 *Job: qualify before a call — but the form is one option, not the only one. Direct channels
-(phone/WhatsApp + email) sit above the form, Schema-M-style (2026-06-11). Formspree is still
-a TODO_ placeholder; the misconfigured/error states show a clickable mailto fallback.*
+(phone/WhatsApp + email) sit above the form, Schema-M-style (2026-06-11). The form submits
+live to Formspree (filled 2026-06-11); the error state shows a clickable mailto fallback.*
 - Heading: **Lass uns sprechen.**
 - Intro: **Füll das Formular aus — oder melde dich direkt per Telefon, WhatsApp oder E-Mail.**
 - Channels row: **Telefon / WhatsApp** → +49 171 3120124 (`tel:`) · **E-Mail** → yannick.spiess@icloud.com (`mailto:`)
