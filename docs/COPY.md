@@ -133,7 +133,7 @@ section serves that one test.
 - CTA: **Audit starten** → `/kontakt.html`
 
 ### Footer (every page) — `Footer.jsx`
-- Yannick Spiess · Berlin · yannick.spiess@icloud.com · © 2026
+- Yannick Spiess · Berlin · yannick.spiess@icloud.com · Impressum · © 2026
 
 ---
 
@@ -153,6 +153,16 @@ live to Formspree (filled 2026-06-11); the error state shows a clickable mailto 
 - Success: **Danke für deine Anfrage — wir melden uns in der Regel innerhalb von 24 Stunden.**
 - Error: **Etwas ist schiefgelaufen. Bitte versuche es erneut — oder schreib uns direkt an [E-Mail-Adresse].**
 - Misconfigured (pre-launch only): **Das Formular ist noch nicht fertig eingerichtet. Schreib uns direkt an [E-Mail-Adresse] — wir melden uns.**
+
+---
+
+## Legal page — `impressum.html` / `Impressum.jsx`
+*Job: provider identification required by German law (§ 5 DDG, § 18 Abs. 2 MStV). Factual,
+no marketing copy. `noindex`. Linked from the footer on every page. Add USt-IdNr. once issued.*
+- Heading: **Impressum**
+- Sections: Angaben gemäß § 5 DDG (name + address) · Kontakt (Telefon, E-Mail) ·
+  Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV · Verbraucherstreitbeilegung
+  (nicht bereit oder verpflichtet)
 
 ---
 

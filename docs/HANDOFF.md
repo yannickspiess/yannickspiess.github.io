@@ -89,6 +89,13 @@ Render order in `App()` inside `index.html` (V4, 2026-06-09):
 
 > No `.reveal` classes on `kontakt.html` — there is no `IntersectionObserver` on that page.
 
+**Third page — `impressum.html`** (added 2026-06-11):
+
+| Component | Notes |
+|---|---|
+| `Header.jsx` | `homeHref="/"` `ctaHref="/kontakt.html"` `ctaLabel="Audit starten"` |
+| `Impressum.jsx` | § 5 DDG provider info + § 18 Abs. 2 MStV + Verbraucherstreitbeilegung. `noindex`. Footer links to it from every page. **Add USt-IdNr. once issued.** A Datenschutzerklärung page does not exist yet (GDPR gap: Formspree + Google Fonts CDN). |
+
 ---
 
 ## CSS Architecture
@@ -165,6 +172,7 @@ The PNG overlays the video so phone chrome stays sharp. `border-radius` clips vi
 5. Mobile visual check — loop collapses to vertical at ≤760px; team grid → 1 col at ≤760px; contact form 2-col → 1 col at ≤600px.
 6. `iphone.png` — swap for real mockup if/when available.
 7. Deferred: AI-stance section, founder video, campaign examples, use-case landing pages, Calendly embed on contact page.
+8. **Datenschutzerklärung** — legally required (GDPR): the contact form sends personal data to Formspree (US processor) and fonts load from the Google Fonts CDN. Impressum exists (2026-06-11); the privacy page does not yet.
 
 ---
 

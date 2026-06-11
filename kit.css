@@ -605,3 +605,15 @@ section { padding-block: var(--section-y); }
 @media (max-width: 600px) {
   .contact-form__row--2col { flex-direction: column; gap: 24px; }
 }
+
+/* ---------------------------------------------------------------------- */
+/* LEGAL — impressum.html                                                   */
+/* ---------------------------------------------------------------------- */
+.legal { padding-block: clamp(64px, 10vh, 108px); }
+.legal__heading { margin: 0 0 40px; }
+.legal__subheading {
+  font-family: var(--font-mono); font-weight: 400; font-size: 13px;
+  letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft);
+  margin: 36px 0 10px;
+}
+.legal__block { font-family: var(--font-body); font-size: var(--fs-body); line-height: 1.7; color: var(--ink); margin: 0; }

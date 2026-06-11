@@ -9,6 +9,8 @@ function Footer({ wordmark, contact }) {
         <span className="dot">&middot;</span>
         <a href={`mailto:${contact}`}>{contact}</a>
         <span className="dot">&middot;</span>
+        <a href="/impressum.html">Impressum</a>
+        <span className="dot">&middot;</span>
         <span>&copy; 2026</span>
       </div>
     </footer>
