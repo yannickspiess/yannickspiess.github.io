@@ -149,17 +149,17 @@ The PNG overlays the video so phone chrome stays sharp. `border-radius` clips vi
 | `index.html` | `CONTACT` | `yannick.spiess@icloud.com` | Temporary — swap when a custom domain/email lands |
 | `Team.jsx` | team photos | initials-avatar placeholders (`.team__photo`) | Replace with real photos |
 | `Team.jsx` | LinkedIn URLs | `#` placeholders (links hidden while `#`) | Replace with real profile URLs |
-| `Team.jsx` | Tommaso's surname | first name only | Add surname |
+| `Team.jsx` | Tommaso's surname | `Tommaso Marinaro` | ✅ filled 2026-06-11 |
 | `ContactForm.jsx` | `FORMSPREE_ENDPOINT` | `'TODO_REPLACE_WITH_FORMSPREE_ENDPOINT'` | Create Formspree account, swap value |
-| `ContactForm.jsx` | `WHATSAPP_NUMBER` | `'TODO_WHATSAPP'` | Digits-only number, e.g. `'4915123456789'` |
+| `ContactForm.jsx` | `WHATSAPP_NUMBER` | `'491713120124'` | ✅ filled 2026-06-11 (WhatsApp block now renders) |
 | `StatCallout.jsx` | Flowkey numbers | not used (external-study stats only) | Optional: if real internal metrics exist, add as a separate truthful claim — do NOT relabel the Nielsen/Confect.io numbers |
 
 ---
 
 ## Open Next Steps
 
-1. **Formspree + WhatsApp** — fill the two `TODO_*` constants in `ContactForm.jsx`. Until then the form shows a graceful mailto fallback on submit and the WhatsApp block stays hidden (V4.1).
-2. **Team placeholders** — fill photos, real LinkedIn URLs (links are hidden until then), Tommaso's surname in `Team.jsx`.
+1. **Formspree** — fill `FORMSPREE_ENDPOINT` in `ContactForm.jsx`. Until then the form shows a graceful mailto fallback on submit. (~~WhatsApp~~ ✅ filled 2026-06-11.)
+2. **Team placeholders** — fill photos and real LinkedIn URLs (links are hidden until then) in `Team.jsx`. (~~Tommaso's surname~~ ✅ Marinaro, 2026-06-11.)
 3. **Niche question for Jacob (Sitzung 3, 2026-06-18)** — sharpen offer to a compound niche vs. start broader? See vault task note.
 4. ~~OG meta tags~~ — done in V4.1 (both heads + `assets/og-image.png`; regenerate via `assets/og-image-gen.html` if the headline changes).
 5. Mobile visual check — loop collapses to vertical at ≤760px; team grid → 1 col at ≤760px; contact form 2-col → 1 col at ≤600px.

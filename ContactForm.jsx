@@ -2,7 +2,7 @@
 // Submits to Formspree. The WhatsApp alt link renders only once the number is real.
 // Validation is the browser's native required/email handling (localized, zero JS).
 const FORMSPREE_ENDPOINT = 'TODO_REPLACE_WITH_FORMSPREE_ENDPOINT';
-const WHATSAPP_NUMBER = 'TODO_WHATSAPP';
+const WHATSAPP_NUMBER = '491713120124';
 
 function ContactForm({ contact }) {
   const [status, setStatus] = React.useState('idle'); // idle | sending | success | error | misconfigured

@@ -10,8 +10,8 @@ const TEAM = [
     linkedin: '#',
   },
   {
-    initials: 'T',
-    name: 'Tommaso',
+    initials: 'TM',
+    name: 'Tommaso Marinaro',
     role: 'Kamera & Videografie',
     bio: 'Produktion auf hohem handwerklichen Niveau, von der Kamera bis zum Schnitt.',
     linkedin: '#',
