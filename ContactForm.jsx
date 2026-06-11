@@ -1,8 +1,10 @@
 // ContactForm — qualifying contact form for kontakt.html.
-// Submits to Formspree. The WhatsApp alt link renders only once the number is real.
+// Submits to Formspree. Direct channels (phone/WhatsApp + email) sit above the form
+// so the visitor can pick: form, call, or mail (Schema-M-style contact row).
 // Validation is the browser's native required/email handling (localized, zero JS).
 const FORMSPREE_ENDPOINT = 'TODO_REPLACE_WITH_FORMSPREE_ENDPOINT';
 const WHATSAPP_NUMBER = '491713120124';
+const PHONE_DISPLAY = '+49 171 3120124';
 
 function ContactForm({ contact }) {
   const [status, setStatus] = React.useState('idle'); // idle | sending | success | error | misconfigured
@@ -46,7 +48,22 @@ function ContactForm({ contact }) {
       <div className="wrap wrap--narrow">
         <h1 className="h2 contact-form__heading">Lass uns sprechen.</h1>
         <p className="contact-form__intro">
-          Damit wir gut vorbereitet sind: Ein paar Fragen vor unserem Gespräch.
+          Füll das Formular aus — oder melde dich direkt per Telefon, WhatsApp oder E-Mail.
+        </p>
+
+        <div className="contact-form__channels">
+          <a className="contact-form__channel" href={'tel:+' + WHATSAPP_NUMBER}>
+            <span className="contact-form__channel-label">Telefon / WhatsApp</span>
+            {PHONE_DISPLAY}
+          </a>
+          <a className="contact-form__channel" href={`mailto:${contact}`}>
+            <span className="contact-form__channel-label">E-Mail</span>
+            {contact}
+          </a>
+        </div>
+
+        <p className="contact-form__prep">
+          Damit wir gut vorbereitet sind: ein paar Fragen vor unserem Gespräch.
         </p>
 
         <form className="contact-form__form" onSubmit={handleSubmit}>
@@ -84,16 +101,8 @@ function ContactForm({ contact }) {
           </div>
 
           <label className="contact-form__field contact-form__row">
-            <span className="contact-form__label">Monatliches Adspend (Meta / TikTok)</span>
-            <select className="contact-form__input contact-form__select" name="adspend" required>
-              <option value="">Bitte wählen</option>
-              <option value="kein-adspend">Noch kein aktiver Adspend</option>
-              <option value="unter-1k">Unter 1.000 €/Monat</option>
-              <option value="1k-5k">1.000 – 5.000 €/Monat</option>
-              <option value="5k-15k">5.000 – 15.000 €/Monat</option>
-              <option value="15k-50k">15.000 – 50.000 €/Monat</option>
-              <option value="ueber-50k">Über 50.000 €/Monat</option>
-            </select>
+            <span className="contact-form__label">Monatliches Adspend (Meta / Google / TikTok)</span>
+            <input className="contact-form__input" type="text" name="adspend" required />
           </label>
 
           <label className="contact-form__field contact-form__row">
@@ -125,21 +134,6 @@ function ContactForm({ contact }) {
             </button>
           </div>
         </form>
-
-        {/* A styled link that goes nowhere is worse than no link — render only when real. */}
-        {!WHATSAPP_NUMBER.startsWith('TODO') && (
-          <div className="contact-form__whatsapp">
-            <p className="contact-form__whatsapp-label">Du erreichst uns auch direkt per WhatsApp:</p>
-            <a
-              className="contact-form__whatsapp-link"
-              href={'https://wa.me/' + WHATSAPP_NUMBER}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              WhatsApp öffnen
-            </a>
-          </div>
-        )}
       </div>
     </section>
   );

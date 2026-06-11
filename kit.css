@@ -538,6 +538,8 @@ section { padding-block: var(--section-y); }
   font-family: var(--font-display); font-weight: 700; font-size: 24px;
   color: var(--ink-soft); margin-bottom: 20px;
 }
+.team__photo--img { overflow: hidden; }
+.team__photo--img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .team__name { font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: -.01em; color: var(--ink); margin: 0 0 4px; }
 .team__role { font-family: var(--font-mono); font-size: 13px; letter-spacing: .01em; color: var(--accent-ink); margin: 0 0 14px; }
 .team__bio { font-family: var(--font-body); font-size: 15px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 16px; text-wrap: pretty; }
@@ -555,7 +557,26 @@ section { padding-block: var(--section-y); }
 
 .contact-form { padding-block: clamp(64px, 10vh, 108px); }
 .contact-form__heading { margin: 0 0 20px; }
-.contact-form__intro { font-size: var(--fs-lede); line-height: 1.5; color: var(--ink-soft); margin: 0 0 48px; text-wrap: pretty; }
+.contact-form__intro { font-size: var(--fs-lede); line-height: 1.5; color: var(--ink-soft); margin: 0 0 28px; text-wrap: pretty; }
+
+/* Direct channels — phone/WhatsApp + email above the form (form is one option, not the only one) */
+.contact-form__channels {
+  display: flex; flex-wrap: wrap; gap: 16px 40px;
+  margin: 0 0 48px; padding-bottom: 32px;
+  border-bottom: 1px solid var(--hair);
+}
+.contact-form__channel {
+  display: flex; flex-direction: column; gap: 4px;
+  font-family: var(--font-body); font-weight: 600; font-size: 16px;
+  color: var(--ink); text-decoration: none;
+  transition: color var(--dur-short) var(--ease-move);
+}
+.contact-form__channel:hover { color: var(--accent-ink); }
+.contact-form__channel-label {
+  font-family: var(--font-mono); font-weight: 400; font-size: 12px;
+  letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft);
+}
+.contact-form__prep { font-size: var(--fs-lede); line-height: 1.5; color: var(--ink-soft); margin: 0 0 40px; text-wrap: pretty; }
 
 .contact-form__form { display: flex; flex-direction: column; gap: 24px; }
 
@@ -575,24 +596,11 @@ section { padding-block: var(--section-y); }
   width: 100%;
 }
 .contact-form__input:focus { border-color: var(--accent); }
-.contact-form__select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236B635A' d='M1 1l5 5 5-5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; cursor: pointer; }
 .contact-form__textarea { resize: vertical; min-height: 140px; }
 
 .contact-form__actions { margin-top: 8px; }
 .contact-form__success { font-size: var(--fs-lede); color: var(--ink); padding-block: clamp(64px, 10vh, 108px); }
 .contact-form__error { font-size: 14px; color: #c0392b; margin: 0; }
-
-.contact-form__whatsapp { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--hair); }
-.contact-form__whatsapp-label { font-size: 15px; color: var(--ink-soft); margin: 0 0 12px; }
-.contact-form__whatsapp-link {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--font-body); font-weight: 600; font-size: 15px;
-  color: var(--ink); text-decoration: none;
-  border: 1.5px solid var(--hair); border-radius: 6px;
-  padding: 10px 18px;
-  transition: border-color var(--dur-short) var(--ease-move), color var(--dur-short) var(--ease-move);
-}
-.contact-form__whatsapp-link:hover { border-color: var(--accent); color: var(--accent-ink); }
 
 @media (max-width: 600px) {
   .contact-form__row--2col { flex-direction: column; gap: 24px; }

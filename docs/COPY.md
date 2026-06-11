@@ -138,19 +138,21 @@ section serves that one test.
 ---
 
 ## Contact page — `kontakt.html` / `ContactForm.jsx`
-*Job: qualify before a call. Form + WhatsApp fallback. Formspree/WhatsApp are still TODO_
-placeholders, but the failure paths are graceful: the WhatsApp block only renders once the
-number is real, and the misconfigured/error states show a clickable mailto fallback.*
+*Job: qualify before a call — but the form is one option, not the only one. Direct channels
+(phone/WhatsApp + email) sit above the form, Schema-M-style (2026-06-11). Formspree is still
+a TODO_ placeholder; the misconfigured/error states show a clickable mailto fallback.*
 - Heading: **Lass uns sprechen.**
-- Intro: **Damit wir gut vorbereitet sind: Ein paar Fragen vor unserem Gespräch.**
+- Intro: **Füll das Formular aus — oder melde dich direkt per Telefon, WhatsApp oder E-Mail.**
+- Channels row: **Telefon / WhatsApp** → +49 171 3120124 (`tel:`) · **E-Mail** → yannick.spiess@icloud.com (`mailto:`)
+- Prep line (below the channels divider — only relevant once you commit to the form):
+  **Damit wir gut vorbereitet sind: ein paar Fragen vor unserem Gespräch.**
 - Fields: Vorname · Nachname · E-Mail · Telefon (optional) · Brand / Unternehmen ·
-  Deine Rolle (optional) · Monatliches Adspend (Meta / TikTok, select) ·
+  Deine Rolle (optional) · Monatliches Adspend (Meta / Google / TikTok — free input, no preset ranges) ·
   Projektbeschreibung · Weitere Ansprechpartner (optional)
 - Submit: **Anfrage senden** / sending: **Wird gesendet…**
 - Success: **Danke für deine Anfrage — wir melden uns in der Regel innerhalb von 24 Stunden.**
 - Error: **Etwas ist schiefgelaufen. Bitte versuche es erneut — oder schreib uns direkt an [E-Mail-Adresse].**
 - Misconfigured (pre-launch only): **Das Formular ist noch nicht fertig eingerichtet. Schreib uns direkt an [E-Mail-Adresse] — wir melden uns.**
-- WhatsApp (renders only once the number is configured): **Du erreichst uns auch direkt per WhatsApp:** → **WhatsApp öffnen**
 
 ---
 
