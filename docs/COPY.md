@@ -133,7 +133,7 @@ section serves that one test.
 - CTA: **Audit starten** → `/kontakt.html`
 
 ### Footer (every page) — `Footer.jsx`
-- Yannick Spiess · Berlin · yannick.spiess@icloud.com · Impressum · © 2026
+- Yannick Spiess · Berlin · yannick.spiess@icloud.com · Impressum · Datenschutz · © 2026
 
 ---
 
@@ -163,6 +163,14 @@ no marketing copy. `noindex`. Linked from the footer on every page. Add USt-IdNr
 - Sections: Angaben gemäß § 5 DDG (name + address) · Kontakt (Telefon, E-Mail) ·
   Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV · Verbraucherstreitbeilegung
   (nicht bereit oder verpflichtet)
+
+## Privacy page — `datenschutz.html` / `Datenschutz.jsx`
+*Job: GDPR privacy policy (Art. 13 DSGVO), standard legal text in Sie-form. Truthful because
+fonts + JS are self-hosted (2026-06-11) — if a third-party embed is ever added, update §2 here.*
+- Heading: **Datenschutzerklärung**
+- Sections: 1 Verantwortlicher · 2 Allgemeine Hinweise (keine Cookies/kein Tracking/lokale
+  Fonts) · 3 Hosting GitHub Pages · 4 Kontaktformular Formspree · 5 E-Mail/Telefon/WhatsApp ·
+  6 SSL/TLS · 7 Ihre Rechte (Art. 15–21, 77 DSGVO; Berliner Aufsichtsbehörde) · 8 Stand
 
 ---
 

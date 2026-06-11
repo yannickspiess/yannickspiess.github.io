@@ -3,15 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kontakt — Yannick Spiess</title>
-<meta name="description" content="Dein nächster Schritt: ein 30-minütiger Audit. Kostenlos, kein Risiko — füll das kurze Formular aus, wir melden uns für einen Termin.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kontakt — Yannick Spiess">
-<meta property="og:description" content="Dein nächster Schritt: ein 30-minütiger Audit. Kostenlos, kein Risiko.">
-<meta property="og:image" content="https://yannickspiess.github.io/assets/og-image.png">
-<meta property="og:url" content="https://yannickspiess.github.io/kontakt.html">
-<meta property="og:locale" content="de_DE">
-<meta name="twitter:card" content="summary_large_image">
+<title>Datenschutzerklärung — Yannick Spiess</title>
+<meta name="description" content="Datenschutzerklärung gemäß DSGVO.">
+<meta name="robots" content="noindex">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="colors_and_type.css">
 <link rel="stylesheet" href="kit.css">
@@ -24,7 +18,7 @@
   <script src="vendor/babel.min.js"></script>
 
   <script type="text/babel" src="Header.jsx"></script>
-  <script type="text/babel" src="ContactForm.jsx"></script>
+  <script type="text/babel" src="Datenschutz.jsx"></script>
   <script type="text/babel" src="Footer.jsx"></script>
 
   <script type="text/babel">
@@ -34,9 +28,9 @@
     function App() {
       return (
         <React.Fragment>
-          <Header wordmark={WORDMARK} homeHref="/" ctaHref="#contact-form" ctaLabel="Zum Formular" />
-          <main id="contact-form">
-            <ContactForm contact={CONTACT} />
+          <Header wordmark={WORDMARK} homeHref="/" ctaHref="/kontakt.html" ctaLabel="Audit starten" />
+          <main>
+            <Datenschutz />
           </main>
           <Footer wordmark={WORDMARK} contact={CONTACT} />
         </React.Fragment>

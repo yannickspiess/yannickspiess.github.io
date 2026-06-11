@@ -48,7 +48,7 @@ Last updated: 2026-06-09 (V4.1 UX-audit pass)
 
 ## Tech Stack
 
-No build step. React 18 + ReactDOM via unpkg CDN. Babel Standalone transpiles JSX in-browser.
+No build step. React 18 + ReactDOM + Babel Standalone, **self-hosted from `vendor/`** (2026-06-11 — hashes verified against the previous unpkg integrity pins). Fonts **self-hosted from `fonts/`** (variable woff2 + `fonts.css`, imported by `colors_and_type.css`). **Do not reintroduce third-party CDNs (unpkg, fonts.googleapis) — the Datenschutzerklärung states that no page-load requests leave the site, and Google-Fonts-via-CDN is the classic German Abmahnung vector.** Babel transpiles JSX in-browser.
 
 - Edit `.jsx` files directly — no compile, no `npm install`.
 - Test: start python server, hard-refresh browser. (Opening `index.html` via `file://` fails — Babel must fetch the `.jsx` files over HTTP.)
@@ -94,7 +94,14 @@ Render order in `App()` inside `index.html` (V4, 2026-06-09):
 | Component | Notes |
 |---|---|
 | `Header.jsx` | `homeHref="/"` `ctaHref="/kontakt.html"` `ctaLabel="Audit starten"` |
-| `Impressum.jsx` | § 5 DDG provider info + § 18 Abs. 2 MStV + Verbraucherstreitbeilegung. `noindex`. Footer links to it from every page. **Add USt-IdNr. once issued.** A Datenschutzerklärung page does not exist yet (GDPR gap: Formspree + Google Fonts CDN). |
+| `Impressum.jsx` | § 5 DDG provider info + § 18 Abs. 2 MStV + Verbraucherstreitbeilegung. `noindex`. Footer links to it from every page. **Add USt-IdNr. once issued.** |
+
+**Fourth page — `datenschutz.html`** (added 2026-06-11):
+
+| Component | Notes |
+|---|---|
+| `Header.jsx` | `homeHref="/"` `ctaHref="/kontakt.html"` `ctaLabel="Audit starten"` |
+| `Datenschutz.jsx` | GDPR privacy policy (Art. 13 DSGVO), Sie-form. Covers GitHub Pages hosting, Formspree form, direct contact channels; states no cookies/tracking and no third-party page-load requests — true only while fonts + JS stay self-hosted. `noindex`. Footer links to it from every page. |
 
 ---
 
@@ -172,7 +179,7 @@ The PNG overlays the video so phone chrome stays sharp. `border-radius` clips vi
 5. Mobile visual check — loop collapses to vertical at ≤760px; team grid → 1 col at ≤760px; contact form 2-col → 1 col at ≤600px.
 6. `iphone.png` — swap for real mockup if/when available.
 7. Deferred: AI-stance section, founder video, campaign examples, use-case landing pages, Calendly embed on contact page.
-8. **Datenschutzerklärung** — legally required (GDPR): the contact form sends personal data to Formspree (US processor) and fonts load from the Google Fonts CDN. Impressum exists (2026-06-11); the privacy page does not yet.
+8. ~~**Datenschutzerklärung**~~ — ✅ added 2026-06-11 (`datenschutz.html`), together with self-hosting fonts (`fonts/`) and JS libs (`vendor/`) so no page-load request leaves the site. Update the policy if any third-party embed (Calendly, analytics, video CDN) is ever added.
 
 ---
 
