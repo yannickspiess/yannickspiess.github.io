@@ -118,13 +118,19 @@ section serves that one test.
 - H2: **Ein klarer Einstieg, kein Jahresvertrag.**
 - Lead: **Ein typischer Einstieg ist ein 6-Wochen-Sprint: ein Funnel, drei bis fünf Creative-Varianten, eine Iterationsrunde. Genug, um echte Signale zu sehen — ohne großes Commitment im Voraus.**
 
-### 7 · Team — `Team.jsx` `#team`
+### 7 · Zusammenarbeit — `Team.jsx` `#zusammenarbeit`
 *Job: real people = the proof substitute (no testimonials yet). (No eyebrow.)*
-- H2: **Wer das umsetzt.**
-- Lead: **Yannick leitet Strategie und Creative Direction. Für jedes Projekt kommen die richtigen Spezialisten dazu — je nachdem, was das Projekt braucht.**
-- Yannick Spiess — *Creative Director & Strategie* — Strategische Führung, Konzept und Creative Direction.
-- Tommaso — *Kamera & Videografie* — Produktion auf hohem handwerklichen Niveau, von der Kamera bis zum Schnitt. *(surname TODO)*
-- Britney Tan — *Social Media* — Distribution und Präsenz über Meta, TikTok und YouTube — bezahlt und organisch.
+*Hard constraint (2026-08-01): this section must read as **project-based collaboration between
+self-employed people**, never as a standing team or employment. The page is cited as evidence in
+the Gründungszuschuss application and as the KSK Tätigkeitsnachweis, both of which state a
+solo operation without employees. Any rewrite has to keep "freiberuflich / selbstständig /
+pro Projekt beauftragt" intact and stay consistent with Businessplan §2.3.*
+- H2: **Für jedes Projekt die richtige Besetzung.**
+- Lead: **Yannick Spiess führt Strategie und Creative Direction und verantwortet jedes Projekt. Für Dreh und Distribution kommen erfahrene Freiberufler:innen dazu — projektbezogen beauftragt, je nachdem, was die Produktion braucht.**
+- Yannick Spiess — *Creative Direction & Strategie* — Strategische Führung, Konzept und Creative Direction — verantwortet jedes Projekt von Anfang bis Ende.
+- Tommaso Marinaro — *Kamera & Schnitt · projektbezogen* — Kommt für Drehs dazu, die mehr als eine Person brauchen — Kamera und Schnitt auf hohem handwerklichen Niveau.
+- Britney Tan — *Social Media · projektbezogen* — Kommt dazu, wenn ein Projekt laufende Ausspielung braucht — Meta, TikTok und YouTube, bezahlt und organisch.
+- Note (below the grid, hairline rule): **Yannick Spiess arbeitet freiberuflich. Tommaso und Britney sind selbstständig und werden pro Projekt beauftragt.**
 
 ### 8 · Soft close — `SoftClose.jsx` `#lets-talk`
 *Job: one unambiguous CTA.*

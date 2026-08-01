@@ -4,7 +4,7 @@ _For full context (GZS, coaching, business trajectory) see the Obsidian vault:_
 `01 Workspace/Projects/Transition to Freelance/Working Documents/Website — Agent Handoff.md`
 _Vault task note: `01 Workspace/Projects/Transition to Freelance/Tasks/Website-Prototyp V2.md`_
 
-Last updated: 2026-06-09 (V4.1 UX-audit pass)
+Last updated: 2026-08-01 (people section reframed to project-based collaboration)
 
 > **Current state — V4.1.**
 > V4 consolidated 11 → 7 content sections (~36% shorter). V4.1 (Session 4) layered a
@@ -71,7 +71,7 @@ Render order in `App()` inside `index.html` (V4, 2026-06-09):
 | 6 | `LoopDiagram.jsx` | — | 5-stage loop (Audit → Strategie → Produktion → Distribution → Messung & Iteration). **V4.1:** accent follows hover/focus (no auto-cycle); click to expand. **V4:** mobile opens detail inline under the tapped tile (`.loop__inline-expand`, ≤760px); desktop uses the bottom `.loop__expand` panel (scrolled into view on open). |
 | 7 | `Qualify.jsx` | `#fit` | "Für wen das passt" — 3 fit criteria (✓) + 2 not-fit (–). |
 | 8 | `PilotOffer.jsx` | `#pilot` | 4-week sprint entry offer, no fixed price. **V4:** eyebrow removed. Alt background. |
-| 9 | `Team.jsx` | `#team` | 3-person team cards. **V4:** eyebrow removed. Initials-avatar placeholders; LinkedIn links hidden until real URLs are filled (V4.1). |
+| 9 | `Team.jsx` | `#zusammenarbeit` | 3 people, framed as **project-based collaboration between self-employed people** (2026-08-01 — see DECISIONS; the file/CSS keep the `team` names, the rendered page no longer uses the word). Closing note states the setup explicitly. **V4:** eyebrow removed. Initials-avatar placeholders; LinkedIn links hidden until real URLs are filled (V4.1). |
 | 10 | `SoftClose.jsx` | `#lets-talk` | Single CTA button → `/kontakt.html`. |
 | 11 | `Footer.jsx` | — | Wordmark · Berlin · contact · © 2026 |
 
@@ -161,7 +161,7 @@ The PNG overlays the video so phone chrome stays sharp. `border-radius` clips vi
 |---|---|---|---|
 | `index.html` | `WORDMARK` | `Yannick Spiess` | ✅ confirmed correct |
 | `index.html` | `CONTACT` | `yannick.spiess@icloud.com` | Temporary — swap when a custom domain/email lands |
-| `Team.jsx` | team photos | Yannick ✅ (`assets/team-yannick.jpg`, 2026-06-11); Tommaso + Britney still initials avatars | Add `photo:` field per member once photos exist |
+| `Team.jsx` | collaborator photos | Yannick ✅ (`assets/team-yannick.jpg`, 2026-06-11); Tommaso + Britney still initials avatars | Add `photo:` field per member once photos exist |
 | `Team.jsx` | LinkedIn URLs | Yannick ✅ (2026-06-11); Tommaso + Britney still `#` (links hidden while `#`) | Replace with real profile URLs |
 | `Team.jsx` | Tommaso's surname | `Tommaso Marinaro` | ✅ filled 2026-06-11 |
 | `ContactForm.jsx` | `FORMSPREE_ENDPOINT` | `'https://formspree.io/f/xojznyvg'` | ✅ filled 2026-06-11 — form submits live (verified with a test submission, HTTP 200 + success state) |
@@ -173,10 +173,10 @@ The PNG overlays the video so phone chrome stays sharp. `border-radius` clips vi
 ## Open Next Steps
 
 1. ~~**Formspree + WhatsApp**~~ — ✅ both filled 2026-06-11; the form submits live (endpoint `xojznyvg`). The misconfigured/mailto branch stays in the code as an inert guard.
-2. **Team placeholders** — Tommaso + Britney photos and LinkedIn URLs in `Team.jsx` (links hidden until real). (~~Tommaso's surname~~ ✅ Marinaro; ~~Yannick photo + LinkedIn~~ ✅ — both 2026-06-11.)
+2. **Collaboration-section placeholders** — Tommaso + Britney photos and LinkedIn URLs in `Team.jsx` (links hidden until real). (~~Tommaso's surname~~ ✅ Marinaro; ~~Yannick photo + LinkedIn~~ ✅ — both 2026-06-11.)
 3. **Niche question for Jacob (Sitzung 3, 2026-06-18)** — sharpen offer to a compound niche vs. start broader? See vault task note.
 4. ~~OG meta tags~~ — done in V4.1 (both heads + `assets/og-image.png`; regenerate via `assets/og-image-gen.html` if the headline changes).
-5. Mobile visual check — loop collapses to vertical at ≤760px; team grid → 1 col at ≤760px; contact form 2-col → 1 col at ≤600px.
+5. Mobile visual check — loop collapses to vertical at ≤760px; `#zusammenarbeit` grid → 1 col at ≤760px; contact form 2-col → 1 col at ≤600px.
 6. `iphone.png` — swap for real mockup if/when available.
 7. Deferred: AI-stance section, founder video, campaign examples, use-case landing pages, Calendly embed on contact page.
 8. ~~**Datenschutzerklärung**~~ — ✅ added 2026-06-11 (`datenschutz.html`), together with self-hosting fonts (`fonts/`) and JS libs (`vendor/`) so no page-load request leaves the site. Update the policy if any third-party embed (Calendly, analytics, video CDN) is ever added.

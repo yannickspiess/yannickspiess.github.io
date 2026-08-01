@@ -521,14 +521,16 @@ section { padding-block: var(--section-y); }
 .fit__list--no li { color: var(--ink-soft); }
 .fit__mk--no { color: var(--ink-soft); font-weight: 600; }
 
-/* Pilot offer */
-.pilot__note {
+/* Pilot offer + Zusammenarbeit footnote (shared muted note under a section) */
+.pilot__note,
+.team__note {
   font-family: var(--font-body); font-size: 15px; line-height: 1.65; color: var(--ink-soft);
   margin: 32px 0 0; max-width: 58ch; text-wrap: pretty;
   padding-top: 28px; border-top: 1px solid var(--hair);
 }
 
-/* Team — 3-up card grid; placeholder initials avatars until photos land */
+/* Zusammenarbeit — 3-up card grid; placeholder initials avatars until photos land.
+   Class names stay `team__*` (styling hooks); the section renders as `#zusammenarbeit`. */
 .team__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 4vw, 48px); margin-top: 52px; }
 .team__card { display: flex; flex-direction: column; }
 .team__photo {

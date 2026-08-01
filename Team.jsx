@@ -1,39 +1,44 @@
-// Team — who's behind the work. Added in V2 per Jacob feedback (3 people for now).
+// Zusammenarbeit — who does the work. Added in V2 per Jacob feedback (3 people for now).
+// Reframed 2026-08-01 from "Team" to project-based collaboration: Tommaso and Britney are
+// self-employed contractors engaged per project, never employees. This section is read as
+// evidence in two applications (Gründungszuschuss, KSK) whose text says "Solo-Betrieb ohne
+// Angestellte" — so nothing here may suggest a standing team or an employment relationship.
+// Must stay consistent with Businessplan §2.3 ("freie Kamera- und Tonleute") and KSK Ziffer 6.
+// Internal class names stay `team__*` — they are styling hooks, not a claim about the setup.
 // A member with `photo` renders the image; otherwise initials avatar. "#" linkedin = hidden link.
 // Still placeholder: Tommaso + Britney photos and LinkedIn URLs.
-// Person-as-identity lives here as texture: system-first, Yannick visible but not the headline.
 const TEAM = [
   {
     initials: 'YS',
     name: 'Yannick Spiess',
-    role: 'Creative Director & Strategie',
-    bio: 'Strategische Führung, Konzept und Creative Direction.',
+    role: 'Creative Direction & Strategie',
+    bio: 'Strategische Führung, Konzept und Creative Direction — verantwortet jedes Projekt von Anfang bis Ende.',
     linkedin: 'https://www.linkedin.com/in/yannick-spiess-15605a312/',
     photo: 'assets/team-yannick.jpg',
   },
   {
     initials: 'TM',
     name: 'Tommaso Marinaro',
-    role: 'Kamera & Videografie',
-    bio: 'Produktion auf hohem handwerklichen Niveau, von der Kamera bis zum Schnitt.',
+    role: 'Kamera & Schnitt · projektbezogen',
+    bio: 'Kommt für Drehs dazu, die mehr als eine Person brauchen — Kamera und Schnitt auf hohem handwerklichen Niveau.',
     linkedin: '#',
   },
   {
     initials: 'BT',
     name: 'Britney Tan',
-    role: 'Social Media',
-    bio: 'Distribution und Präsenz über Meta, TikTok und YouTube — bezahlt und organisch.',
+    role: 'Social Media · projektbezogen',
+    bio: 'Kommt dazu, wenn ein Projekt laufende Ausspielung braucht — Meta, TikTok und YouTube, bezahlt und organisch.',
     linkedin: '#',
   },
 ];
 
 function Team() {
   return (
-    <section id="team">
+    <section id="zusammenarbeit">
       <div className="wrap wrap--wide">
-        <h2 className="h2 reveal">Wer das umsetzt.</h2>
+        <h2 className="h2 reveal">Für jedes Projekt die richtige Besetzung.</h2>
         <p className="lead reveal">
-          Yannick leitet Strategie und Creative Direction. Für jedes Projekt kommen die richtigen Spezialisten dazu — je nachdem, was das Projekt braucht.
+          Yannick Spiess führt Strategie und Creative Direction und verantwortet jedes Projekt. Für Dreh und Distribution kommen erfahrene Freiberufler:innen dazu — projektbezogen beauftragt, je nachdem, was die Produktion braucht.
         </p>
         <div className="team__grid">
           {TEAM.map((m, i) => (
@@ -57,6 +62,10 @@ function Team() {
             </div>
           ))}
         </div>
+        {/* The one line that resolves the Website ↔ Businessplan ↔ KSK contradiction. Keep it. */}
+        <p className="team__note reveal">
+          Yannick Spiess arbeitet freiberuflich. Tommaso und Britney sind selbstständig und werden pro Projekt beauftragt.
+        </p>
       </div>
     </section>
   );

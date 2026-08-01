@@ -4,6 +4,44 @@ Architectural, product, and implementation decisions with rationale.
 
 ---
 
+## 2026-08-01 — The people section is project-based collaboration, not a team
+
+**Decision:** The `#team` section becomes `#zusammenarbeit`. The rendered page no longer contains
+the word "Team" anywhere. Tommaso Marinaro and Britney Tan stay on the page, but are presented as
+self-employed people engaged per project: role lines carry `· projektbezogen`, the lead says
+"Freiberufler:innen … projektbezogen beauftragt", and a closing note under the grid states it
+plainly — *"Yannick Spiess arbeitet freiberuflich. Tommaso und Britney sind selbstständig und
+werden pro Projekt beauftragt."*
+
+**Rationale:** This is not a copy preference, it is a consistency requirement across three
+documents. Yannick decided on 2026-07-30 that Tommaso and Britney are project-based contractors,
+never employees. The Gründungszuschuss business plan says "Solo-Betrieb ohne Angestellte" and
+names them under "freie Kamera- und Tonleute" (§2.3); the KSK questionnaire has Ziffer 6 set to
+`Nein` with a standing constraint of max. 1 employee. This site is public, its URL is printed in
+the business plan (§3.3), and it is the only secured KSK Tätigkeitsnachweis for Ziffer 2.2 — a
+caseworker at the Agentur für Arbeit or the KSK opens it with one click. A "Team" heading next to
+those applications is a visible contradiction.
+
+**What must NOT change:** Tommaso and Britney stay on the page. The existing production capacity
+is an asset in both applications; only the legal shape of the collaboration had to be stated
+correctly. Any future rewrite of this section has to keep "freiberuflich / selbstständig / pro
+Projekt beauftragt" intact — see the hard constraint noted in `docs/COPY.md` §7.
+
+**Scope note:** CSS classes and the component file keep their `team__*` / `Team.jsx` names. They
+are styling hooks, not a claim about the setup, and renaming them would be churn with no effect on
+what a reader or a caseworker sees. The site-wide company "wir" voice is unchanged — with the
+collaboration framing in place it reads as Yannick plus project partners, which is accurate.
+
+---
+
+## 2026-06-10 — Always push after every commit in the same session
+
+**Decision:** Every commit must be followed by `git push origin main` in the same session. Never leave a commit without pushing before ending a session.
+
+**Rationale:** For a solo-developer repo hosted on GitHub Pages, an unpushed commit is effectively lost if the machine fails — the remote is the only backup. Pushing is the last step of every deploy flow; skipping it also means the live site is not updated. This rule is enforced at the session level: commit and push are treated as a single atomic action.
+
+---
+
 ## 2026-06-09 — UX audit pass: conversion plumbing + craft fixes (V4.1)
 
 **Decision:** After a structured UX audit (NN/g-heuristic review + interactive testing), ship one pass of usability/trust fixes:

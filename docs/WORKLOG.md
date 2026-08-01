@@ -2,6 +2,21 @@
 
 > **Note for agents:** This file is reverse-chronological — newest entries are at the top, oldest at the bottom. Always read from the top of the Entries section to find the insertion point. Do not use `tail` to locate where to insert.
 
+## 2026-08-01 (Session 6 — "Team" → Zusammenarbeit, application-consistency fix)
+
+- Scope: one section. Driven by the vault task `website-team-sektion-auf-zusammenarbeit-umstellen` and Yannick's 2026-07-30 decision that Tommaso and Britney are project-based contractors, never employees. The page is public, its URL is in the Gründungszuschuss business plan (§3.3), and it is the only secured KSK Tätigkeitsnachweis (Ziffer 2.2) — a "Team" heading contradicted both applications. Rationale in DECISIONS "2026-08-01".
+- `Team.jsx`:
+  - Section id `#team` → `#zusammenarbeit` (no inbound anchors existed — grepped `href="#team"`, zero hits).
+  - H2 "Wer das umsetzt." → **"Für jedes Projekt die richtige Besetzung."**
+  - Lead rewritten to name the arrangement: "… Für Dreh und Distribution kommen erfahrene Freiberufler:innen dazu — projektbezogen beauftragt, je nachdem, was die Produktion braucht."
+  - Role lines: Tommaso `Kamera & Schnitt · projektbezogen`, Britney `Social Media · projektbezogen`, Yannick `Creative Director & Strategie` → `Creative Direction & Strategie` (function, not job title). Britney's role shortened after the first render wrapped to two lines and pushed her card out of alignment with the other two.
+  - Bios reworded from standing-role phrasing to "kommt dazu, wenn …".
+  - New closing note under the grid: **"Yannick Spiess arbeitet freiberuflich. Tommaso und Britney sind selbstständig und werden pro Projekt beauftragt."** This is the line that resolves the contradiction — flagged in the component comment and in `docs/COPY.md` §7 so a future copy pass doesn't drop it.
+- `kit.css` — `.team__note` added to the existing `.pilot__note` rule (muted note, hairline top rule). No other CSS change; `team__*` class names deliberately kept (styling hooks, invisible to a reader).
+- `docs/COPY.md` §7 retitled to Zusammenarbeit, full copy synced, and given a "hard constraint" block so the KSK/GZS requirement survives future rewrites.
+- Not done on purpose: Tommaso and Britney were **not** removed — the production capacity is an asset in both applications; only the legal shape had to be stated correctly.
+- Verification (local `python3 -m http.server 8765`, Playwright): 0 console errors; `#zusammenarbeit` present, `#team` gone; `document.body.innerText.match(/Team/gi)` → `null` (the word appears nowhere on the rendered page); 3-col grid at 1280px (308px cards, aligned), 1-col at 390px, no horizontal overflow at either width; section screenshot reviewed.
+
 ## 2026-06-09 (Session 4 — UX audit + V4.1 conversion-plumbing pass)
 
 - Scope: Structured UX audit (ui-ux-designer subagent critique + interactive Playwright testing at 1152px/390px), then one implementation pass. Audit verdict: the editorial system is strong; the failures were in the conversion path (chat unfurl → CTA → form) — exactly the journey of the warm-referral audience. Full decision detail in DECISIONS "UX audit pass (V4.1)".
