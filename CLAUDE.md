@@ -9,12 +9,15 @@
 - `docs/COPY.md` is the voice guide + the full site copy in render order. Change copy **holistically** (whole narrative arc in view), never line-by-line in isolation.
 - All copy is prototype-stage (write best-effort, Yannick iterates — no review gate). Keep `docs/COPY.md` and the `.jsx` files in sync in the **same** commit.
 
+## Operating Rules
+
+- **Always push after every commit.** Commit and push are a single atomic action in every session — never end a session with an unpushed commit. The remote is the only backup for a solo-developer repo.
+
 ## Deploy (Default Flow)
 Run this for normal content updates:
 
 ```bash
-# Repo currently lives inside the Obsidian vault (its own git repo, nested in the vault repo):
-cd "/Users/yannickspiess/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian/03 Records/Work/Portfolio/Portfolio Website 2026/yannickspiess.github.io"
+cd "/Users/yannickspiess/Documents/daily app/yannickspiess.github.io"
 git status --short
 git add <changed files>   # avoid `git add -A`: .DS_Store is untracked and not yet in .gitignore
 git commit -m "Update site"
