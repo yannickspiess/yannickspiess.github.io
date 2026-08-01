@@ -118,21 +118,25 @@ section serves that one test.
 - H2: **Ein klarer Einstieg, kein Jahresvertrag.**
 - Lead: **Ein typischer Einstieg ist ein 6-Wochen-Sprint: ein Funnel, drei bis fünf Creative-Varianten, eine Iterationsrunde. Genug, um echte Signale zu sehen — ohne großes Commitment im Voraus.**
 
-### 7 · Zusammenarbeit — `Team.jsx` `#zusammenarbeit`
-*Job: real people = the proof substitute (no testimonials yet). (No eyebrow.)*
-*Hard constraint (2026-08-01): this section must read as **project-based collaboration between
-self-employed people**, never as a standing team or employment. The page is cited as evidence in
-the Gründungszuschuss application and as the KSK Tätigkeitsnachweis, both of which state a
-solo operation without employees. Any rewrite has to keep "freiberuflich / selbstständig /
-pro Projekt beauftragt" intact and stay consistent with Businessplan §2.3.*
-- H2: **Für jedes Projekt die richtige Besetzung.**
-- Lead: **Yannick Spiess führt Strategie und Creative Direction und verantwortet jedes Projekt. Für Dreh und Distribution kommen erfahrene Freiberufler:innen dazu — projektbezogen beauftragt, je nachdem, was die Produktion braucht.**
-- Yannick Spiess — *Creative Direction & Strategie* — Strategische Führung, Konzept und Creative Direction — verantwortet jedes Projekt von Anfang bis Ende.
-- Tommaso Marinaro — *Kamera & Schnitt · projektbezogen* — Kommt für Drehs dazu, die mehr als eine Person brauchen — Kamera und Schnitt auf hohem handwerklichen Niveau.
-- Britney Tan — *Social Media · projektbezogen* — Kommt dazu, wenn ein Projekt laufende Ausspielung braucht — Meta, TikTok und YouTube, bezahlt und organisch.
-- Note (below the grid, hairline rule): **Yannick Spiess arbeitet freiberuflich. Tommaso und Britney sind selbstständig und werden pro Projekt beauftragt.**
+### ~~7 · People section~~ — **removed 2026-08-01**
+*The section that named Tommaso Marinaro and Britney Tan is gone; `Team.jsx` was deleted and the
+page goes straight from the pilot offer to the soft close. Reason: the site is public, its URL is
+printed in the Gründungszuschuss business plan (§3.3) and it is the only secured KSK
+Tätigkeitsnachweis (Ziffer 2.2) — both applications describe a solo operation without employees,
+and naming other people invites a question the page cannot fully answer in a caption. Full
+rationale in `docs/DECISIONS.md`.*
 
-### 8 · Soft close — `SoftClose.jsx` `#lets-talk`
+**Do not reintroduce a people/team section without checking the vault first** (`01 Workspace/
+Projects/Transition to Freelance/`). If one ever returns, it must read as project-based
+collaboration between self-employed people — never a standing team or employment — and stay
+consistent with Businessplan §2.3. The removed copy is recoverable from git history (commit
+`236e9f7` and its successor).
+
+*Consequence for the arc: the site currently has **no proof section at all** — testimonials were
+ruled out (no fake proof) and the real-people substitute is now gone. The proof burden sits
+entirely on the two research stats in §3 and on the specificity of the method in §4.*
+
+### 7 · Soft close — `SoftClose.jsx` `#lets-talk`
 *Job: one unambiguous CTA.*
 - H2: **Dein nächster Schritt: ein 30-minütiger Audit.**
 - Sub: **30 Minuten, kostenlos, kein Risiko. Füll das kurze Formular aus — wir melden uns für einen Termin.**

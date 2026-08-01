@@ -2,7 +2,18 @@
 
 > **Note for agents:** This file is reverse-chronological — newest entries are at the top, oldest at the bottom. Always read from the top of the Entries section to find the insertion point. Do not use `tail` to locate where to insert.
 
-## 2026-08-01 (Session 6 — "Team" → Zusammenarbeit, application-consistency fix)
+## 2026-08-01 (Session 6b — people section removed entirely)
+
+- Yannick reversed the reframing shipped an hour earlier: remove the section instead of rewording it. Rationale in DECISIONS "2026-08-01 (later same day)". Net effect: no third-party names anywhere on the site, which is the unambiguous read for the GZS and KSK applications.
+- `Team.jsx` — **deleted** (`git rm`), not just unregistered. The V4 convention leaves dead files on disk, but this one stayed publicly fetchable at `/Team.jsx` with two people's names in it, which is the whole thing being removed. Recover from history (`236e9f7`) if the section ever returns.
+- `index.html` — `<script src="Team.jsx">` tag and `<Team />` render call removed. Section order is now Hero → Platforms → Warum Video → Loop → Für wen das passt → Pilot → Soft close.
+- `index.html` meta description — "Wie dein internes Video-Team: …" → "Video Ads für Paid Social — Strategie, Produktion und Distribution aus einer Hand. …". It referred to the reader's internal team, not Yannick's, but it was the last "Team" string on a public surface and it no longer matched the V4 hero copy. `og:description` was already clean.
+- `kit.css` — the whole `.team__*` block and the `@media` 1-col override deleted; `.team__note` taken back out of the `.pilot__note` rule; V2-additions header comment updated.
+- Docs — COPY.md §7 replaced by a removal note plus the do-not-reintroduce constraint and a flag that the page now has no proof section at all; HANDOFF section inventory renumbered (SoftClose 10→9, Footer 11→10) with a removal callout, placeholder rows and open-step 2 retired. Also fixed two stale HANDOFF facts found in passing: the local repo path still pointed inside the Obsidian vault, and the V4 backlog still listed the team placeholder fill.
+- Kept on purpose: `assets/team-yannick.jpg` (Yannick's own portrait, now unreferenced — no risk, likely wanted for a founder photo later) and the unrendered legacy files `ProblemStatements.jsx` / `WhatThisMeans.jsx` / `VideoIntro.jsx`.
+- Verification: local `python3 -m http.server` **on a fresh port** — the first check on the old port showed 3 phantom errors (`Team.jsx` 404 + `ReferenceError: Team is not defined`) purely from Babel's per-origin `.jsx` cache serving the stale page; on a fresh origin, 0 console errors. `main > section` order confirmed as the 6 sections above, `#team`/`#zusammenarbeit` both absent, `document.body.innerText.match(/team|tommaso|britney/gi)` → `null`, no horizontal overflow, page height 4352px → 3859px (−11%). Tail screenshot checked: tinted pilot block into the close CTA reads fine with no adjacent same-background clash.
+
+## 2026-08-01 (Session 6 — "Team" → Zusammenarbeit, application-consistency fix) — *superseded the same day by the removal above; kept as the reference if a people section ever returns*
 
 - Scope: one section. Driven by the vault task `website-team-sektion-auf-zusammenarbeit-umstellen` and Yannick's 2026-07-30 decision that Tommaso and Britney are project-based contractors, never employees. The page is public, its URL is in the Gründungszuschuss business plan (§3.3), and it is the only secured KSK Tätigkeitsnachweis (Ziffer 2.2) — a "Team" heading contradicted both applications. Rationale in DECISIONS "2026-08-01".
 - `Team.jsx`:

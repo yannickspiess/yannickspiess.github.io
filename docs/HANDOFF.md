@@ -4,7 +4,7 @@ _For full context (GZS, coaching, business trajectory) see the Obsidian vault:_
 `01 Workspace/Projects/Transition to Freelance/Working Documents/Website — Agent Handoff.md`
 _Vault task note: `01 Workspace/Projects/Transition to Freelance/Tasks/Website-Prototyp V2.md`_
 
-Last updated: 2026-08-01 (people section reframed to project-based collaboration)
+Last updated: 2026-08-01 (people section removed entirely)
 
 > **Current state — V4.1.**
 > V4 consolidated 11 → 7 content sections (~36% shorter). V4.1 (Session 4) layered a
@@ -28,7 +28,7 @@ Last updated: 2026-08-01 (people section reframed to project-based collaboration
 
 **Explicitly skipped (not V3, revisit later):**
 - AI/people framing section
-- Team placeholder fill (photos, LinkedIn, Tommaso surname) — Yannick fills manually
+- ~~Team placeholder fill (photos, LinkedIn, Tommaso surname)~~ — moot: section removed 2026-08-01
 - Calendly embed on contact page (was stretch goal for Item 5)
 
 ---
@@ -39,10 +39,10 @@ Last updated: 2026-08-01 (people section reframed to project-based collaboration
 |---|---|
 | Live URL | https://yannickspiess.github.io |
 | Repo | https://github.com/yannickspiess/yannickspiess.github.io (branch: `main`) |
-| Local repo path | `03 Records/Work/Portfolio/Portfolio Website 2026/yannickspiess.github.io/` (inside the Obsidian vault; it is its own git repo, nested in the vault repo — run git from this folder) |
+| Local repo path | `/Users/yannickspiess/Documents/daily app/yannickspiess.github.io` (moved out of the Obsidian vault; run git from this folder) |
 | Local dev | `python3 -m http.server 8765 --directory "<path-to-repo>"` → http://localhost:8765 |
 | Deploy | `git push origin main` — GitHub Pages auto-deploys (~1 min) |
-| Last deploy | `236e9f7` (2026-08-01) — people section reframed "Team" → Zusammenarbeit (`#zusammenarbeit`), for consistency with the GZS business plan and the KSK application |
+| Last deploy | `PENDING` (2026-08-01) — people section removed entirely (GZS/KSK consistency); supersedes the same-day reframing in `236e9f7` |
 
 ---
 
@@ -71,9 +71,14 @@ Render order in `App()` inside `index.html` (V4, 2026-06-09):
 | 6 | `LoopDiagram.jsx` | — | 5-stage loop (Audit → Strategie → Produktion → Distribution → Messung & Iteration). **V4.1:** accent follows hover/focus (no auto-cycle); click to expand. **V4:** mobile opens detail inline under the tapped tile (`.loop__inline-expand`, ≤760px); desktop uses the bottom `.loop__expand` panel (scrolled into view on open). |
 | 7 | `Qualify.jsx` | `#fit` | "Für wen das passt" — 3 fit criteria (✓) + 2 not-fit (–). |
 | 8 | `PilotOffer.jsx` | `#pilot` | 4-week sprint entry offer, no fixed price. **V4:** eyebrow removed. Alt background. |
-| 9 | `Team.jsx` | `#zusammenarbeit` | 3 people, framed as **project-based collaboration between self-employed people** (2026-08-01 — see DECISIONS; the file/CSS keep the `team` names, the rendered page no longer uses the word). Closing note states the setup explicitly. **V4:** eyebrow removed. Initials-avatar placeholders; LinkedIn links hidden until real URLs are filled (V4.1). |
-| 10 | `SoftClose.jsx` | `#lets-talk` | Single CTA button → `/kontakt.html`. |
-| 11 | `Footer.jsx` | — | Wordmark · Berlin · contact · © 2026 |
+| 9 | `SoftClose.jsx` | `#lets-talk` | Single CTA button → `/kontakt.html`. |
+| 10 | `Footer.jsx` | — | Wordmark · Berlin · contact · © 2026 |
+
+> **Removed 2026-08-01: the people section (`Team.jsx`, formerly slot 9).** Deleted from the repo,
+> not just unregistered — it named third parties on a page that serves as evidence in the
+> Gründungszuschuss and KSK applications, both of which describe a solo operation. Its CSS went
+> with it. Recover from git history (`236e9f7` and its successor) if it ever returns, and read the
+> constraint in `docs/COPY.md` §7 first. **Consequence: the page currently has no proof section.**
 
 **Unregistered in V4 (files left on disk, not rendered):** `VideoIntro.jsx`, `ProblemStatements.jsx`, `WhatThisMeans.jsx`. Their content was merged into the method section (problem framing + Loop stage 01 audit) or dropped (placeholder video). Delete the files or revive by re-adding the `<script>` tag + render call.
 
@@ -161,9 +166,6 @@ The PNG overlays the video so phone chrome stays sharp. `border-radius` clips vi
 |---|---|---|---|
 | `index.html` | `WORDMARK` | `Yannick Spiess` | ✅ confirmed correct |
 | `index.html` | `CONTACT` | `yannick.spiess@icloud.com` | Temporary — swap when a custom domain/email lands |
-| `Team.jsx` | collaborator photos | Yannick ✅ (`assets/team-yannick.jpg`, 2026-06-11); Tommaso + Britney still initials avatars | Add `photo:` field per member once photos exist |
-| `Team.jsx` | LinkedIn URLs | Yannick ✅ (2026-06-11); Tommaso + Britney still `#` (links hidden while `#`) | Replace with real profile URLs |
-| `Team.jsx` | Tommaso's surname | `Tommaso Marinaro` | ✅ filled 2026-06-11 |
 | `ContactForm.jsx` | `FORMSPREE_ENDPOINT` | `'https://formspree.io/f/xojznyvg'` | ✅ filled 2026-06-11 — form submits live (verified with a test submission, HTTP 200 + success state) |
 | `ContactForm.jsx` | `WHATSAPP_NUMBER` | `'491713120124'` | ✅ filled 2026-06-11 — shown in the channels row above the form (`tel:` link; the old WhatsApp button block was removed) |
 | `StatCallout.jsx` | Flowkey numbers | not used (external-study stats only) | Optional: if real internal metrics exist, add as a separate truthful claim — do NOT relabel the Nielsen/Confect.io numbers |
@@ -173,10 +175,10 @@ The PNG overlays the video so phone chrome stays sharp. `border-radius` clips vi
 ## Open Next Steps
 
 1. ~~**Formspree + WhatsApp**~~ — ✅ both filled 2026-06-11; the form submits live (endpoint `xojznyvg`). The misconfigured/mailto branch stays in the code as an inert guard.
-2. **Collaboration-section placeholders** — Tommaso + Britney photos and LinkedIn URLs in `Team.jsx` (links hidden until real). (~~Tommaso's surname~~ ✅ Marinaro; ~~Yannick photo + LinkedIn~~ ✅ — both 2026-06-11.)
+2. ~~**People-section placeholders**~~ — moot: the section was removed 2026-08-01 (see DECISIONS). `assets/team-yannick.jpg` is kept but unreferenced.
 3. **Niche question for Jacob (Sitzung 3, 2026-06-18)** — sharpen offer to a compound niche vs. start broader? See vault task note.
 4. ~~OG meta tags~~ — done in V4.1 (both heads + `assets/og-image.png`; regenerate via `assets/og-image-gen.html` if the headline changes).
-5. Mobile visual check — loop collapses to vertical at ≤760px; `#zusammenarbeit` grid → 1 col at ≤760px; contact form 2-col → 1 col at ≤600px.
+5. Mobile visual check — loop collapses to vertical at ≤760px; contact form 2-col → 1 col at ≤600px.
 6. `iphone.png` — swap for real mockup if/when available.
 7. Deferred: AI-stance section, founder video, campaign examples, use-case landing pages, Calendly embed on contact page.
 8. ~~**Datenschutzerklärung**~~ — ✅ added 2026-06-11 (`datenschutz.html`), together with self-hosting fonts (`fonts/`) and JS libs (`vendor/`) so no page-load request leaves the site. Update the policy if any third-party embed (Calendly, analytics, video CDN) is ever added.

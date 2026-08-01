@@ -4,7 +4,39 @@ Architectural, product, and implementation decisions with rationale.
 
 ---
 
-## 2026-08-01 — The people section is project-based collaboration, not a team
+## 2026-08-01 (later same day) — Remove the people section entirely
+
+**Decision:** Delete the section instead of reframing it. `Team.jsx` is removed from the repo, its
+`<script>` tag and `<Team />` render call are gone from `index.html`, and the `team__*` CSS block is
+deleted from `kit.css`. The page now runs Hero → Platforms → Warum Video → Loop → Für wen das passt
+→ Pilot → Soft close. Yannick's call, reversing the reframing shipped in `236e9f7` a few minutes
+earlier (which stays in history and remains the reference if the section ever returns).
+
+**Rationale:** Yannick judged removal the safer option. The reframing made the page *accurate* —
+"freiberuflich / selbstständig / pro Projekt beauftragt" — but accuracy still leaves two other
+names on a page that a Gründungszuschuss or KSK caseworker opens as evidence for a solo operation.
+No named third parties means no question to answer. The site loses nothing structural: the offer,
+method, and qualification sections carry the argument, and the section existed only as a
+proof substitute after testimonials were ruled out.
+
+**Known cost — the page now has no proof section.** Testimonials were rejected (no fake proof) and
+the real-people substitute is gone. Proof rests entirely on the two sourced research stats
+(Nielsen, Confect.io) and the specificity of the Loop. If the page starts feeling thin on
+credibility, the answer is real client work or a founder video — not a reinstated people section.
+
+**Also changed:** the `index.html` meta description said "Wie dein internes Video-Team: …". It
+referred to the *reader's* internal team, not Yannick's, but it was the last "Team" string on a
+public surface and it no longer matched the V4 hero copy. Replaced with "Video Ads für Paid
+Social — Strategie, Produktion und Distribution aus einer Hand. …".
+
+**Kept on purpose:** `assets/team-yannick.jpg` (Yannick's own portrait, now unreferenced) stays —
+it carries no risk and is likely wanted again for a founder photo. The unrendered legacy files
+`ProblemStatements.jsx` / `WhatThisMeans.jsx` / `VideoIntro.jsx` also stay as they are; the only
+"Team" wording in them is about the reader's internal team.
+
+---
+
+## ~~2026-08-01 — The people section is project-based collaboration, not a team~~ (superseded same day by the removal decision above; kept for the reasoning and the recoverable copy)
 
 **Decision:** The `#team` section becomes `#zusammenarbeit`. The rendered page no longer contains
 the word "Team" anywhere. Tommaso Marinaro and Britney Tan stay on the page, but are presented as
