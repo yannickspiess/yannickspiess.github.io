@@ -42,7 +42,7 @@ Last updated: 2026-08-01 (people section reframed to project-based collaboration
 | Local repo path | `03 Records/Work/Portfolio/Portfolio Website 2026/yannickspiess.github.io/` (inside the Obsidian vault; it is its own git repo, nested in the vault repo — run git from this folder) |
 | Local dev | `python3 -m http.server 8765 --directory "<path-to-repo>"` → http://localhost:8765 |
 | Deploy | `git push origin main` — GitHub Pages auto-deploys (~1 min) |
-| Last deploy | `c2ec1b8` (2026-06-11) — Datenschutzerklärung + self-hosted fonts/JS (no third-party page-load requests) |
+| Last deploy | `236e9f7` (2026-08-01) — people section reframed "Team" → Zusammenarbeit (`#zusammenarbeit`), for consistency with the GZS business plan and the KSK application |
 
 ---
 
