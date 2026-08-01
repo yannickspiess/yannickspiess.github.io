@@ -42,7 +42,7 @@ Last updated: 2026-08-01 (people section removed entirely)
 | Local repo path | `/Users/yannickspiess/Documents/daily app/yannickspiess.github.io` (moved out of the Obsidian vault; run git from this folder) |
 | Local dev | `python3 -m http.server 8765 --directory "<path-to-repo>"` → http://localhost:8765 |
 | Deploy | `git push origin main` — GitHub Pages auto-deploys (~1 min) |
-| Last deploy | `PENDING` (2026-08-01) — people section removed entirely (GZS/KSK consistency); supersedes the same-day reframing in `236e9f7` |
+| Last deploy | `b5c44c6` (2026-08-01) — people section removed entirely (GZS/KSK consistency); supersedes the same-day reframing in `236e9f7` |
 
 ---
 
