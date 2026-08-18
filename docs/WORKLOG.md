@@ -2,6 +2,80 @@
 
 > **Note for agents:** This file is reverse-chronological — newest entries are at the top, oldest at the bottom. Always read from the top of the Entries section to find the insertion point. Do not use `tail` to locate where to insert.
 
+## 2026-08-18 (Session 8 — Yannick's review round, then deploy) — ✅ DEPLOYED
+
+- Built a static single-file preview of the staged B+ version (rendered DOM of `/` and
+  `/kontakt.html`, fonts and images inlined as data URIs, loop details forced open, hero video
+  as a still) and published it as a private artifact so Yannick could read the change on his
+  phone. He reviewed it there and dictated the revisions below.
+- **"Film" → "Video" across every customer-facing string.** `Hero.jsx` (H1 accent word, iPhone
+  alt), `HowItWorks.jsx` (H2 accent word), `LoopDiagram.jsx` (stages 01, 03, 04, 05),
+  `Qualify.jsx`, `ContactForm.jsx` field label, `index.html` `<title>` + meta + OG,
+  `assets/og-image-gen.html`. Craft vocabulary untouched — that is where the KSK evidence sits.
+- `Hero.jsx` — subline lost "Die Kampagne fährst du" and gained **"Für Werbekampagnen auf Paid
+  Social."** ⚠️ Yannick asked for the paid-media context ("sonst ist nicht ganz so klar, worum
+  es eigentlich geht") but said he was unsure of the wording; **this sentence is the agent's,
+  not his.** Flagged in COPY.md as the one open string on the page. Secondary CTA "So arbeite
+  ich" → **"Mehr erfahren"**.
+- `Proof.jsx` — "Die Kanäle, auf denen deine Filme laufen." → **"Die Kanäle, auf die ich mich
+  spezialisiert habe."** 🔴 Yannick's spoken version was "auf die **wir** spezialisiert sind";
+  he switched to "ich" as soon as the Befund-1 conflict was named.
+- `LoopDiagram.jsx` — stage 02 desc lost "Die Form, bevor gedreht wird."; its detail opener
+  "Aus dem Stoff wird eine Form:" → "Aus der Recherche wird ein Plan:". **Stage 05's explicit
+  boundary sentence removed** ("Die Ausspielung fährst du — Mediaplanung und Kampagnensteuerung
+  liegen bei dir oder deiner Agentur") in favour of "in den Formaten und Längen der Kanäle, auf
+  denen sie laufen sollen." A quieter replacement was offered and declined. Return line →
+  "Das Ergebnis der ersten Runde fließt in die nächste ein". Header comment rewritten to warn
+  that the boundary is now structural only.
+- `Qualify.jsx` — **"Weniger passend" block deleted entirely** (label, `notFit` array, second
+  `<ul>`). Both lines were load-bearing KSK evidence; fit bullet 3 ("gestalterischen Spielraum
+  geben") now carries the *eigenschöpferischer Spielraum* signal alone. Header comment says so.
+- `Impressum.jsx` + `Datenschutz.jsx` — **three "Wir" survivors** the morning pass missed
+  (Streitbeilegung, Formspree-Speicherdauer, Stand). Now "ich". "Lass uns sprechen" and "vor
+  unserem Gespräch" in `ContactForm.jsx` are second-person-plural *us* and correctly stay.
+- `assets/og-image.png` regenerated for the "Videos" headline (headless Chrome, 1200×630);
+  render checked, fonts and vermilion accent correct.
+- Docs — `CLAUDE.md`, `docs/COPY.md`, `docs/DECISIONS.md` all updated. The two guard-rails that
+  changed meaning are called out explicitly rather than quietly edited: the media-services rule
+  now states the page says this nowhere, and COPY.md §5 records what the deleted counter-list
+  used to carry.
+- Verification: local `python3 -m http.server`, both pages rendered — 0 console errors, Babel
+  compiled every component, full rendered text read back against the redlist, grep sweep for
+  banned vocabulary and for `wir/uns/unser` across all `.jsx`/`.html` (excluding `legacy/`,
+  `vendor/`, `docs/`) clean.
+- **Known, accepted:** the page now contains no sentence stating that media planning and
+  campaign management are not his work. Befund 2 is defended structurally (no Distribution
+  stage, no Messung stage) and nothing else. Named before the decision; Yannick accepted it.
+
+## 2026-08-18 (Session 7 — Weg B+: copy rebuilt on the KSK line) — ✅ SHIPPED, WITH REVISIONS
+
+> **Superseded in part by Session 8 above.** This entry describes what was *staged* on the
+> morning of 08-18. Yannick chose B+ that afternoon but revised the copy first — "Video"
+> instead of "Film", and both explicit media-boundary strings removed. **Where this entry
+> and Session 8 disagree, Session 8 is what is live.** Rationale in DECISIONS
+> "2026-08-18 — Weg B+" and "2026-08-18 (later) — Yannick's revision".
+
+- Scope: every public copy surface. Driven by the finding in the vault note `KSK
+  Künstlereigenschaft — Rechtsgrundlagen und Nachweisstrategie` §6.4 — the site was
+  structurally arguing the opposite of the KSK application, and the `<title>` was the
+  smallest part of it.
+- `index.html` — `<title>`, meta description, `og:title`, `og:description`.
+- `Hero.jsx` — H1, subline (now carries the boundary: "Die Kampagne fährst du"), both CTAs, iPhone alt text.
+- `Proof.jsx` — platform label reframed so the channels are where the films *play*, not a service offered.
+- `HowItWorks.jsx` — H2 "Es funktioniert als Loop, nicht als Projekt" → "So entsteht ein Film"; intro rewritten off the measurement framing.
+- `LoopDiagram.jsx` — **the structural change.** All five stages replaced: Audit · Strategie · Produktion · Distribution · Messung & Iteration → **Recherche & Stoff · Buch & Konzept · Regie & Bildgestaltung · Schnitt & Fassungen · Übergabe.** Stage 05 states the scope boundary. Return line rewritten. Header comment now warns future agents not to let media work migrate back into stages 01–04. `.loop` is a flexbox, so the tile count was never load-bearing — five kept for rhythm.
+- `Qualify.jsx` — both not-fit lines replaced with ones that do double duty as KSK evidence (no hand-for-hire execution; no media services); fit list off "Creative-Output"/"Ad-Volumen".
+- `PilotOffer.jsx` — H2 dropped its "kein"-negation; lead rewritten off Funnel/Creative-Varianten/Iterationsrunde onto Stoff/Dreh/Schnittfassungen.
+- `SoftClose.jsx`, `Header.jsx`, `impressum.html`, `datenschutz.html` — "Audit starten" → "Erstgespräch anfragen" in all six places it appeared (two were hardcoded `ctaLabel` overrides on the legal pages, easy to miss).
+- `ContactForm.jsx` — **"Monatliches Adspend (Meta / Google / TikTok)" field removed** (Befund 3), replaced by "Wo soll der Film laufen? (Kanäle, Längen, Formate)"; Projektbeschreibung → "Worum geht es? (Produkt, Anlass, Idee)"; "wir" → "ich" in the prep line, success, error and misconfigured states. Formspree field name `adspend` → `einsatz`.
+- `kontakt.html` — meta description and `og:description` still advertised the 30-minute Audit.
+- `Datenschutz.jsx` — "wir/uns" → "ich/mir" (6 places). Legal substance unchanged; a sole trader in the plural was inaccurate anyway and it was the last "wir" on a public indexed page. **Flagging this one for Yannick — it is legal text and the only edit here that is arguably out of scope.**
+- **Deleted `ProblemStatements.jsx` and `WhatThisMeans.jsx`** (`git rm`). Unrendered since V4 but tracked, so GitHub Pages served them verbatim — carrying "Ein echtes Growth-System", "Wir iterieren … Performance-Daten", "als wären wir dein internes Team", "30-minütiger Audit", "Kanäle & Funnel", "Creatives & Markenauftritt". This **reverses** the explicit "kept on purpose" from the 2026-08-01 entry below, which assessed them on the Team axis only. `VideoIntro.jsx` has no redlisted copy and stays; its stale comment was fixed, as was one in `StatCallout.jsx`.
+- `assets/og-image-gen.html` + **`assets/og-image.png` regenerated** — the share card still showed the old headline and "Strategie · Produktion · Distribution". Rendered headless at 1200×630 (`Google Chrome --headless=new --screenshot --window-size=1200,630`), fonts and vermilion accent verified in the output.
+- Docs — `CLAUDE.md` now carries the KSK line as a hard constraint block that explicitly outranks the other copy rules and flags that the voice rule was **inverted**; `docs/COPY.md` gets the same constraint at the top, the flipped voice rule, and the full copy updated in render order with notes on which lines are load-bearing; `DECISIONS.md` gets the full rationale. `AGENTS.md` is `@CLAUDE.md`, so it inherits.
+- Verification: local `python3 -m http.server 8765`, both pages loaded in a browser — **0 console errors**, Babel compiled all components, full rendered text of `/` and `/kontakt.html` read back and checked against the redlist. Grep sweep for the banned vocabulary across all `.jsx`/`.html` (excluding `legacy/`, `vendor/`, `docs/`) returns clean.
+- **Not done (vault-side, deliberately out of repo scope):** `KSK ↔ Businessplan — Konsistenzmatrix` §E, and the Businessplan §3.3 website status which still reads "In Aufbau".
+
 ## 2026-08-01 (Session 6b — people section removed entirely)
 
 - Yannick reversed the reframing shipped an hour earlier: remove the section instead of rewording it. Rationale in DECISIONS "2026-08-01 (later same day)". Net effect: no third-party names anywhere on the site, which is the unambiguous read for the GZS and KSK applications.

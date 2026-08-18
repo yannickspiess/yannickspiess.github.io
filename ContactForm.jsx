@@ -36,7 +36,7 @@ function ContactForm({ contact }) {
       <section className="contact-form">
         <div className="wrap wrap--narrow">
           <p className="contact-form__success">
-            Danke für deine Anfrage — wir melden uns in der Regel innerhalb von 24 Stunden.
+            Danke für deine Anfrage — ich melde mich in der Regel innerhalb von 24 Stunden.
           </p>
         </div>
       </section>
@@ -63,7 +63,7 @@ function ContactForm({ contact }) {
         </div>
 
         <p className="contact-form__prep">
-          Damit wir gut vorbereitet sind: ein paar Fragen vor unserem Gespräch.
+          Damit ich gut vorbereitet bin: ein paar Fragen vor unserem Gespräch.
         </p>
 
         <form className="contact-form__form" onSubmit={handleSubmit}>
@@ -101,12 +101,12 @@ function ContactForm({ contact }) {
           </div>
 
           <label className="contact-form__field contact-form__row">
-            <span className="contact-form__label">Monatliches Adspend (Meta / Google / TikTok)</span>
-            <input className="contact-form__input" type="text" name="adspend" required />
+            <span className="contact-form__label">Wo soll das Video laufen? (Kanäle, Längen, Formate)</span>
+            <input className="contact-form__input" type="text" name="einsatz" required />
           </label>
 
           <label className="contact-form__field contact-form__row">
-            <span className="contact-form__label">Projektbeschreibung</span>
+            <span className="contact-form__label">Worum geht es? (Produkt, Anlass, Idee)</span>
             <textarea className="contact-form__input contact-form__textarea" name="projektbeschreibung" rows="5" required />
           </label>
 
@@ -117,14 +117,14 @@ function ContactForm({ contact }) {
 
           {status === 'error' && (
             <p className="contact-form__error">
-              Etwas ist schiefgelaufen. Bitte versuche es erneut — oder schreib uns direkt
+              Etwas ist schiefgelaufen. Bitte versuche es erneut — oder schreib mir direkt
               an <a className="ilink" href={`mailto:${contact}`}>{contact}</a>.
             </p>
           )}
           {status === 'misconfigured' && (
             <p className="contact-form__error">
-              Das Formular ist noch nicht fertig eingerichtet. Schreib uns direkt
-              an <a className="ilink" href={`mailto:${contact}`}>{contact}</a> — wir melden uns.
+              Das Formular ist noch nicht fertig eingerichtet. Schreib mir direkt
+              an <a className="ilink" href={`mailto:${contact}`}>{contact}</a> — ich melde mich.
             </p>
           )}
 

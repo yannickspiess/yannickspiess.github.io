@@ -1,5 +1,5 @@
 // VideoIntro — podcast/interview video placeholder. Builds trust by showing Yannick in conversation.
-// Placed after StatCallout, before ProblemStatements.
+// Unregistered since V4 — not rendered on any page.
 // YouTube embed: placeholder until a dedicated episode is produced.
 function VideoIntro() {
   return (

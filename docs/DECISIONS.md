@@ -4,6 +4,161 @@ Architectural, product, and implementation decisions with rationale.
 
 ---
 
+## 2026-08-18 (later) — Yannick's revision: "Video", and the boundary goes implicit
+
+**Decision:** Ship B+, with four changes Yannick made after reading the rendered preview.
+Two are cosmetic. Two move KSK evidence off the page, knowingly.
+
+**1 · "Video", not "Film", as the customer-facing noun.** Yannick: "Video ist so ein bisschen
+der gängigere Begriff." Applied throughout — H1, section 4, all five stages, the fit list,
+`<title>`/OG, the contact-form field, the OG image. **Cost: near zero.** The KSK evidence was
+never in the word "Film"; it is in Stoff, Buch, Treatment, Storyboard, Regie, Bildgestaltung,
+Kadrage, Dreh, Schnitt, Montage, Fassungen — all unchanged. "Warum Video" and the pullquote
+already said "Video" and were never flagged in §6.4.
+
+**2 · The stage-05 disclaimer is gone.** "Die Ausspielung fährst du — Mediaplanung und
+Kampagnensteuerung liegen bei dir oder deiner Agentur" → "in den Formaten und Längen der
+Kanäle, auf denen sie laufen sollen." A quieter replacement ("Geschaltet werden sie von dir")
+was offered and **explicitly declined**.
+
+**3 · The "Weniger passend" counter-list is gone entirely.** Both lines removed. The first was
+the *eigenschöpferischer Spielraum* test from §3.2; the second declined media services.
+
+> 🔴 **2 and 3 together are the real cost of this round, and it was named before the call was
+> made.** The page now contains **no sentence anywhere** that says media work is not his. What
+> defends Befund 2 is purely structural: the loop has no Distribution stage and no Messung
+> stage, and nothing on offer is a media service. That is genuinely the larger half of the
+> original finding — Befund 2 was about the *shape* of the loop — but the explicit half is
+> gone, and there is no slack left. Any sixth stage, reporting mention, or media line re-opens
+> it outright.
+>
+> 🟢 **The Spielraum signal survives** in fit bullet 3: "die gestalterischen Spielraum geben —
+> und dafür eine eigene Handschrift bekommen." Same test, stated positively. That string is now
+> load-bearing on its own.
+
+**4 · "wir" was proposed and withdrawn.** Yannick's spoken wording for the platform label was
+"die Kanäle, auf die **wir** spezialisiert sind". Flagged as Befund 1 — the exact word the
+whole review turned on — and he switched to "ich" immediately. Shipped as "Die Kanäle, auf die
+ich mich spezialisiert habe." Worth recording because it shows how naturally the company voice
+returns in speech.
+
+**Also in this round:** the hero subline lost "Die Kampagne fährst du" (per 2) and gained "Für
+Werbekampagnen auf Paid Social" — Yannick's own concern that the page otherwise never says
+what kind of work this is. ⚠️ **That sentence is the agent's wording, not his**; he said he was
+"noch nicht so sicher" about the subline and signed off on shipping anyway. It is the one open
+string on the page. Naming the advertising purpose is Layer 2 (harmless, never denied) — it
+says where the videos run, not what he operates — but it should be re-read before the KSK
+bundle is printed.
+
+Three "Wir" survivors were also found and fixed in `Impressum.jsx` and `Datenschutz.jsx`
+(legal boilerplate the morning pass missed). "Lass uns sprechen" / "unserem Gespräch" in the
+contact form are second-person-plural *us*, not company voice, and stay.
+
+## 2026-08-18 — Weg B+: the KSK line becomes a standing constraint on the copy
+
+**Status: SHIPPED 2026-08-18.** Yannick chose **B+** after reviewing a rendered preview,
+then revised the copy in a second round (see "2026-08-18 (later) — Yannick's revision"
+below). Deployed with those revisions folded in.
+
+**Decision:** Rebuild the site's copy so it is consistent with the KSK Künstlereigenschaft
+line, and record that line as a permanent constraint on all future copy — in `CLAUDE.md`,
+in `docs/COPY.md`, and here. This is **Weg B+** from the vault note `KSK Künstlereigenschaft
+— Rechtsgrundlagen und Nachweisstrategie` §6.4.
+
+**Rationale.** On 2026-08-02 this looked like a ten-minute job: change the `<title>`, then
+print the page as evidence (Weg B). On 2026-08-04 the *source* was read for the first time
+rather than the rendered page, and the finding was structural — three problems, each
+independently sufficient:
+
+1. **The site was deliberately a company voice.** The voice rule in `docs/COPY.md` read, in
+   full: *"Company voice, never 'ich' … the site is a company, not a personal portfolio."*
+   That is the exact opposite of what the KSK application claims, and "wir" works against
+   Fragebogen Ziffer 6 ("keine Beschäftigten") and the one-employee ceiling of § 1 Nr. 2 KSVG.
+2. **The Loop described the full performance-marketing cycle.** Audit → Strategie →
+   Produktion → Distribution → Messung & Iteration. Of five stages, **one** was making a
+   film. Stages 1, 4 and 5 were, by name, the three services that §5 of the KSK
+   Tätigkeitsbeschreibung explicitly disclaims.
+3. **The contact form collected "Monatliches Adspend (Meta / Google / TikTok)."** A form that
+   asks for the client's media budget reads as a media-services intake, not a commission for
+   a work.
+
+**Why "just don't submit the page" was never an option.** The URL is printed in the
+Gründungszuschuss business plan §3.3 and therefore reaches the Arbeitsagentur; the Impressum
+is public and indexed; the domain is trivially findable from the name. The KSK asks for "ein
+möglichst genaues Bild von Ihrer Tätigkeit" and takes three to six months to look. Leaving
+the page out of the evidence bundle does not hide it. Conversely BSG 04.06.2019 – B 3 KS 2/18
+R names an "Internetauftritt" as admissible proof of serious professional intent — so the
+question was never whether to expose the site, only whether it would count for or against.
+
+**The trade-off, stated honestly:** this is the live client-acquisition surface, and the
+business plan claims viability in the paid-social video market. Giving up the claim on media
+management could cost clients. Three things make the cost smaller than it looks — the site's
+own voice guide already listed "Growth-System" as a buzzphrase to avoid; the defined reader is
+a **warm referral**, not a media buyer, who wants to understand the offer in 30–60 seconds;
+and the media-management claim was independently flagged in the vault's KSK ↔ Businessplan
+consistency matrix §C as the line that burdens the KV-Hauptberuf test. "Ich entwerfe und
+produziere die Filme; die Kampagne fährst du" is **clearer** for that reader, not weaker.
+
+### What changed
+
+| Area | Before | After |
+|---|---|---|
+| **Voice** | "wir", company voice, no first person singular | **"ich"** throughout, incl. `Datenschutz.jsx` |
+| **`<title>`** | Yannick Spiess — Video-Wachstumssysteme | Yannick Spiess — Filme für Marken und Kampagnen |
+| **Hero H1** | Mach *Video* zu deinem verlässlichen Kanal für neue Kunden. | Ich entwerfe und produziere die *Filme* für deine Kampagnen. |
+| **Hero subline** | Strategie, Produktion und Distribution aus einer Hand. | … bis zum Schnitt — aus einer Hand. **Die Kampagne fährst du.** |
+| **Method section** | "Es funktioniert als Loop, nicht als Projekt" | **So entsteht ein Film.** |
+| **The five stages** | Audit · Strategie · Produktion · Distribution · Messung & Iteration | **Recherche & Stoff · Buch & Konzept · Regie & Bildgestaltung · Schnitt & Fassungen · Übergabe** |
+| **CTA (all six places)** | Audit starten | Erstgespräch anfragen |
+| **Contact form** | Monatliches Adspend (Meta / Google / TikTok), required | **Wo soll der Film laufen? (Kanäle, Längen, Formate)** |
+| **Not-fit list** | einzelner Clip ohne System · Markt nicht validiert | **fertiges Storyboard, sucht nur eine Kamera · will Mediaplanung mitbestellen** |
+| **OG image** | old headline + "Strategie · Produktion · Distribution" | regenerated: new headline + "Stoff · Buch · Regie · Schnitt" |
+
+**Stage 05 "Übergabe" is where the boundary is drawn** — "Die Ausspielung fährst du —
+Mediaplanung und Kampagnensteuerung liegen bei dir oder deiner Agentur." It states the scope
+positively rather than as a "keine X"-negation, which the voice guide also forbids. If a
+future edit lets media work migrate back into stages 01–04, the section has regressed.
+
+**The two not-fit lines are load-bearing.** "Wer ein fertiges Storyboard hat und nur noch eine
+Kamera sucht" says he is not a hand for hire executing someone else's board — which is exactly
+the *eigenschöpferischer Spielraum* test from §3.2 (Bayerisches LSG 20.05.2025 i. V. m. BFH
+15.10.1998) that decides the case. It reads as ordinary qualification copy. Keep it.
+
+### 🔴 Reverses a "kept on purpose" from 2026-08-01
+
+The people-section decision below explicitly kept `ProblemStatements.jsx` and
+`WhatThisMeans.jsx` on disk, reasoning that "the only 'Team' wording in them is about the
+reader's internal team." **That assessment was correct on the Team axis and wrong on every
+other one.** Both files are tracked, unrendered since V4, and therefore served verbatim by
+GitHub Pages at their own URLs. `ProblemStatements.jsx` contained:
+
+> "Ein echtes **Growth-System** bedeutet: Jedes Video lernt vom letzten. **Wir iterieren**
+> kontinuierlich auf Basis echter **Performance-Daten**…"
+> "Wir denken Strategie, Produktion und **Distribution** als Einheit — und liefern so, **als
+> wären wir dein internes Team**."
+
+and `WhatThisMeans.jsx` carried "30-minütiger **Audit**", "Kanäle & **Funnel**", "**Creatives**
+& Markenauftritt". That is the redlist almost in its entirety, publicly fetchable, on the
+single axis that matters most here. **Both files are deleted** (`git rm`) rather than left in
+place. They are recoverable from history if the V4 merge ever needs re-examining.
+
+`VideoIntro.jsx` is also unregistered but contains no redlisted copy; it is left alone. Its
+stale comment pointing at the deleted files was fixed.
+
+### Cost and open items
+
+- **The proof gap widens.** The Loop's specificity was carrying part of the credibility load;
+  the craft stages are more honest but less differentiating to a founder. The right answer is
+  now clearly a **Werkliste or reel of actual films** — which would serve the reader and the
+  KSK evidence bundle simultaneously. Needs assets that do not exist on the site yet.
+- **Downstream vault work, not done here:** `KSK ↔ Businessplan — Konsistenzmatrix` §E, and
+  the Businessplan §3.3 website status (Jacob's draft says "In Aufbau"; the site is live since
+  06/2026 and now also KSK-conforming).
+- **Position 8 of the KSK Nachweisbündel** can now be printed as an asset rather than a
+  liability — but that is a separate decision in the bundle's own montage plan §5.
+
+---
+
 ## 2026-08-01 (later same day) — Remove the people section entirely
 
 **Decision:** Delete the section instead of reframing it. `Team.jsx` is removed from the repo, its

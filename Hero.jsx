@@ -34,7 +34,7 @@ function Hero() {
             </video>
             <img
               src="iphone.png"
-              alt="iPhone Mockup — Paid Social Ads"
+              alt="iPhone Mockup — Video im Hochformat"
               className="hero__iphone"
             />
             <button
@@ -49,14 +49,15 @@ function Hero() {
         </div>
         <div className="hero__text">
           <h1 className="hero__title reveal">
-            Mach <span className="hero__hl">Video</span> zu deinem verlässlichen Kanal für neue Kunden.
+            Ich entwerfe und produziere die <span className="hero__hl">Videos</span> für deine Kampagnen.
           </h1>
           <p className="hero__sub reveal">
-            Video Ads für Paid Social — Strategie, Produktion und Distribution aus einer Hand.
+            Von Recherche und Buch über Regie und Bildgestaltung bis zum Schnitt — aus einer Hand.
+            Für Werbekampagnen auf Paid Social.
           </p>
           <div className="hero__cta reveal">
-            <a className="btn btn--primary" href="/kontakt.html">Audit starten</a>
-            <a className="hero__seclink" href="#how">So funktioniert es</a>
+            <a className="btn btn--primary" href="/kontakt.html">Erstgespräch anfragen</a>
+            <a className="hero__seclink" href="#how">Mehr erfahren</a>
           </div>
         </div>
       </div>

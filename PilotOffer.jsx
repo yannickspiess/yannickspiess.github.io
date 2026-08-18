@@ -5,11 +5,11 @@ function PilotOffer() {
   return (
     <section id="pilot" className="alt">
       <div className="wrap">
-        <h2 className="h2 reveal">Ein klarer Einstieg, kein Jahresvertrag.</h2>
+        <h2 className="h2 reveal">Ein klarer Einstieg in die Zusammenarbeit.</h2>
         <p className="lead reveal">
-          Ein typischer Einstieg ist ein 6-Wochen-Sprint: ein Funnel, drei bis fünf
-          Creative-Varianten, eine Iterationsrunde. Genug, um echte Signale zu sehen —
-          ohne großes Commitment im Voraus.
+          Ein typischer Einstieg ist eine erste Arbeit über sechs Wochen: ein Stoff, ein Dreh,
+          drei bis fünf Schnittfassungen für die Formate, die du brauchst. Genug, um zu sehen,
+          wie eine Zusammenarbeit sich anfühlt.
         </p>
       </div>
     </section>

@@ -1,5 +1,5 @@
 // StatCallout — editorial trust block. Two research-backed stats with count-up animation.
-// Sits between PlatformStrip and ProblemStatements.
+// Sits between PlatformStrip and the method section (HowItWorks).
 
 function useCountUp(target, duration, triggered) {
   const [value, setValue] = React.useState(0);

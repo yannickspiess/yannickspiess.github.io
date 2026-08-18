@@ -1,61 +1,66 @@
-// LoopDiagram — five stages. The accent follows hover/focus; stage 01 anchors at rest.
+// LoopDiagram — five stages of the video work (Stoff -> Buch -> Regie -> Schnitt -> Übergabe).
+// The stages are werkbezogen by design: media planning, ad buying and campaign reporting are
+// NOT stages here and must not migrate back in. Yannick removed the explicit "die Ausspielung
+// fährst du" disclaimer on 2026-08-18 — the boundary now rests on those stages being absent,
+// so adding one back is the regression to watch for. See docs/DECISIONS.md
+// "KSK-Linie als Copy-Randbedingung" before touching this array.
+// The accent follows hover/focus; stage 01 anchors at rest.
 // (No auto-timer: cycling every 1.4s repainted faster than a card could be read and made
 // hover/expanded states illegible — the reader drives the motion, not a clock.)
 // Click: expand panel below with detail. Bold key terms animate in with staggered delays.
 const LOOP_STAGES = [
   {
     n: '01',
-    name: 'Audit',
-    desc: 'Produkt, Kunden, Kanäle und Acquisition-Flow verstehen. Bevor ein Video entsteht.',
+    name: 'Recherche & Stoff',
+    desc: 'Produkt, Publikum und Anlass verstehen. Woraus das Video gemacht wird.',
     detail: (
       <React.Fragment>
-        Bevor ein Video entsteht, klären wir die Ausgangslage:{' '}
-        <strong className="kw">Produkt, Zielgruppe, bestehende Kanäle und Acquisition-Flow</strong>. So wissen wir, wo Video wirklich etwas bewegt — und wo nicht.
+        Bevor ein Bild entsteht, klärt sich der Stoff:{' '}
+        <strong className="kw">Produkt, Publikum und der Anlass des Videos</strong>. Daraus wird sichtbar, welche Geschichte überhaupt zu erzählen ist.
       </React.Fragment>
     )
   },
   {
     n: '02',
-    name: 'Strategie',
-    desc: 'Eine Video-Roadmap für Paid Social entwickeln, die zur Situation passt.',
+    name: 'Buch & Konzept',
+    desc: 'Treatment, Buch und Storyboard.',
     detail: (
       <React.Fragment>
-        Wir entwickeln aus dem Audit eine konkrete{' '}
-        <strong className="kw">Video-Roadmap</strong>: welche Formate, welche Botschaften, welche Test-Hypothesen zuerst. Kein Schuss ins Blaue.
+        Aus der Recherche wird ein Plan:{' '}
+        <strong className="kw">Treatment, Buch und Storyboard</strong>, dazu Formatentwürfe für die Längen, die du brauchst.
       </React.Fragment>
     )
   },
   {
     n: '03',
-    name: 'Produktion',
-    desc: 'Das Video machen, auf hohem Niveau.',
+    name: 'Regie & Bildgestaltung',
+    desc: 'Der Dreh. Bildsprache, Licht und die Führung vor der Kamera.',
     detail: (
       <React.Fragment>
-        Von Brief bis Final Cut, konzipiert zum Konvertieren. Wir produzieren{' '}
-        <strong className="kw">mehrere Formate und Hooks gleichzeitig</strong> — damit die Tests direkt in die Distribution fließen. Handwerk und Strategie in einem Durchgang.
+        Am Set entscheidet sich das Video:{' '}
+        <strong className="kw">Bildsprache, Licht, Kadrage und die Führung vor der Kamera</strong>. Für größere Drehs ziehe ich projektbezogen Selbständige hinzu.
       </React.Fragment>
     )
   },
   {
     n: '04',
-    name: 'Distribution',
-    desc: 'Auf Meta, TikTok, YouTube und Co. ausspielen. Bezahlt und organisch.',
+    name: 'Schnitt & Fassungen',
+    desc: 'Montage, Rhythmus, Ton. Mehrere Fassungen aus einem Dreh.',
     detail: (
       <React.Fragment>
-        Kampagnen einrichten, Launch starten, laufend anpassen.{' '}
-        <strong className="kw">Budget, Targeting und Platzierungen werden kontinuierlich optimiert</strong> — nicht einmal eingerichtet und vergessen.
+        In der Montage entstehen{' '}
+        <strong className="kw">Rhythmus, Ton und mehrere Schnittfassungen</strong> — verschiedene Längen und Anfänge für die Plätze, an denen das Video laufen soll.
       </React.Fragment>
     )
   },
   {
     n: '05',
-    name: 'Messung & Iteration',
-    desc: 'Was funktioniert, skalieren. Die Daten fließen zurück in den Audit.',
+    name: 'Übergabe',
+    desc: 'Das fertige Video, in den Formaten, die du brauchst.',
     detail: (
       <React.Fragment>
-        Performance-Daten zeigen, was ankommt und was nicht. Was funktioniert, wird{' '}
-        <strong className="kw">skaliert</strong>. Was nicht, wird{' '}
-        <strong className="kw">iteriert</strong>. Jeder Zyklus macht das System schärfer — das ist der Unterschied zu einem Einzelprojekt.
+        Du bekommst die fertigen Fassungen samt Rohmaterial —{' '}
+        <strong className="kw">in den Formaten und Längen der Kanäle</strong>, auf denen sie laufen sollen.
       </React.Fragment>
     )
   },
@@ -121,7 +126,7 @@ function LoopDiagram() {
         </div>
       )}
       <div className="loop__return">
-        <span>&#8635; Messung &amp; Iteration speist zurück in den Audit</span>
+        <span>&#8635; Das Ergebnis der ersten Runde fließt in die nächste ein</span>
         <span className="arc"></span>
       </div>
     </div>

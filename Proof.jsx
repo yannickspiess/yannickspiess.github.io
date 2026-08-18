@@ -6,7 +6,7 @@ function PlatformStrip() {
   return (
     <div className="plat" id="platforms">
       <div className="wrap wrap--wide">
-        <p className="plat__label reveal">Die Kanäle, auf denen wir arbeiten.</p>
+        <p className="plat__label reveal">Die Kanäle, auf die ich mich spezialisiert habe.</p>
         <div className="pstrip reveal">
 
           <span className="pstrip__logo" title="Instagram">

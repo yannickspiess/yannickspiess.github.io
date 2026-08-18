@@ -4,7 +4,26 @@ _For full context (GZS, coaching, business trajectory) see the Obsidian vault:_
 `01 Workspace/Projects/Transition to Freelance/Working Documents/Website — Agent Handoff.md`
 _Vault task note: `01 Workspace/Projects/Transition to Freelance/Tasks/Website-Prototyp V2.md`_
 
-Last updated: 2026-08-01 (people section removed entirely)
+Last updated: 2026-08-18 (Weg B+ copy rebuild — **deployed**, with Yannick's revisions)
+
+> ## 🔴 Read before changing any copy
+> The site's copy is on the **KSK line** (Weg B+, deployed 2026-08-18). This is a hard
+> constraint, not a style preference — the site is evidence in two pending applications.
+> Read the constraint block in `CLAUDE.md` first. Two things trip people up:
+>
+> - **The voice rule is inverted** from what this repo used to say. First-person singular
+>   ("ich"). "wir" implies staff and contradicts KSK Ziffer 6.
+> - **The media-services boundary is now carried by absence, not by any sentence.** The loop
+>   has no Distribution stage and no Messung stage, and the "Weniger passend" counter-list is
+>   gone. Adding a sixth stage or a reporting line re-opens the original finding outright.
+>
+> The customer-facing noun is **"Video"**, not "Film" (Yannick, 2026-08-18) — the craft
+> vocabulary is what carries the evidence, so this cost nothing. Full reasoning in DECISIONS
+> "2026-08-18 — Weg B+" and "2026-08-18 (later) — Yannick's revision".
+>
+> ⚠️ **One open string:** the hero subline's second sentence, "Für Werbekampagnen auf Paid
+> Social." Yannick asked for the paid-media context but did not settle the wording; this is
+> the agent's. Re-read it before the KSK bundle is printed.
 
 > **Current state — V4.1.**
 > V4 consolidated 11 → 7 content sections (~36% shorter). V4.1 (Session 4) layered a
@@ -42,7 +61,7 @@ Last updated: 2026-08-01 (people section removed entirely)
 | Local repo path | `/Users/yannickspiess/Documents/daily app/yannickspiess.github.io` (moved out of the Obsidian vault; run git from this folder) |
 | Local dev | `python3 -m http.server 8765 --directory "<path-to-repo>"` → http://localhost:8765 |
 | Deploy | `git push origin main` — GitHub Pages auto-deploys (~1 min) |
-| Last deploy | `b5c44c6` (2026-08-01) — people section removed entirely (GZS/KSK consistency); supersedes the same-day reframing in `236e9f7` |
+| Last deploy | 2026-08-18 — Weg B+ copy rebuild on the KSK line, with Yannick's revision round folded in ("Video" not "Film"; both explicit media-boundary strings removed). Supersedes `b5c44c6` (2026-08-01, people section removed). |
 
 ---
 
@@ -68,7 +87,7 @@ Render order in `App()` inside `index.html` (V4, 2026-06-09):
 | 3 | `Proof.jsx` | `#platforms` | `PlatformStrip` — IG / FB / TikTok / YouTube logos. **V4:** label removed (folded into hero). |
 | 4 | `StatCallout.jsx` | — | "Warum Video" eyebrow + pullquote → two research stats (44 % / 612 %, count-up). |
 | 5 | `HowItWorks.jsx` | `#how` | **V4:** merged method section (problem → Loop). No eyebrow. Renders `<LoopDiagram />`. |
-| 6 | `LoopDiagram.jsx` | — | 5-stage loop (Audit → Strategie → Produktion → Distribution → Messung & Iteration). **V4.1:** accent follows hover/focus (no auto-cycle); click to expand. **V4:** mobile opens detail inline under the tapped tile (`.loop__inline-expand`, ≤760px); desktop uses the bottom `.loop__expand` panel (scrolled into view on open). |
+| 6 | `LoopDiagram.jsx` | — | 5 stages of the film work (Recherche & Stoff → Buch & Konzept → Regie & Bildgestaltung → Schnitt & Fassungen → Übergabe). **Stage 05 draws the media-services boundary — do not let media work migrate back into 01–04.** **V4.1:** accent follows hover/focus (no auto-cycle); click to expand. **V4:** mobile opens detail inline under the tapped tile (`.loop__inline-expand`, ≤760px); desktop uses the bottom `.loop__expand` panel (scrolled into view on open). |
 | 7 | `Qualify.jsx` | `#fit` | "Für wen das passt" — 3 fit criteria (✓) + 2 not-fit (–). |
 | 8 | `PilotOffer.jsx` | `#pilot` | 4-week sprint entry offer, no fixed price. **V4:** eyebrow removed. Alt background. |
 | 9 | `SoftClose.jsx` | `#lets-talk` | Single CTA button → `/kontakt.html`. |
@@ -80,7 +99,7 @@ Render order in `App()` inside `index.html` (V4, 2026-06-09):
 > with it. Recover from git history (`236e9f7` and its successor) if it ever returns, and read the
 > constraint in `docs/COPY.md` §7 first. **Consequence: the page currently has no proof section.**
 
-**Unregistered in V4 (files left on disk, not rendered):** `VideoIntro.jsx`, `ProblemStatements.jsx`, `WhatThisMeans.jsx`. Their content was merged into the method section (problem framing + Loop stage 01 audit) or dropped (placeholder video). Delete the files or revive by re-adding the `<script>` tag + render call.
+**Unregistered in V4 (files left on disk, not rendered):** `VideoIntro.jsx` only. `ProblemStatements.jsx` and `WhatThisMeans.jsx` were **deleted 2026-08-18** — GitHub Pages served them verbatim at their own URLs and they carried the heaviest KSK-hostile copy on the site ("Growth-System", "Performance-Daten", "als wären wir dein internes Team", "Audit", "Funnel", "Creatives"). Recover from history if the V4 merge needs re-examining. Delete `VideoIntro.jsx` or revive it by re-adding the `<script>` tag + render call.
 
 > **Copy:** all copy is prototype-stage; before any copy change read `docs/COPY.md` (voice guide + full copy in render order) and edit it in the same pass.
 
@@ -168,6 +187,7 @@ The PNG overlays the video so phone chrome stays sharp. `border-radius` clips vi
 | `index.html` | `CONTACT` | `yannick.spiess@icloud.com` | Temporary — swap when a custom domain/email lands |
 | `ContactForm.jsx` | `FORMSPREE_ENDPOINT` | `'https://formspree.io/f/xojznyvg'` | ✅ filled 2026-06-11 — form submits live (verified with a test submission, HTTP 200 + success state) |
 | `ContactForm.jsx` | `WHATSAPP_NUMBER` | `'491713120124'` | ✅ filled 2026-06-11 — shown in the channels row above the form (`tel:` link; the old WhatsApp button block was removed) |
+| `assets/og-image.png` | share card | regenerated 2026-08-18 for the "Videos" headline; deployed |
 | `StatCallout.jsx` | Flowkey numbers | not used (external-study stats only) | Optional: if real internal metrics exist, add as a separate truthful claim — do NOT relabel the Nielsen/Confect.io numbers |
 
 ---

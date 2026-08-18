@@ -1,7 +1,7 @@
 // Header — minimal. Wordmark left, single CTA text link right. Hairline appears on scroll.
-// The CTA defaults to the contact page so "Audit starten" does the same thing everywhere
+// The CTA defaults to the contact page so "Erstgespräch anfragen" does the same thing everywhere
 // it appears (hero, header, soft close) — identical label, identical destination.
-function Header({ wordmark, homeHref = '#top', ctaHref = '/kontakt.html', ctaLabel = 'Audit starten' }) {
+function Header({ wordmark, homeHref = '#top', ctaHref = '/kontakt.html', ctaLabel = 'Erstgespräch anfragen' }) {
   const [scrolled, setScrolled] = React.useState(false);
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);

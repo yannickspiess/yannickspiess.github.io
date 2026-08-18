@@ -1,14 +1,13 @@
-// Qualify — who this is for (and who it isn't). Added in V2 per Jacob feedback:
-// the page was missing an explicit fit statement. Honest, no track-record claims.
+// Qualify — who this is for. Added in V2 per Jacob feedback: the page was missing an
+// explicit fit statement. Honest, no track-record claims.
+// The "Weniger passend" counter-list was removed 2026-08-18 on Yannick's call. Bullet 3
+// ('gestalterischen Spielraum geben') is what now carries the eigenschöpferischer-Spielraum
+// signal — see docs/DECISIONS.md "KSK-Linie als Copy-Randbedingung" before rewriting it.
 function Qualify() {
   const fit = [
     'Gründer:innen und Marketing-Leads bei Startups und Scale-ups',
-    'mit einem Paid-Kanal, der bereits läuft',
-    'die besseren Creative-Output wollen — nicht einfach mehr Ad-Volumen',
-  ];
-  const notFit = [
-    'Wer nur einen einzelnen Clip braucht, ohne System dahinter',
-    'Wer Markt und Produkt noch nicht validiert hat',
+    'die ihre Kanäle bereits bespielen und jetzt bessere Videos brauchen',
+    'die gestalterischen Spielraum geben — und dafür eine eigene Handschrift bekommen',
   ];
   return (
     <section id="fit">
@@ -19,15 +18,6 @@ function Qualify() {
           {fit.map((t, i) => (
             <li key={i}>
               <span className="fit__mk" aria-hidden="true">✓</span>
-              <span>{t}</span>
-            </li>
-          ))}
-        </ul>
-        <p className="fit__not-label reveal">Weniger passend:</p>
-        <ul className="getlist fit__list fit__list--no reveal">
-          {notFit.map((t, i) => (
-            <li key={i}>
-              <span className="fit__mk fit__mk--no" aria-hidden="true">–</span>
               <span>{t}</span>
             </li>
           ))}

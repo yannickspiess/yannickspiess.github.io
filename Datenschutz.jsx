@@ -24,7 +24,7 @@ function Datenschutz() {
           bindet keine Inhalte von Drittanbieter-Servern ein. Schriftarten und Skripte werden
           lokal von dieser Website ausgeliefert; beim Aufruf der Seiten werden keine Daten an
           Google oder andere CDN-Anbieter übertragen. Personenbezogene Daten werden nur
-          verarbeitet, soweit dies technisch erforderlich ist (Hosting) oder Sie sie uns aktiv
+          verarbeitet, soweit dies technisch erforderlich ist (Hosting) oder Sie sie mir aktiv
           mitteilen (Kontaktformular, E-Mail, Telefon, WhatsApp).
         </p>
 
@@ -44,14 +44,14 @@ function Datenschutz() {
 
         <h2 className="legal__subheading">4. Kontaktformular (Formspree)</h2>
         <p className="legal__block">
-          Für das Kontaktformular nutzen wir den Dienst Formspree der Formspree, Inc., USA.
+          Für das Kontaktformular nutze ich den Dienst Formspree der Formspree, Inc., USA.
           Wenn Sie das Formular absenden, werden die von Ihnen eingegebenen Daten (Name,
           E-Mail-Adresse, optional Telefonnummer und Rolle, Unternehmen, Angaben zum Projekt)
-          an Formspree übertragen und von dort per E-Mail an uns weitergeleitet.
+          an Formspree übertragen und von dort per E-Mail an mich weitergeleitet.
           Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Durchführung vorvertraglicher
           Maßnahmen auf Ihre Anfrage) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse
           an der Bearbeitung von Anfragen). Die Übermittlung in die USA erfolgt auf Grundlage
-          der EU-Standardvertragsklauseln. Wir speichern Ihre Anfrage, bis die Bearbeitung
+          der EU-Standardvertragsklauseln. Ich speichere Ihre Anfrage, bis die Bearbeitung
           abgeschlossen ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
           Weitere Informationen finden Sie in der{' '}
           <a className="ilink" href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">
@@ -61,11 +61,11 @@ function Datenschutz() {
 
         <h2 className="legal__subheading">5. Kontakt per E-Mail, Telefon und WhatsApp</h2>
         <p className="legal__block">
-          Wenn Sie uns per E-Mail, Telefon oder WhatsApp kontaktieren, verarbeiten wir Ihre
+          Wenn Sie mich per E-Mail, Telefon oder WhatsApp kontaktieren, verarbeite ich Ihre
           Angaben zur Bearbeitung der Anfrage (Art. 6 Abs. 1 lit. b und f DSGVO). Bei der
           Kommunikation über WhatsApp gelten ergänzend die Datenschutzbestimmungen der
           WhatsApp Ireland Limited; dabei können Daten auf Server von Meta in Drittländer
-          übertragen werden. Die Nutzung von WhatsApp ist freiwillig — Sie können uns
+          übertragen werden. Die Nutzung von WhatsApp ist freiwillig — Sie können mich
           jederzeit stattdessen per E-Mail oder Telefon erreichen.
         </p>
 
@@ -77,7 +77,7 @@ function Datenschutz() {
 
         <h2 className="legal__subheading">7. Ihre Rechte</h2>
         <p className="legal__block">
-          Sie haben gegenüber uns folgende Rechte hinsichtlich der Sie betreffenden
+          Sie haben mir gegenüber folgende Rechte hinsichtlich der Sie betreffenden
           personenbezogenen Daten: Recht auf Auskunft (Art. 15 DSGVO), Berichtigung
           (Art. 16 DSGVO), Löschung (Art. 17 DSGVO), Einschränkung der Verarbeitung
           (Art. 18 DSGVO), Datenübertragbarkeit (Art. 20 DSGVO) sowie Widerspruch gegen die
@@ -90,7 +90,7 @@ function Datenschutz() {
 
         <h2 className="legal__subheading">8. Stand</h2>
         <p className="legal__block">
-          Juni 2026. Wir passen diese Datenschutzerklärung an, wenn sich die Website oder die
+          Juni 2026. Ich passe diese Datenschutzerklärung an, wenn sich die Website oder die
           Rechtslage ändert.
         </p>
       </div>

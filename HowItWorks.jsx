@@ -5,10 +5,10 @@ function HowItWorks() {
   return (
     <section id="how">
       <div className="wrap wrap--wide">
-        <h2 className="h2 reveal">Es funktioniert als <span className="hero__hl">Loop</span>, nicht als Projekt.</h2>
+        <h2 className="h2 reveal">So entsteht ein <span className="hero__hl">Video</span>.</h2>
         <p className="how__intro reveal">
-          Zuerst verstehen, dann handeln. Jede Phase fließt in die nächste &ndash; und was wir messen,
-          schärft die nächste Runde.
+          Jede Arbeit beginnt beim Stoff und endet beim fertigen Schnitt. Was in der einen
+          Arbeit entsteht, prägt die Bildsprache der nächsten.
         </p>
         <div className="reveal">
           <LoopDiagram />

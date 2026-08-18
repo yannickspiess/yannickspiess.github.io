@@ -29,7 +29,7 @@ function Impressum() {
 
         <h2 className="legal__subheading">Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
         <p className="legal__block">
-          Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+          Ich bin nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
           Verbraucherschlichtungsstelle teilzunehmen.
         </p>
       </div>
