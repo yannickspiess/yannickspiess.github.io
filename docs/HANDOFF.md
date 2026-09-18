@@ -4,7 +4,7 @@ _For full context (GZS, coaching, business trajectory) see the Obsidian vault:_
 `01 Workspace/Projects/Transition to Freelance/Working Documents/Website — Agent Handoff.md`
 _Vault task note: `01 Workspace/Projects/Transition to Freelance/Tasks/Website-Prototyp V2.md`_
 
-Last updated: 2026-08-18 (Weg B+ copy rebuild — **deployed**, with Yannick's revisions)
+Last updated: 2026-09-18 (Lern- und Erklärvideos offer added)
 
 > ## 🔴 Read before changing any copy
 > The site's copy is on the **KSK line** (Weg B+, deployed 2026-08-18). This is a hard
@@ -35,6 +35,10 @@ Last updated: 2026-08-18 (Weg B+ copy rebuild — **deployed**, with Yannick's r
 > See WORKLOG Session 4 + DECISIONS "UX audit pass (V4.1)".
 > Validate the section merges with Jacob on 2026-06-18.
 > Before writing or iterating any copy, read `docs/COPY.md` (voice guide + full copy in render order). All copy is prototype-stage — write best-effort, Yannick iterates. No review gate (see the 2026-06-09 German-copy decision).
+
+## Latest change — 18 September 2026
+
+`Qualify.jsx` now includes the linked `#lernvideos` offer: concept, visual didactics, direction, image design and editing for individual topics or learning series. `docs/COPY.md` mirrors the exact copy; `kit.css` provides spacing and heading styling. Desktop (1280px) and mobile (390px) rendering checked; no horizontal overflow or JavaScript errors. No new dependencies. The approved 24-page KSK evidence PDF remains a historical capture from earlier today; this additive web change does not invalidate it.
 
 ---
 

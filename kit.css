@@ -598,3 +598,7 @@ section { padding-block: var(--section-y); }
   margin: 36px 0 10px;
 }
 .legal__block { font-family: var(--font-body); font-size: var(--fs-body); line-height: 1.7; color: var(--ink); margin: 0; }
+
+/* Educational video offer, within the existing fit section. */
+.fit__learning { margin-top: 48px; max-width: 62ch; scroll-margin-top: 100px; }
+.fit__learning h3 { font-family: var(--font-body); font-size: 24px; line-height: 1.3; margin: 0 0 16px; }

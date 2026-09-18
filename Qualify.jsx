@@ -22,6 +22,16 @@ function Qualify() {
             </li>
           ))}
         </ul>
+        <div id="lernvideos" className="fit__learning reveal">
+          <h3>Lern- und Erklärvideos</h3>
+          <p className="lead">
+            Du möchtest Wissen vermitteln oder einen Ablauf verständlich machen? Ich entwickle
+            das Konzept und die visuelle Didaktik: Was wird gezeigt, in welcher Reihenfolge,
+            aus welcher Perspektive? Daraus gestalte ich Lern- und Erklärvideos — von Buch
+            und Regie über Bildgestaltung bis zum Schnitt. Für einzelne Themen oder
+            zusammenhängende Lernreihen.
+          </p>
+        </div>
       </div>
     </section>
   );

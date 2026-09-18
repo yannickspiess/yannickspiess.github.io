@@ -2,6 +2,12 @@
 
 > **Note for agents:** This file is reverse-chronological — newest entries are at the top, oldest at the bottom. Always read from the top of the Entries section to find the insertion point. Do not use `tail` to locate where to insert.
 
+## 2026-09-18 — Lern- und Erklärvideos offer
+
+- Added a concise educational/explainer video offer in `Qualify.jsx` at `#lernvideos`, with matching copy in `docs/COPY.md` and two scoped styles in `kit.css`.
+- Describes concept, visual didactics, direction, image design and editing without internal employer figures or outcome claims.
+- Verified local desktop/mobile rendering with Playwright (1280px / 390px), no horizontal overflow, no JavaScript errors. Existing paid-social positioning and approved PDF captures retained.
+
 ## 2026-08-18 (Session 8 — Yannick's review round, then deploy) — ✅ DEPLOYED
 
 - Built a static single-file preview of the staged B+ version (rendered DOM of `/` and

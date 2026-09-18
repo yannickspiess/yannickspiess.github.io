@@ -216,6 +216,11 @@ or pulling media work into 01–05, is no longer a softening. It is the regressi
 > geben — und dafür eine eigene Handschrift bekommen" says the same thing positively. It is
 > the single most KSK-load-bearing string left in this section. Do not trim it for rhythm.
 
+#### Lern- und Erklärvideos — `Qualify.jsx` `#lernvideos`
+- H3: **Lern- und Erklärvideos**
+- Text: **Du möchtest Wissen vermitteln oder einen Ablauf verständlich machen? Ich entwickle das Konzept und die visuelle Didaktik: Was wird gezeigt, in welcher Reihenfolge, aus welcher Perspektive? Daraus gestalte ich Lern- und Erklärvideos — von Buch und Regie über Bildgestaltung bis zum Schnitt. Für einzelne Themen oder zusammenhängende Lernreihen.**
+- Ergänzt am 18.09.2026: eigenes Videoangebot, kein Unterrichts- oder Beratungsangebot; ohne interne Arbeitgeberzahlen oder Erfolgsversprechen.
+
 ### 6 · So startet ein Projekt — `PilotOffer.jsx` `#pilot`
 *Job: show the entry engagement; no fixed price, no implied customer base. (No eyebrow.)*
 - H2: **Ein klarer Einstieg in die Zusammenarbeit.**
