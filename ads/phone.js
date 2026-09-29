@@ -161,7 +161,7 @@ if (renderer) {
       .then((txt) => { logos[name] = buildLogo(txt); holder.add(logos[name]); })
       .catch(() => {});
   });
-  const order = ['phone', 'instagram', 'phone', 'youtube', 'phone', 'tiktok'];
+  const order = ['phone', 'instagram', 'youtube', 'tiktok'];
   const objectFor = (key) => (key === 'phone' ? phone : logos[key]);
 
   const size = () => {
@@ -181,7 +181,7 @@ if (renderer) {
     let visible = true, last = performance.now(), t = 0;
     let idx = 0, spin = 0, phase = 'show', tp = 0, current = phone;
     const SPEED = 0.9;       // rad/s, unchanged
-    const HOLD = 3;          // seconds each object is shown
+    const HOLD = 2;          // seconds each object is shown
     new IntersectionObserver(([e]) => { visible = e.isIntersecting; last = performance.now(); }).observe(band);
     const ease = (x) => x * x * (3 - 2 * x);
     const tick = (now) => {
