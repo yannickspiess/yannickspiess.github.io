@@ -113,6 +113,12 @@
   }
   .hero .s em { font-style: normal; color: var(--green); }
   .hero .dot { margin-top: clamp(36px, 4vw, 56px); }
+  /* Hero jump link: bold down arrow instead of the dot. */
+  .hero .dot::before {
+    width: 12px; height: 14px; border-radius: 0;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 14'%3E%3Cpath d='M6 1v11M1.5 7.5 6 12l4.5-4.5' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='square'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 14'%3E%3Cpath d='M6 1v11M1.5 7.5 6 12l4.5-4.5' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='square'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
 
   /* Black band with a rotating gold phone (three.js, self-hosted). */
   .band {
