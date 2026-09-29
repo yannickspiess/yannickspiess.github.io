@@ -1,5 +1,7 @@
-// Rotating gold smartphone for the black band. three.js is self-hosted in /vendor.
-import * as THREE from '../vendor/three.module.min.js';
+// Rotating gold smartphone for the black band. After each full turn it becomes a platform logo
+// (Instagram, YouTube, TikTok; Simple Icons, CC0) and back. three.js + SVGLoader are self-hosted in /vendor.
+import * as THREE from 'three';
+import { SVGLoader } from '/vendor/SVGLoader.js';
 
 const band = document.querySelector('.band');
 const canvas = band && band.querySelector('canvas');
@@ -123,8 +125,44 @@ if (renderer) {
     phone.add(k);
   });
 
-  phone.rotation.set(0.12, -0.6, 0.06);
-  scene.add(phone);
+  // Everything turns inside one holder, so each object picks up where the last one left off.
+  const holder = new THREE.Group();
+  holder.rotation.set(0.12, -0.6, 0.06);
+  holder.add(phone);
+  scene.add(holder);
+
+  const logos = {};
+  const buildLogo = (svgText) => {
+    const g = new THREE.Group();
+    const data = new SVGLoader().parse(svgText);
+    data.paths.forEach((path) => {
+      SVGLoader.createShapes(path).forEach((shape) => {
+        const geo = new THREE.ExtrudeGeometry(shape, {
+          depth: 2.2, bevelEnabled: true, bevelThickness: 0.45, bevelSize: 0.3, bevelSegments: 6, curveSegments: 28,
+        });
+        g.add(new THREE.Mesh(geo, [brushed, polished]));
+      });
+    });
+    // SVG y runs downwards: turn it over (a rotation, so faces keep their winding), then center and size it.
+    const box = new THREE.Box3().setFromObject(g);
+    const c = box.getCenter(new THREE.Vector3());
+    g.children.forEach((m) => m.geometry.translate(-c.x, -c.y, -c.z));
+    const sz = box.getSize(new THREE.Vector3());
+    const wrap = new THREE.Group();
+    g.rotation.x = Math.PI;
+    g.scale.setScalar(1.4 / Math.max(sz.x, sz.y));
+    wrap.add(g);
+    wrap.visible = false;
+    return wrap;
+  };
+  ['instagram', 'youtube', 'tiktok'].forEach((name) => {
+    fetch(new URL('logos/' + name + '.svg', import.meta.url))
+      .then((r) => (r.ok ? r.text() : Promise.reject(r.status)))
+      .then((txt) => { logos[name] = buildLogo(txt); holder.add(logos[name]); })
+      .catch(() => {});
+  });
+  const order = ['phone', 'instagram', 'phone', 'youtube', 'phone', 'tiktok'];
+  const objectFor = (key) => (key === 'phone' ? phone : logos[key]);
 
   const size = () => {
     const w = band.clientWidth, h = band.clientHeight;
@@ -132,7 +170,7 @@ if (renderer) {
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
     const s = Math.min(1, (w / h) / 0.7);
-    phone.scale.setScalar(s);
+    scene.scale.setScalar(s);
   };
   size();
   window.addEventListener('resize', () => { size(); if (still) renderer.render(scene, camera); });
@@ -141,16 +179,51 @@ if (renderer) {
     renderer.render(scene, camera);
   } else {
     let visible = true, last = performance.now(), t = 0;
+    let idx = 0, spin = 0, phase = 'show', tp = 0, current = phone;
+    const SPEED = 0.9;
     new IntersectionObserver(([e]) => { visible = e.isIntersecting; last = performance.now(); }).observe(band);
+    const ease = (x) => x * x * (3 - 2 * x);
     const tick = (now) => {
       requestAnimationFrame(tick);
       if (!visible) return;
       const dt = Math.min((now - last) / 1000, 0.05);
       last = now;
       t += dt;
-      phone.rotation.y += dt * 0.55;
-      phone.rotation.x = 0.12 + Math.sin(t * 0.6) * 0.08;
-      phone.position.y = Math.sin(t * 0.9) * 0.05;
+      holder.rotation.y += dt * SPEED;
+      holder.rotation.x = 0.12 + Math.sin(t * 0.6) * 0.08;
+      holder.position.y = Math.sin(t * 0.9) * 0.05;
+
+      if (phase === 'show') {
+        spin += dt * SPEED;
+        if (spin >= Math.PI * 2) {
+          // find the next object that is ready (logos load asynchronously)
+          let n = idx, next = null;
+          for (let i = 1; i <= order.length; i++) {
+            const k = (idx + i) % order.length;
+            const o = objectFor(order[k]);
+            if (o && o !== current) { n = k; next = o; break; }
+          }
+          if (next) { phase = 'out'; tp = 0; idx = n; } else { spin = 0; }
+        }
+      } else {
+        tp += dt;
+        if (phase === 'out') {
+          const k = Math.min(tp / 0.22, 1);
+          current.scale.setScalar(Math.max(1 - ease(k), 0.001));
+          if (k >= 1) {
+            current.visible = false;
+            current.scale.setScalar(1);
+            current = objectFor(order[idx]);
+            current.scale.setScalar(0.001);
+            current.visible = true;
+            phase = 'in'; tp = 0;
+          }
+        } else {
+          const k = Math.min(tp / 0.32, 1);
+          current.scale.setScalar(Math.max(ease(k), 0.001));
+          if (k >= 1) { phase = 'show'; spin = 0; }
+        }
+      }
       renderer.render(scene, camera);
     };
     requestAnimationFrame(tick);

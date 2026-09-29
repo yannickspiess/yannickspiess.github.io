@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wenn der CPA steigt, brauchst du neue Videos — Yannick Spiess</title>
+<title>Wenn dein CPA steigt, brauchst du neue Videos — Yannick Spiess</title>
 <meta name="description" content="Video-Ads für Meta und TikTok: aus einem Drehtag viele Varianten, und ein Test zeigt, welche am besten performt.">
 <meta name="robots" content="noindex">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Wenn der CPA steigt, brauchst du neue Videos.">
+<meta property="og:title" content="Wenn dein CPA steigt, brauchst du neue Videos.">
 <meta property="og:description" content="Video-Ads für Meta und TikTok, von Yannick Spiess.">
 <meta property="og:url" content="https://yannickspiess.github.io/ads/">
 <meta property="og:locale" content="de_DE">
@@ -67,7 +67,7 @@
   .dot::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
   .dot:hover { color: var(--green); }
 
-  /* Header floats over everything and inverts against dark areas. */
+  /* Pinned header on a blurred bar; switches to dark over the black areas. */
   header {
     position: fixed;
     inset: 0 0 auto 0;
@@ -75,11 +75,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 26px var(--gutter);
-    color: #fff;
-    mix-blend-mode: difference;
+    padding: 20px var(--gutter);
+    color: var(--ink);
+    background: rgba(255,255,255,0.72);
+    -webkit-backdrop-filter: blur(16px) saturate(1.4);
+    backdrop-filter: blur(16px) saturate(1.4);
     font-size: 16px;
+    transition: background .25s, color .25s;
   }
+  header.dark { color: var(--cream); background: rgba(20,20,20,0.6); }
   header a { text-decoration: none; }
   header .name { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
   header nav { display: flex; gap: 32px; }
@@ -90,26 +94,21 @@
     text-align: center;
   }
   .hero h1 { margin: 22px 0 0; font-weight: 500; }
-  .hero .g {
+  .hero .g, .hero .s {
     display: block;
-    font-size: clamp(46px, 8.6vw, 150px);
-    line-height: 0.92;
+    white-space: nowrap;
+    font-size: var(--hs, clamp(30px, 7.6vw, 150px));
+    line-height: 0.95;
     letter-spacing: -0.05em;
   }
-  .hero .s {
-    display: block;
-    font-size: clamp(46px, 8.6vw, 150px);
-    font-weight: 300;
-    line-height: 0.92;
-    letter-spacing: -0.05em;
-  }
+  .hero .s { font-weight: 300; }
   .hero .s em { font-style: normal; color: var(--green); }
   .hero .dot { margin-top: clamp(36px, 4vw, 56px); }
 
   /* Black band with a rotating gold phone (three.js, self-hosted). */
   .band {
     position: relative;
-    height: clamp(440px, 56vw, 780px);
+    height: clamp(396px, 50.4vw, 702px);
     background: var(--black);
     overflow: hidden;
   }
@@ -129,14 +128,15 @@
   }
   .sechead b { font-weight: 800; font-variant-numeric: tabular-nums; }
   .statement {
-    margin: 22px 0 0;
+    margin: clamp(28px, 3vw, 44px) 0 0;
     max-width: 1240px;
     font-size: clamp(28px, 3.4vw, 48px);
     font-weight: 400;
-    line-height: 1.05;
+    line-height: 1.28;
     letter-spacing: -0.03em;
   }
   .statement strong { font-weight: 600; }
+  .block.roomy { padding-top: clamp(104px, 13vw, 190px); padding-bottom: clamp(120px, 15vw, 220px); }
 
   /* Two cards, like a project pair. */
   .rowhead { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
@@ -245,8 +245,6 @@
     header nav { gap: 18px; }
     header nav .hide-sm { display: none; }
     .details .item { grid-template-columns: 1fr; gap: 10px; }
-    .hero .g { font-size: 13.4vw; }
-    .hero .s { font-size: 13.4vw; }
   }
 </style>
 </head>
@@ -264,7 +262,7 @@
   <section class="hero">
     <p class="eyebrow">Video-Ads für Meta und TikTok</p>
     <h1>
-      <span class="g">Wenn der CPA steigt,</span>
+      <span class="g">Wenn dein CPA steigt,</span>
       <span class="s">brauchst du <em>neue Videos</em>.</span>
     </h1>
     <a class="dot" href="#sprint">So läuft der Sprint</a>
@@ -272,7 +270,7 @@
 
   <div class="band" aria-hidden="true"><canvas></canvas></div>
 
-  <section class="block">
+  <section class="block roomy">
     <h2 class="sechead"><b>01</b>Was ich mache</h2>
     <p class="statement" data-reveal><strong>Ich konzipiere und produziere Video-Ads für Meta und TikTok.</strong> Aus einem Drehtag entstehen viele Varianten, und ein Test zeigt, welche am besten performt.</p>
   </section>
@@ -308,7 +306,7 @@
       </div>
       <div class="item" data-reveal>
         <dt>Danach</dt>
-        <dd>Wenn du weitermachen willst, baut jede Runde auf der letzten auf. Was im Test funktioniert hat, nehmen wir in den nächsten Dreh mit, was nicht funktioniert hat, lassen wir weg. So werden deine Ads von Runde zu Runde besser, und du weisst immer genauer, was bei deinen Kunden ankommt. Keine Mindestlaufzeit.</dd>
+        <dd>Jede Runde baut auf der letzten auf: Was im Test funktioniert, kommt in den nächsten Dreh, der Rest fällt weg. So werden deine Ads mit jeder Runde besser. Keine Mindestlaufzeit.</dd>
       </div>
       <div class="item" data-reveal>
         <dt>Warum ich</dt>
@@ -319,7 +317,7 @@
 </main>
 
 <footer class="contact" id="kontakt">
-  <h2 class="sechead"><b>04</b>Nächster Schritt</h2>
+  <h2 class="sechead">Nächster Schritt</h2>
   <p class="big">Schreib mir eine kurze E-Mail.</p>
   <a class="mail" href="mailto:yannick.spiess@icloud.com?subject=Video-Ads%20f%C3%BCr%20Meta%20und%20TikTok">yannick.spiess@icloud.com</a>
   <p class="lede">Was du bewirbst, was gerade nicht läuft und wo du hinwillst. Wenn es passt, telefonieren wir 20&nbsp;Minuten.</p>
@@ -344,8 +342,34 @@
   <div class="legal">© 2026 Yannick Spiess</div>
 </footer>
 
+<script type="importmap">{ "imports": { "three": "/vendor/three.module.min.js" } }</script>
 <script type="module" src="phone.js"></script>
 <script>
+  (function () {
+    // Size both headline lines so the longer one fills the width on a single line.
+    var hero = document.querySelector('.hero'), lines = hero.querySelectorAll('.g, .s');
+    function fit() {
+      hero.style.setProperty('--hs', '100px');
+      var avail = hero.clientWidth - 2 * parseFloat(getComputedStyle(hero).paddingLeft);
+      var widest = 0;
+      lines.forEach(function (l) { l.style.display = 'inline-block'; widest = Math.max(widest, l.getBoundingClientRect().width); l.style.display = ''; });
+      hero.style.setProperty('--hs', Math.min(150, 100 * avail / widest* 0.92) + 'px');
+    }
+    fit();
+    if (document.fonts) document.fonts.ready.then(fit);
+    window.addEventListener('resize', fit);
+
+    // Dark header over the black band and the footer.
+    var header = document.querySelector('header'), darks = document.querySelectorAll('.band, .contact');
+    function theme() {
+      var y = header.offsetHeight / 2, dark = false;
+      darks.forEach(function (d) { var r = d.getBoundingClientRect(); if (r.top <= y && r.bottom >= y) dark = true; });
+      header.classList.toggle('dark', dark);
+    }
+    theme();
+    window.addEventListener('scroll', theme, { passive: true });
+  })();
+
   (function () {
     var els = document.querySelectorAll('[data-reveal]');
     if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
