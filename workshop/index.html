@@ -136,54 +136,7 @@
   .questions { margin: 16px 0 0; padding-left: 1.2em; list-style: disc; }
   .questions li { margin-top: 6px; padding-left: 2px; }
 
-  .portrait { display: block; width: 72px; height: 72px; border-radius: 50%; object-fit: cover; margin-bottom: 16px; }
-
   .next { background: var(--night); color: var(--night-ink); }
-  .learn { padding-bottom: 0; }
-  .tiles {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: flex-start;
-    max-width: 640px;
-  }
-  .tile[open] { flex-basis: 100%; }
-  .tile {
-    border: 1.5px solid var(--ring);
-    border-radius: 28px;
-    transition: background .15s;
-  }
-  .tile summary {
-    list-style: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 14px 12px 22px;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: -0.01em;
-  }
-  .tile summary::-webkit-details-marker { display: none; }
-  .tile summary::after {
-    content: "+";
-    flex: none;
-    display: grid;
-    place-items: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: var(--ring);
-    color: var(--night);
-    font-size: 20px;
-    line-height: 1;
-    transition: transform .2s;
-  }
-  .tile[open] summary::after { transform: rotate(45deg); }
-  .tile summary:hover::after, .tile summary:focus-visible::after { background: var(--night-ink); }
-  .tile summary:focus-visible { outline: none; }
-  .tile p { margin: 0; padding: 0 22px 18px; font-size: 16px; line-height: 1.5; color: var(--night-soft); }
   .next .big {
     font-size: clamp(34px, 5.4vw, 72px);
     font-weight: 500;
@@ -234,10 +187,6 @@
     .block .statement + .statement { margin-top: 36px; padding-top: 32px; }
     .statement.follow { font-size: 19px; }
     .cta { margin-top: 36px; }
-    .tiles { gap: 8px; }
-    .tile summary { font-size: 15px; padding: 10px 10px 10px 16px; gap: 8px; }
-    .tile summary::after { width: 24px; height: 24px; font-size: 18px; }
-    .tile p { padding: 0 16px 14px; font-size: 15px; }
   }
 </style>
 </head>
@@ -293,35 +242,10 @@
         <div>
           <dt>Warum ich</dt>
           <dd>
-            <img class="portrait" src="../assets/team-yannick.jpg" alt="Yannick Spiess" width="72" height="72" loading="lazy">
             Ich habe viele Jahre in der Film- und Kreativproduktion komplexe Projekte betreut. Als ich anfing, ernsthaft mit KI zu arbeiten, habe ich gemerkt, wie schnell die KI Dinge vergisst oder erfindet, wenn die Struktur fehlt. Die Lösung habe ich mir selbst erarbeitet, und ich nutze sie heute jeden Tag.
           </dd>
         </div>
       </dl>
-    </div>
-  </section>
-
-  <section class="row next learn">
-    <h2 class="label">Was du lernst</h2>
-    <div class="content">
-      <div class="tiles">
-        <details class="tile">
-          <summary>Kontext geben</summary>
-          <p>Die KI kennt dein Angebot und deinen Ton, ohne dass du jedes Mal alles neu erklärst.</p>
-        </details>
-        <details class="tile">
-          <summary>Daten schützen</summary>
-          <p>Du weisst, was du der KI zeigen kannst und was nicht.</p>
-        </details>
-        <details class="tile">
-          <summary>Ergebnisse prüfen</summary>
-          <p>Du merkst, wenn die KI sich etwas ausdenkt.</p>
-        </details>
-        <details class="tile">
-          <summary>Selbst weitermachen</summary>
-          <p>Du überträgst das auf die nächste Aufgabe, ohne mich.</p>
-        </details>
-      </div>
     </div>
   </section>
 
