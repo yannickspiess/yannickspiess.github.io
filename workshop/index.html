@@ -34,11 +34,9 @@
   :root {
     --paper: #FAFAF8;
     --ink: #111110;
-    --ink-soft: #74746E;
     --hair: #E3E3DE;
     --block: #1F2BD8;
     --block-ink: #FFFFFF;
-    --block-soft: rgba(255,255,255,0.66);
     --night: #111110;
     --night-ink: #F4F4F0;
     --night-soft: #9A9A93;
@@ -58,7 +56,6 @@
     -webkit-font-smoothing: antialiased;
   }
   a { color: inherit; }
-  strong { font-weight: 600; }
 
   header {
     display: flex;
@@ -98,19 +95,14 @@
   .content { max-width: 780px; }
   .content p { margin: 0; }
 
-  /* Statements: the set-up runs soft, the point runs at full ink. */
   .statement {
     font-size: clamp(26px, 3.2vw, 40px);
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: -0.025em;
-    color: var(--ink-soft);
   }
-  .statement strong { color: var(--ink); font-weight: 500; }
 
   .block { background: var(--block); color: var(--block-ink); }
-  .block .statement { color: var(--block-soft); }
-  .block .statement strong { color: var(--block-ink); }
   .block .statement + .statement {
     margin-top: 56px;
     padding-top: 48px;
@@ -203,15 +195,15 @@
   <section class="row">
     <h2 class="label">Was ich mache</h2>
     <div class="content">
-      <p class="statement">Ich helfe Solo-Selbstständigen in einem Workshop, <strong>KI so in ihren Arbeitsalltag zu holen</strong>, dass sie ihnen bei Akquise, Aufträgen und Organisation <strong>Arbeit abnimmt</strong> und <strong>sensible Daten dort bleiben, wo sie hingehören.</strong></p>
+      <p class="statement">Ich helfe Solo-Selbstständigen in einem Workshop, KI so in ihren Arbeitsalltag zu holen, dass sie ihnen bei Akquise, Aufträgen und Organisation Arbeit abnimmt und sensible Daten dort bleiben, wo sie hingehören.</p>
     </div>
   </section>
 
   <section class="row block">
     <h2 class="label">Was du davon hast</h2>
     <div class="content">
-      <p class="statement"><strong>Wer solo selbstständig ist, macht alles selbst.</strong> Neben der eigentlichen Arbeit warten Angebote und Rechnungen, Formulare vom Amt und die Steuererklärung. KI könnte dir viel davon abnehmen. <strong>Aber jeder neue Chat beginnt bei null, und oft weisst du nicht, welche Daten du hineingeben darfst und ob die Antworten stimmen.</strong></p>
-      <p class="statement">Im Workshop nimmst du dir eine dieser Aufgaben vor, etwa ein Formular, das schon lange liegt. Wir legen einen Ordner mit einfachen Textdateien an, in dem steht, was du anbietest und wie du arbeitest. Du behandelst die KI dabei <strong>wie einen neuen Praktikanten</strong>: Er bekommt Kontext, klare Aufgaben und Regeln, was er sehen darf. Danach prüfst du das Ergebnis, bevor es rausgeht. <strong>Am Ende läuft diese eine Aufgabe zuverlässig mit KI.</strong> Und du weisst, was du abgeben kannst und was besser bei dir bleibt.</p>
+      <p class="statement">Wer solo selbstständig ist, macht alles selbst. Neben der eigentlichen Arbeit warten Angebote und Rechnungen, Formulare vom Amt und die Steuererklärung. KI könnte dir viel davon abnehmen. Aber jeder neue Chat beginnt bei null, und oft weisst du nicht, welche Daten du hineingeben darfst und ob die Antworten stimmen.</p>
+      <p class="statement">Im Workshop nimmst du dir eine dieser Aufgaben vor, etwa ein Formular, das schon lange liegt. Wir legen einen Ordner mit einfachen Textdateien an, in dem steht, was du anbietest und wie du arbeitest. Du behandelst die KI dabei wie einen neuen Praktikanten: Er bekommt Kontext, klare Aufgaben und Regeln, was er sehen darf. Danach prüfst du das Ergebnis, bevor es rausgeht. Am Ende läuft diese eine Aufgabe zuverlässig mit KI. Und du weisst, was du abgeben kannst und was besser bei dir bleibt.</p>
     </div>
   </section>
 
