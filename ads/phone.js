@@ -1,7 +1,7 @@
-// Rotating gold smartphone for the black band. After each full turn it becomes a platform logo
+// Rotating gold smartphone for the black band. Every few seconds it becomes a platform logo
 // (Instagram, YouTube, TikTok; Simple Icons, CC0) and back. three.js + SVGLoader are self-hosted in /vendor.
-import * as THREE from 'three';
-import { SVGLoader } from '/vendor/SVGLoader.js';
+import * as THREE from '../vendor/three.module.min.js';
+import { SVGLoader } from '../vendor/SVGLoader.js';
 
 const band = document.querySelector('.band');
 const canvas = band && band.querySelector('canvas');
@@ -180,7 +180,8 @@ if (renderer) {
   } else {
     let visible = true, last = performance.now(), t = 0;
     let idx = 0, spin = 0, phase = 'show', tp = 0, current = phone;
-    const SPEED = 0.9;
+    const SPEED = 0.9;       // rad/s, unchanged
+    const HOLD = 3;          // seconds each object is shown
     new IntersectionObserver(([e]) => { visible = e.isIntersecting; last = performance.now(); }).observe(band);
     const ease = (x) => x * x * (3 - 2 * x);
     const tick = (now) => {
@@ -194,8 +195,8 @@ if (renderer) {
       holder.position.y = Math.sin(t * 0.9) * 0.05;
 
       if (phase === 'show') {
-        spin += dt * SPEED;
-        if (spin >= Math.PI * 2) {
+        spin += dt;
+        if (spin >= HOLD) {
           // find the next object that is ready (logos load asynchronously)
           let n = idx, next = null;
           for (let i = 1; i <= order.length; i++) {
