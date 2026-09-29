@@ -87,7 +87,7 @@
   header.dark { color: var(--cream); background: rgba(20,20,20,0.6); }
   header a { text-decoration: none; }
   header .name { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
-  header .role { font-size: 14px; font-weight: 400; letter-spacing: 0; opacity: 0.6; margin-left: 14px; }
+  header .role { font-size: 16px; font-weight: 300; letter-spacing: 0; opacity: 0.55; margin-left: 10px; white-space: nowrap; }
   header nav { display: flex; gap: 32px; }
 
   /* Hero: giant grotesk line, script line laid across it. */
@@ -252,8 +252,7 @@
   }
   @media (max-width: 560px) {
     header nav { gap: 18px; }
-    header .name { line-height: 1.2; }
-    header .role { display: block; margin: 2px 0 0; font-size: 12px; }
+    header .role { font-size: 15px; margin-left: 8px; }
     header nav .hide-sm { display: none; }
     .details .item { grid-template-columns: 1fr; gap: 10px; }
   }
@@ -262,7 +261,7 @@
 <body>
 
 <header>
-  <a class="name" href="../">Yannick Spiess<span class="role">Video-Ads für Paid Social</span></a>
+  <a class="name" href="../">Yannick Spiess<span class="role">Paid Social Video</span></a>
   <nav>
     <a class="hide-sm" href="#details">Im Detail</a>
     <a href="#kontakt">Kontakt</a>
