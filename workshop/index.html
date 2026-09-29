@@ -44,6 +44,8 @@
     --font: 'Hanken Grotesk Var', system-ui, -apple-system, sans-serif;
     --gutter: clamp(16px, 3.4vw, 48px);
     --header-height: 68px;
+    --frame: 1440px;
+    --side: max(var(--gutter), (100vw - var(--frame)) / 2);
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--header-height) + 16px); }
@@ -67,7 +69,7 @@
     justify-content: space-between;
     align-items: center;
     height: var(--header-height);
-    padding: 0 var(--gutter);
+    padding: 0 var(--side);
     background: rgba(250, 250, 248, 0.76);
     -webkit-backdrop-filter: blur(16px) saturate(1.4);
     backdrop-filter: blur(16px) saturate(1.4);
@@ -78,9 +80,14 @@
   header nav { display: flex; gap: 24px; }
   header nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
-  .hero__art { margin: 0; width: 100%; }
+  .hero__art {
+    /* never taller than the fold minus the first headline line; full-bleed until capped */
+    --art-w: min(100%, var(--frame), max(480px, (100svh - var(--header-height) - 196px) * 1.5));
+    width: var(--art-w);
+    margin: 0 0 0 min(var(--side), 100% - var(--art-w));
+  }
   .hero__art img { display: block; width: 100%; height: auto; }
-  .hero { padding: clamp(24px, 2.5vw, 40px) var(--gutter) 0; }
+  .hero { padding: clamp(24px, 2.5vw, 40px) var(--side) 0; }
   .hero h1 {
     margin: 0;
     max-width: 18ch;
@@ -109,7 +116,7 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr);
     gap: 24px var(--gutter);
-    padding: clamp(56px, 7vw, 96px) var(--gutter);
+    padding: clamp(56px, 7vw, 96px) var(--side);
   }
   .label {
     margin: 0;
@@ -193,7 +200,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 12px 24px;
-    padding: 28px var(--gutter) 36px;
+    padding: 28px var(--side) 36px;
     background: var(--night);
     color: var(--night-soft);
     font-size: 13px;
