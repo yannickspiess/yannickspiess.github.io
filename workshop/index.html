@@ -103,6 +103,13 @@
   }
 
   .block { background: var(--block); color: var(--block-ink); }
+  .statement.follow {
+    font-size: clamp(19px, 1.8vw, 24px);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    max-width: 680px;
+  }
   .block .statement + .statement {
     margin-top: 56px;
     padding-top: 48px;
@@ -173,6 +180,7 @@
     header nav .hide-sm { display: none; }
     .row { grid-template-columns: 1fr; gap: 20px; }
     .block .statement + .statement { margin-top: 36px; padding-top: 32px; }
+    .statement.follow { font-size: 19px; }
     .cta { margin-top: 36px; }
   }
 </style>
@@ -203,7 +211,7 @@
     <h2 class="label">Was du davon hast</h2>
     <div class="content">
       <p class="statement">Wer solo selbstständig ist, macht alles selbst. Neben der eigentlichen Arbeit warten Angebote und Rechnungen, Formulare vom Amt und die Steuererklärung. KI könnte dir viel davon abnehmen. Aber jeder neue Chat beginnt bei null, und oft weisst du nicht, welche Daten du hineingeben darfst und ob die Antworten stimmen.</p>
-      <p class="statement">Im Workshop nimmst du dir eine dieser Aufgaben vor, etwa ein Formular, das schon lange liegt. Wir legen einen Ordner mit einfachen Textdateien an, in dem steht, was du anbietest und wie du arbeitest. Du behandelst die KI dabei wie einen neuen Praktikanten: Er bekommt Kontext, klare Aufgaben und Regeln, was er sehen darf. Danach prüfst du das Ergebnis, bevor es rausgeht. Am Ende läuft diese eine Aufgabe zuverlässig mit KI. Und du weisst, was du abgeben kannst und was besser bei dir bleibt.</p>
+      <p class="statement follow">Im Workshop nimmst du dir eine dieser Aufgaben vor, etwa ein Formular, das schon lange liegt. Wir legen einen Ordner mit einfachen Textdateien an, in dem steht, was du anbietest und wie du arbeitest. Du behandelst die KI dabei wie einen neuen Praktikanten: Er bekommt Kontext, klare Aufgaben und Regeln, was er sehen darf. Danach prüfst du das Ergebnis, bevor es rausgeht. Am Ende läuft diese eine Aufgabe zuverlässig mit KI. Und du weisst, was du abgeben kannst und was besser bei dir bleibt.</p>
     </div>
   </section>
 
