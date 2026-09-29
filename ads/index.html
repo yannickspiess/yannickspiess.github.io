@@ -14,7 +14,7 @@
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <script>document.documentElement.classList.add('js');</script>
 <style>
-  /* Host Grotesk (300–800) + Ballet script, both OFL, self-hosted — no requests to Google. */
+  /* Host Grotesk (300–800) + Instrument Serif Italic, both OFL, self-hosted — no requests to Google. */
   @font-face {
     font-family: 'Host Grotesk';
     font-style: normal;
@@ -23,11 +23,11 @@
     src: url(../fonts/HostGrotesk-var-latin.woff2) format('woff2');
   }
   @font-face {
-    font-family: 'Ballet';
-    font-style: normal;
+    font-family: 'Instrument Serif';
+    font-style: italic;
     font-weight: 400;
     font-display: swap;
-    src: url(../fonts/Ballet-var-latin.woff2) format('woff2');
+    src: url(../fonts/InstrumentSerif-italic-latin.woff2) format('woff2');
   }
 
   :root {
@@ -40,7 +40,7 @@
     --mist: #A3A29A;
     --green: #16A34A;
     --sans: 'Host Grotesk', system-ui, -apple-system, sans-serif;
-    --script: 'Ballet', 'Snell Roundhand', cursive;
+    --script: 'Instrument Serif', Georgia, serif;
     --gutter: clamp(16px, 2.8vw, 40px);
   }
   * { box-sizing: border-box; }
@@ -107,14 +107,15 @@
   .hero .s {
     display: block;
     position: relative;
-    margin-top: -0.32em;
+    margin-top: -0.12em;
     font-family: var(--script);
+    font-style: italic;
     font-weight: 400;
-    font-size: clamp(40px, 6.6vw, 112px);
-    line-height: 1.25;
-    letter-spacing: 0;
+    font-size: clamp(46px, 8vw, 138px);
+    line-height: 1;
+    letter-spacing: -0.02em;
   }
-  .hero .s em { font-style: normal; color: var(--green); }
+  .hero .s em { font-style: italic; color: var(--green); }
   .hero .dot { margin-top: clamp(36px, 4vw, 56px); }
 
   /* Black band with a glossy, inflated 9:16 frame. */
@@ -302,7 +303,7 @@
     .details .item { grid-template-columns: 1fr; gap: 10px; }
     .frame.back { left: 48%; }
     .hero .g { font-size: 13.4vw; }
-    .hero .s { font-size: 12.4vw; margin-top: -0.18em; }
+    .hero .s { font-size: 13.4vw; margin-top: -0.06em; }
   }
 </style>
 </head>
