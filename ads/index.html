@@ -116,7 +116,7 @@
   /* Black band with a rotating gold phone (three.js, self-hosted). */
   .band {
     position: relative;
-    height: clamp(396px, 50.4vw, 702px);
+    aspect-ratio: 16 / 9;
     background: var(--black);
     overflow: hidden;
   }
@@ -350,7 +350,7 @@
   <div class="legal">© 2026 Yannick Spiess</div>
 </footer>
 
-<script type="module" src="phone.js?v=6"></script>
+<script type="module" src="phone.js?v=7"></script>
 <script>
   (function () {
     // Size both headline lines so the longer one fills the width on a single line.
