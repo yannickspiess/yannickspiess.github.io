@@ -69,7 +69,7 @@
   header nav { display: flex; gap: 24px; }
   header nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
-  .hero { padding: clamp(64px, 10vw, 120px) var(--gutter) clamp(72px, 9vw, 112px); }
+  .hero { padding: clamp(64px, 10vw, 120px) var(--gutter) 0; }
   .hero h1 {
     margin: 0;
     max-width: 18ch;
@@ -78,6 +78,8 @@
     line-height: 0.98;
     letter-spacing: -0.04em;
   }
+  .hero__art { margin: clamp(44px, 5.5vw, 80px) 0 0; max-width: 1120px; }
+  .hero__art img { display: block; width: 100%; height: auto; }
   .hero h1.hero--prepared .hero__word {
     display: inline-block;
     opacity: 0;
@@ -198,7 +200,8 @@
   @media (max-width: 760px) {
     header nav { gap: 16px; }
     header nav .hide-sm { display: none; }
-    .hero { padding-top: 56px; padding-bottom: 64px; }
+    .hero { padding-top: 56px; }
+    .hero__art { margin-top: 40px; }
     .hero h1 { font-size: clamp(52px, 13.5vw, 60px); line-height: 1.12; }
     .row { grid-template-columns: 1fr; gap: 20px; }
     .block .statement + .statement { margin-top: 36px; padding-top: 32px; }
@@ -220,6 +223,9 @@
 <main>
   <section class="hero">
     <h1>KI <em class="hl">sicher</em> in die eigene Arbeit holen</h1>
+    <figure class="hero__art">
+      <img src="../assets/workshop-print.webp" width="1536" height="1024" alt="" loading="lazy" decoding="async">
+    </figure>
   </section>
 
   <section class="row">
