@@ -37,7 +37,6 @@
     --hair: #E3E3DE;
     --block: #1F2BD8;
     --block-ink: #FFFFFF;
-    --case: #E9EBFB;
     --night: #111110;
     --night-ink: #F4F4F0;
     --night-soft: #9A9A93;
@@ -133,34 +132,8 @@
   .details dd { margin: 0; font-size: 17px; line-height: 1.55; }
   .details .content { max-width: none; }
 
-  .questions { list-style: none; margin: 16px 0 0; padding: 0; }
-  .questions li { position: relative; padding-left: 20px; margin-top: 6px; }
-  .questions li::before { content: "–"; position: absolute; left: 0; color: var(--ink-soft, #74746E); }
-
-  .cases {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-    padding: 0 var(--gutter) clamp(56px, 7vw, 96px);
-  }
-  .case {
-    background: var(--case);
-    padding: clamp(28px, 3vw, 44px);
-    min-height: 260px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 32px;
-  }
-  .case h3 {
-    margin: 0;
-    font-size: clamp(24px, 2.4vw, 32px);
-    font-weight: 500;
-    line-height: 1.15;
-    letter-spacing: -0.025em;
-    max-width: 14ch;
-  }
-  .case p { margin: 0; font-size: 17px; line-height: 1.55; max-width: 34ch; }
+  .questions { margin: 16px 0 0; padding-left: 1.2em; list-style: disc; }
+  .questions li { margin-top: 6px; padding-left: 2px; }
 
   .next { background: var(--night); color: var(--night-ink); }
   .next .big {
@@ -205,8 +178,6 @@
 
   @media (max-width: 1000px) {
     .details dl { grid-template-columns: 1fr; gap: 28px; }
-    .cases { grid-template-columns: 1fr; }
-    .case { min-height: 0; }
   }
   @media (max-width: 760px) {
     header nav { gap: 16px; }
@@ -272,21 +243,6 @@
           <dd>Ich habe viele Jahre in der Film- und Kreativproduktion komplexe Projekte betreut. Als ich anfing, ernsthaft mit KI zu arbeiten, habe ich gemerkt, wie schnell die KI Dinge vergisst oder erfindet, wenn die Struktur fehlt. Die Lösung habe ich mir selbst erarbeitet, und ich nutze sie heute jeden Tag.</dd>
         </div>
       </dl>
-    </div>
-  </section>
-
-  <section class="cases" aria-label="Anwendungsfälle">
-    <div class="case">
-      <h3>Das Formular, das seit Wochen liegt</h3>
-      <p>Die KI erklärt dir jede Frage und bereitet die Antworten vor. Abschicken tust du.</p>
-    </div>
-    <div class="case">
-      <h3>Der volle Posteingang</h3>
-      <p>Aus vierzig Mails wird eine kurze Liste: was heute wichtig ist, mit Entwürfen für die Antworten.</p>
-    </div>
-    <div class="case">
-      <h3>Der Beitrag über dein letztes Projekt</h3>
-      <p>Aus ein paar Fotos und Notizen wird ein Text für deine Website oder Instagram.</p>
     </div>
   </section>
 
