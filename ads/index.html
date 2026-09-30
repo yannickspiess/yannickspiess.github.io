@@ -53,10 +53,16 @@
 
   .eyebrow {
     margin: 0;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 800;
     letter-spacing: 0.01em;
     text-transform: uppercase;
+  }
+  .d-only { display: none; }
+  @media (min-width: 601px) {
+    .eyebrow { font-size: 15px; }
+    .m-only { display: none; }
+    .d-only { display: inline; }
   }
   .dot {
     display: inline-flex;
@@ -279,7 +285,7 @@
 
 <main>
   <section class="hero">
-    <p class="eyebrow">Video-Ads für Meta, TikTok und YouTube</p>
+    <p class="eyebrow">Video-Ads für <span class="m-only">Meta und TikTok</span><span class="d-only">Meta, TikTok und YouTube</span></p>
     <h1>
       <span class="g">Wenn dein CPA<br class="m"> steigt,</span>
       <span class="s">brauchst<br class="m"> du <em>neue Videos</em>.</span>
@@ -291,7 +297,7 @@
 
   <section class="block roomy">
     <h2 class="sechead"><b>01</b>Was ich mache</h2>
-    <p class="statement" data-reveal><strong>Ich konzipiere und produziere Video-Ads für Meta, TikTok und YouTube.</strong> Aus einem Drehtag entstehen viele Varianten, und ein Test zeigt, welche am besten performt.</p>
+    <p class="statement" data-reveal><strong>Ich konzipiere und produziere Video-Ads für <span class="m-only">Meta und TikTok</span><span class="d-only">Meta, TikTok und YouTube</span>.</strong> Aus einem Drehtag entstehen viele Varianten, und ein Test zeigt, welche am besten performt.</p>
   </section>
 
   <section class="block" id="sprint" style="padding-top:0;scroll-margin-top:110px">
