@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Loop mark: open vermilion ring with a solid dot closing the cycle — echoes the
+       loop diagram's dot + return-arc motif on the site. Paper tile for contrast in
+       both light and dark browser chrome. -->
+  <rect width="32" height="32" rx="7" fill="#FAF6EF"/>
+  <path d="M 16 6.5 A 9.5 9.5 0 1 0 25.5 16" fill="none" stroke="#E1492A" stroke-width="3.4" stroke-linecap="round"/>
+  <circle cx="25.5" cy="11" r="3.1" fill="#E1492A"/>
+</svg>
