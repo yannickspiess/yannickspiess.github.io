@@ -1,5 +1,5 @@
 // Impressum — legally required provider identification (§ 5 DDG, § 18 Abs. 2 MStV).
-// Keep factual and current; no marketing copy here. USt-IdNr. must be added once issued.
+// Keep factual and current; no marketing copy here.
 function Impressum() {
   return (
     <section className="legal">
@@ -18,6 +18,12 @@ function Impressum() {
         <p className="legal__block">
           Telefon: <a className="ilink" href="tel:+491713120124">+49 171 3120124</a><br />
           E-Mail: <a className="ilink" href="mailto:hi@yannickspiess.de">hi@yannickspiess.de</a>
+        </p>
+
+        <h2 className="legal__subheading">Umsatzsteuer-ID</h2>
+        <p className="legal__block">
+          Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br />
+          DE300447681
         </p>
 
         <h2 className="legal__subheading">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
